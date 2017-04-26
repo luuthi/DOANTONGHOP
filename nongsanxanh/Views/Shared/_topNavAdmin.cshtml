@@ -1,0 +1,153 @@
+﻿@using Bussiness.ViewModel
+@{
+    AccountViewModel acc = new AccountViewModel();
+    if (Session["Account"] != null)
+    {
+        acc = Session["Account"] as AccountViewModel;
+
+    }
+    else
+    {
+        Response.Redirect("~/Admin/LoginAdmin");
+    }
+}
+<header class="main-header">
+    <!-- Logo -->
+    <a href="javascript:void()" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><i class="mdi mdi-24px mdi-react"></i></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><i class="mdi mdi-24px mdi-react" style="margin-right: 10px"></i><b>Admin</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="mdi mdi-24px mdi-menu"></span>
+        </a>
+
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="~/Images/@acc.Image" class="user-image" alt="@acc.UserName">
+                        <span class="">@acc.FullName</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="~/Images/@acc.Image" class="img-circle" alt="@acc.UserName">
+
+                            <p>
+                                @acc.FullName - @acc.UserName
+                                <small>Member since Nov. 2012</small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-primary btn-flat btn-info" data-id="@acc.Id" data-toggle="modal" data-target="#accountModal" data-backdrop="static" data-keyboard="false"><i class="mdi mdi-account-settings-variant"></i>Thông tin tài khoản</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="~/Admin/LoginAdmin/doLogout" class="btn btn-danger btn-flat"><i class="mdi mdi-logout"></i>Đăng xuất</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="modal fade" id="accountModal" role="dialog">
+    <div class="modal-dialog" id="detail-account" style="text-align: center; width: 90%">
+       
+    </div>
+</div>
+<script>
+    function readUrl(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#Image2')
+                    .attr('src', e.target.result)
+                    .width(200)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $(document)
+        .ready(function () {
+            $(".btn-info")
+                .click(function () {
+                    debugger;
+                    var id = $(this).attr("data-id");
+                    $.ajax({
+                        url: '/Admin/AccountMng/Details',
+                        type: "POST",
+                        data: { accountid: id },
+                        success: function (result) {
+                            $("#detail-account").html(result);
+                        },
+                        error: function (err) {
+                        }
+                    });
+                });
+            $(document).on("click",".btn_edit",function () {
+                    $("#accountModal .row input").removeAttr("readonly");
+                    $("#UserName_popup").attr("readonly", "readonly");
+                    $("#accountModal .row input").css("border", "#ddd 1px solid");
+                    $(".submit_add_post").removeClass("hide");
+                    $(this).addClass("hide");
+                    $("#UserName").focus();
+                });
+
+            $(document).on("click", ".btn_close", function () {
+                    $("#accountModal .row input").attr("readonly", "readonly");
+                    $("#accountModal .row input").css("border", "none");
+                    $(".submit_add_post").addClass("hide");
+                    $(".btn_edit").removeClass("hide");
+                });
+
+            $(document).on("click", ".submit_add_post", function () {
+                    if (window.FormData !== undefined) {
+                        // Create FormData object
+                        debugger;
+                        var fileData = new FormData();
+                        fileData.append('Id', $("#txtId").val());
+                        var gender;
+                        if ($("#Gender1_popup:checkbox:checked").val()) {
+                            gender = true;
+                        } else {
+                            gender = false;
+                        };
+                        fileData.append('Gender', gender);
+                        fileData.append('Email', $("#Email_popup").val());
+                        fileData.append('Birthday', $("#Birthday_popup").val());
+                        fileData.append('FullName', $("#FullName_popup").val());
+                        fileData.append('Address', $("#Address_popup").val());
+                        fileData.append('PhoneNumber', $("#PhoneNumber_popup").val());
+                        var src = $("#postFile_pop").val();
+                        fileData.append('Image', src.substring(13,src.length));
+                        $.ajax({
+                            url: '/Admin/AccountMng/UpdatePopUp',
+                            type: "POST",
+                            contentType: false, // Not to set any content header
+                            processData: false, // Not to process data
+                            data: fileData,
+                            success: function (result) {
+                                if (result.success == 1) {
+                                    $("#accountModal").modal("hide");
+                                }
+                            },
+                            error: function (err) {
+                            }
+                        });
+                    }
+                });
+        });
+</script>

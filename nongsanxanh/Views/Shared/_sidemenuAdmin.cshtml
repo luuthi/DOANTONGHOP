@@ -1,0 +1,166 @@
+﻿@using Bussiness.ViewModel
+@using NSX_Common
+@{
+        AccountViewModel acc = new AccountViewModel();
+        if (Session["Account"] != null)
+        {
+            acc = Session["Account"] as AccountViewModel;
+
+        }
+        else
+        {
+            Response.Redirect("~/Admin/LoginAdmin");
+        }
+}
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="~/Images/@acc.Image" class="img-circle" alt="@acc.UserName">
+            </div>
+            <div class="pull-left info">
+                <p>@acc.FullName</p>
+                <a href="#"><i class="mdi mdi-circle text-success"></i> Online</a>
+            </div>
+        </div>
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header text-center">MENU CHÍNH</li>
+            @{
+                if (Session["Role"] != null)
+                {
+                    if (Session["Role"].ToString().Contains(RightAdmin.System.ToString()))
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="mdi mdi-account-multiple"></i> <span>Quản trị người dùng</span>
+                                <span class="pull-right-container">
+                                    <i class="mdi mdi-18px mdi-chevron-down pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/AccountGroup"><i class="mdi mdi-account-multiple"></i> Quản lý nhóm người dùng</a></li>
+                                <li><a href="/Admin/AccountMng"><i class="mdi mdi-account"></i> Quản lý người dùng</a></li>
+                                <li><a href="/Admin/RoleMng"><i class="mdi mdi-seal"></i> Quản lý quyền quản trị</a></li>
+                                <li><a href="/Admin/Decentralization"><i class="mdi mdi-account-network"></i> Quản lý phân quyền</a></li>
+
+                            </ul>
+                        </li>
+                    }
+                }
+            }
+            @{
+                if (Session["Role"] != null)
+                {
+                    if (Session["Role"].ToString().Contains(RightAdmin.WebConfig.ToString()))
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="mdi mdi-settings"></i>
+                                <span>Quản lý trang web</span>
+                                <span class="pull-right-container">
+                                    <i class="mdi mdi-18px mdi-chevron-down pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><i class="mdi mdi-clipboard-account"></i> Quản lý thông tin công ty</a></li>
+                                <li><a href=""><i class="mdi mdi-home"></i> Quản lý trang chủ</a></li>
+                                <li><a href=""><i class="mdi mdi-airplay"></i> Quản lý banner</a></li>
+                            </ul>
+                        </li>
+                    }
+                }
+            }
+            @{
+                if (Session["Role"] != null)
+                {
+                    if (Session["Role"].ToString().Contains(RightAdmin.News.ToString()))
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="mdi mdi-newspaper"></i>
+                                <span>Quản lý tin tức</span>
+                                <span class="pull-right-container">
+                                    <i class="mdi mdi-18px mdi-chevron-down pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><i class="mdi mdi-note-multiple"></i> Quản lý nhóm tin tức</a></li>
+                                <li><a href=""><i class="mdi mdi-note"></i> Quản lý tin tức</a></li>
+                            </ul>
+                        </li>
+                    }
+                }
+            }
+            @{
+                if (Session["Role"] != null)
+                {
+                    if (Session["Role"].ToString().Contains(RightAdmin.Product.ToString()))
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="mdi mdi-food-apple"></i>
+                                <span>Quản lý sản phẩm</span>
+                                <span class="pull-right-container">
+                                    <i class="mdi mdi-18px mdi-chevron-down pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><i class="mdi mdi-food-variant"></i> Quản lý nhóm sản phẩm</a></li>
+                                <li><a href=""><i class="mdi mdi-food"></i> Quản lý sản phẩm</a></li>
+                            </ul>
+                        </li>
+                    }
+                }
+            }
+            @{
+                if (Session["Role"] != null)
+                {
+                    if (Session["Role"].ToString().Contains(RightAdmin.Order.ToString()))
+                    {
+                        <li>
+                            <a href="#">
+                                <i class="mdi mdi-note-text"></i>
+                                <span>Quản lý đơn đặt hàng</span>
+                            </a>
+                        </li>
+                    }
+                }
+            }
+            @{
+                if (Session["Role"] != null)
+                {
+                    if (Session["Role"].ToString().Contains(RightAdmin.Menu.ToString()))
+                    {
+
+                        <li>
+                            <a href="">
+                                <i class="mdi mdi-format-list-bulleted"></i>
+                                <span>Quản lý menu</span>
+                            </a>
+                        </li>
+                    }
+                }
+            }
+            @{
+                if (Session["Role"] != null)
+                {
+                    if (Session["Role"].ToString().Contains(RightAdmin.Comment.ToString()))
+                    {
+
+                        <li>
+                            <a href="">
+                                <i class="mdi mdi-comment"></i>
+                                <span>Quản lý bình luận</span>
+                            </a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

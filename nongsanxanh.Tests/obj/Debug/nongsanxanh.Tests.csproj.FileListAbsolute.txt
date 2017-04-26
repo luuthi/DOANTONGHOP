@@ -1,0 +1,146 @@
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\obj\Debug\nongsanxanh.Tests.csprojResolveAssemblyReference.cache
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\ApplicationInsights.config
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\csc.exe
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\vbc.exe
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.Tests.dll.config
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.Tests.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.Tests.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Helpers.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Owin.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Http.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\EntityFramework.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.Integration.WebApi.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Helpers.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Http.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\EntityFramework.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.Integration.WebApi.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\obj\Debug\nongsanxanh.Tests.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh.Tests\obj\Debug\nongsanxanh.Tests.pdb
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\ApplicationInsights.config
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\csc.exe
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\vbc.exe
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.Tests.dll.config
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.Tests.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.Tests.pdb
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Helpers.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Mvc.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Razor.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Optimization.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Security.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Owin.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Http.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\EntityFramework.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Http.WebHost.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.Integration.Mvc.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.Integration.WebApi.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Net.Http.Formatting.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.pdb
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Newtonsoft.Json.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Helpers.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Mvc.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Razor.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Optimization.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Security.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Http.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\EntityFramework.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Web.Http.WebHost.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.Integration.Mvc.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Autofac.Integration.WebApi.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\System.Net.Http.Formatting.xml
+D:\nongsanxanh\nongsanxanh.Tests\obj\Debug\nongsanxanh.Tests.csprojResolveAssemblyReference.cache
+D:\nongsanxanh\nongsanxanh.Tests\obj\Debug\nongsanxanh.Tests.dll
+D:\nongsanxanh\nongsanxanh.Tests\obj\Debug\nongsanxanh.Tests.pdb
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Bussiness.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\DataAccess.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\NSX_Common.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\ClosedXML.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\DocumentFormat.OpenXml.dll
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\Bussiness.pdb
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\DataAccess.pdb
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\NSX_Common.pdb
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\ClosedXML.pdb
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\ClosedXML.xml

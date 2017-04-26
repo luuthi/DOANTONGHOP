@@ -1,0 +1,95 @@
+﻿@model List<Bussiness.ViewModel.GroupAccountViewModel>
+@{
+    ViewBag.Title = "Phân quyên hệ thống";
+    Layout = "~/Views/Shared/_rootLayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Phân quyền nhóm người dùng
+                </h2>
+            </div>
+            <div class="row cls-btn-add">
+                <a class="btn btn-primary save" style="float: right"> Ghi lại</a>
+                <i class="mdi mdi-24px mdi-spin mdi-loading hide" style="float: right"  id="loading"></i>
+            </div>
+            <div class="box-body">
+                <table class="table table-bordered table-hover table-striped table-responsive" id="tbl_right">
+                    <thead>
+                    <tr>
+                        <th>Nhóm người sử dụng</th>
+                        <th> Quyền sử dụng</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @{
+                        if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td data-id="@item.GroupCode">@item.GroupName</td>
+                                    <td id="@item.GroupCode">@Html.DropDownList("RightAdmin" + @item.GroupCode, @ViewData["RightAdmin"+@item.GroupCode] as SelectList, new {@class = "form-control select2 select_for_search", @multiple = "multiple"})</td>
+                                </tr>
+                            }
+                        }
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script>
+    $(document).ready(function() {
+        var save = function () {
+            $("#loading").removeClass("hide");
+            $.ajax({
+                url: '/Admin/Decentralization/Delete',
+                type: "POST",
+                data: {},
+                success: function (result) {
+                    
+                },
+                error: function (err) {
+                }
+            });
+            $('#tbl_right > tbody  > tr')
+                .each(function () {
+                    debugger;
+                    var GroupAccId = $('td:first', this).attr("data-id");
+                    var arr = $('td:nth-child(2)#' + GroupAccId + ' > #RightAdmin'+GroupAccId).val();
+                    if (window.FormData !== undefined) {
+                        // Create FormData object
+                        var fileData = new FormData();
+                        fileData.append('GroupAccId', GroupAccId)
+                        fileData.append('Role', arr+"");
+                        $.ajax({
+                            url: '/Admin/Decentralization/Save',
+                            type: "POST",
+                            contentType: false, // Not to set any content header
+                            processData: false, // Not to process data
+                            data: fileData,
+                            success: function (result) {
+                                if (result.success == 1) {
+                                    
+                                }
+                            },
+                            error: function (err) {
+                            }
+                        });
+                    }
+                });
+            $("#loading").addClass("hide");
+            alert("Ok");
+        };
+        $(document).on("click", ".save", save);
+    })
+    
+</script>
+

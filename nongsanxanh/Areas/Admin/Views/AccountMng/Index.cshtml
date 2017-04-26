@@ -1,0 +1,85 @@
+﻿@model List<Bussiness.ViewModel.AccountViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_rootLayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Danh sách người dùng
+                </h2>
+            </div>
+            <div class="row cls-btn-add">
+                @Html.ActionLink("Thêm mới","Create","AccountMng", null, new { @class = "btn btn-primary", @style = "float:right;" })
+            </div>
+           
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped  table-responsive">
+                    <thead>
+                        <tr>
+                            <th style="width: 100px">Ảnh đại diện</th>
+                            <th style="width: 50px">UserName</thstyle="width:>
+                            <th style="width: 100px">Họ tên</thstyle="width:>
+                            <th style="width: 30px">Giới tính</th>
+                            <th style="width: 30px">Ngày sinh</th>
+                            <th style="width: 30px">Email</th>
+                            <th style="width: 30px">Tình trạng</th>
+                            <th style="width: 100px">Loại TK</th>
+                            <th style="width: 120px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td><img src="../../Images/@item.Image" alt="@item.UserName" width="50px" height="50px" class="img-responsive text-center"/> </td>
+                                        <td>@item.UserName</td>
+                                        <td>@item.FullName</td>
+                                        <td>@item.Gender_string</td>
+                                        <td>@item.Birthday.ToString("dd/MM/yyyy")</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.status_string</td>
+                                        <td>@item.type_string</td>
+                                        <td>
+                                            <a href="/Admin/AccountMng/Edit/@item.Id" class="btn btn-success btn-sm">Sửa</a>
+                                            <a data-id="@item.Id" type="button" class="btn btn-danger btn-sm DelAcc">Xóa</a>
+                                        </td>
+                                        </tr>
+                                }
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script>
+    $(document)
+        .ready(function () {
+            $(".btn-info")
+                .click(function () {
+                    debugger;
+                    var id = $(this).attr("data-id");
+                    $.ajax({
+                        url: '/Admin/AccountMng/Delete',
+                        type: "POST",
+                        data: { accountid: id },
+                        success: function (result) {
+                            $("#detail-account").html(result);
+                        },
+                        error: function (err) {
+                        }
+                    });
+                });
+        })
+</script>

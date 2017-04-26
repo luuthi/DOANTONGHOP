@@ -1,0 +1,26 @@
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\NSX_Common.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\ClosedXML.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\Newtonsoft.Json.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\NSX_Common.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\ClosedXML.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\ClosedXML.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\bin\Debug\Newtonsoft.Json.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\DataAccess\obj\Debug\DataAccess.pdb
+D:\nongsanxanh\DataAccess\bin\Debug\DataAccess.dll
+D:\nongsanxanh\DataAccess\bin\Debug\DataAccess.pdb
+D:\nongsanxanh\DataAccess\bin\Debug\NSX_Common.dll
+D:\nongsanxanh\DataAccess\bin\Debug\ClosedXML.dll
+D:\nongsanxanh\DataAccess\bin\Debug\Newtonsoft.Json.dll
+D:\nongsanxanh\DataAccess\bin\Debug\DocumentFormat.OpenXml.dll
+D:\nongsanxanh\DataAccess\bin\Debug\NSX_Common.pdb
+D:\nongsanxanh\DataAccess\bin\Debug\ClosedXML.pdb
+D:\nongsanxanh\DataAccess\bin\Debug\ClosedXML.xml
+D:\nongsanxanh\DataAccess\bin\Debug\Newtonsoft.Json.xml
+D:\nongsanxanh\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\nongsanxanh\DataAccess\obj\Debug\DataAccess.dll
+D:\nongsanxanh\DataAccess\obj\Debug\DataAccess.pdb

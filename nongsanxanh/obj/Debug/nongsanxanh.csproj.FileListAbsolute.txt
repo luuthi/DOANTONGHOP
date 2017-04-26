@@ -1,0 +1,198 @@
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\obj\Debug\nongsanxanh.csprojResolveAssemblyReference.cache
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\ApplicationInsights.config
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\csc.exe
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\vbc.exe
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\VBCSCompiler.exe
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\nongsanxanh.dll.config
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\nongsanxanh.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\nongsanxanh.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Antlr3.Runtime.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Autofac.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Autofac.Integration.Mvc.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Autofac.Integration.WebApi.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\EntityFramework.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\EntityFramework.SqlServer.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.Web.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.ApplicationInsights.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Newtonsoft.Json.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Owin.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Net.Http.Formatting.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Helpers.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Http.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Http.WebHost.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Mvc.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Optimization.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Razor.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.Deployment.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.Razor.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\WebGrease.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Autofac.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Autofac.Integration.Mvc.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Autofac.Integration.WebApi.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.Web.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.ApplicationInsights.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Net.Http.Formatting.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Http.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Http.WebHost.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Helpers.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Mvc.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Optimization.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.Razor.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.Deployment.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.Razor.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Antlr3.Runtime.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Newtonsoft.Json.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\EntityFramework.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\EntityFramework.SqlServer.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\obj\Debug\nongsanxanh.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\nongsanxanh\obj\Debug\nongsanxanh.pdb
+D:\nongsanxanh\nongsanxanh\bin\ApplicationInsights.config
+D:\nongsanxanh\nongsanxanh\bin\roslyn\csc.exe
+D:\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\nongsanxanh\nongsanxanh\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\nongsanxanh\nongsanxanh\bin\roslyn\System.Collections.Immutable.dll
+D:\nongsanxanh\nongsanxanh\bin\roslyn\System.Reflection.Metadata.dll
+D:\nongsanxanh\nongsanxanh\bin\roslyn\vbc.exe
+D:\nongsanxanh\nongsanxanh\bin\roslyn\VBCSCompiler.exe
+D:\nongsanxanh\nongsanxanh\bin\roslyn\VBCSCompiler.exe.config
+D:\nongsanxanh\nongsanxanh\bin\nongsanxanh.dll.config
+D:\nongsanxanh\nongsanxanh\bin\nongsanxanh.dll
+D:\nongsanxanh\nongsanxanh\bin\nongsanxanh.pdb
+D:\nongsanxanh\nongsanxanh\bin\Antlr3.Runtime.dll
+D:\nongsanxanh\nongsanxanh\bin\Autofac.dll
+D:\nongsanxanh\nongsanxanh\bin\Autofac.Integration.Mvc.dll
+D:\nongsanxanh\nongsanxanh\bin\Autofac.Integration.WebApi.dll
+D:\nongsanxanh\nongsanxanh\bin\EntityFramework.dll
+D:\nongsanxanh\nongsanxanh\bin\EntityFramework.SqlServer.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.Agent.Intercept.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.DependencyCollector.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.Web.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.WindowsServer.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.ApplicationInsights.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.Core.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Cookies.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Facebook.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Google.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.OAuth.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Twitter.dll
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Web.Infrastructure.dll
+D:\nongsanxanh\nongsanxanh\bin\Newtonsoft.Json.dll
+D:\nongsanxanh\nongsanxanh\bin\Owin.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Net.Http.Formatting.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Helpers.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Http.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Http.WebHost.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Mvc.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Optimization.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Razor.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.Deployment.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.dll
+D:\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.Razor.dll
+D:\nongsanxanh\nongsanxanh\bin\WebGrease.dll
+D:\nongsanxanh\nongsanxanh\bin\Autofac.xml
+D:\nongsanxanh\nongsanxanh\bin\Autofac.Integration.Mvc.xml
+D:\nongsanxanh\nongsanxanh\bin\Autofac.Integration.WebApi.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.DependencyCollector.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.Web.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AI.WindowsServer.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.ApplicationInsights.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Net.Http.Formatting.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Http.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Http.WebHost.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Helpers.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Mvc.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Optimization.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Web.Razor.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.Deployment.xml
+D:\nongsanxanh\nongsanxanh\bin\System.Web.WebPages.Razor.xml
+D:\nongsanxanh\nongsanxanh\bin\Antlr3.Runtime.pdb
+D:\nongsanxanh\nongsanxanh\bin\Newtonsoft.Json.xml
+D:\nongsanxanh\nongsanxanh\bin\EntityFramework.xml
+D:\nongsanxanh\nongsanxanh\bin\EntityFramework.SqlServer.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.Core.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Facebook.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Cookies.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.OAuth.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Google.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.Twitter.xml
+D:\nongsanxanh\nongsanxanh\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\nongsanxanh\nongsanxanh\obj\Debug\nongsanxanh.csprojResolveAssemblyReference.cache
+D:\nongsanxanh\nongsanxanh\obj\Debug\nongsanxanh.dll
+D:\nongsanxanh\nongsanxanh\obj\Debug\nongsanxanh.pdb
+D:\nongsanxanh\nongsanxanh\bin\Bussiness.dll
+D:\nongsanxanh\nongsanxanh\bin\DataAccess.dll
+D:\nongsanxanh\nongsanxanh\bin\NSX_Common.dll
+D:\nongsanxanh\nongsanxanh\bin\ClosedXML.dll
+D:\nongsanxanh\nongsanxanh\bin\DocumentFormat.OpenXml.dll
+D:\nongsanxanh\nongsanxanh\bin\Bussiness.pdb
+D:\nongsanxanh\nongsanxanh\bin\DataAccess.pdb
+D:\nongsanxanh\nongsanxanh\bin\NSX_Common.pdb
+D:\nongsanxanh\nongsanxanh\bin\ClosedXML.pdb
+D:\nongsanxanh\nongsanxanh\bin\ClosedXML.xml

@@ -1,0 +1,22 @@
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\obj\Debug\NSX_Common.csprojResolveAssemblyReference.cache
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\bin\Debug\NSX_Common.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\bin\Debug\NSX_Common.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\bin\Debug\ClosedXML.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\bin\Debug\ClosedXML.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\bin\Debug\ClosedXML.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\obj\Debug\NSX_Common.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\NSX_Common\obj\Debug\NSX_Common.pdb
+D:\nongsanxanh\NSX_Common\bin\Debug\NSX_Common.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\NSX_Common.pdb
+D:\nongsanxanh\NSX_Common\bin\Debug\ClosedXML.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\DocumentFormat.OpenXml.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\Newtonsoft.Json.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\ClosedXML.pdb
+D:\nongsanxanh\NSX_Common\bin\Debug\ClosedXML.xml
+D:\nongsanxanh\NSX_Common\bin\Debug\Newtonsoft.Json.xml
+D:\nongsanxanh\NSX_Common\obj\Debug\NSX_Common.csprojResolveAssemblyReference.cache
+D:\nongsanxanh\NSX_Common\obj\Debug\NSX_Common.dll
+D:\nongsanxanh\NSX_Common\obj\Debug\NSX_Common.pdb

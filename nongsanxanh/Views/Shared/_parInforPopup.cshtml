@@ -1,0 +1,84 @@
+﻿@model Bussiness.ViewModel.AccountViewModel
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h2>
+            Thông tin tài khoản
+        </h2>
+    </div>
+    <div class="box-body">
+        <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="hidden" value="@Model.Id" id="txtId" />
+            <div class="form-group">
+                <img src="~/Images/@Model.Image" class="img-circle " id="Image2" width="200" height="200" />
+                <br />
+                <label class="hide" for="postFile_pop" style="text-decoration: underline; cursor: pointer">Tải ảnh lên...</label>
+                <input type="file" id="postFile_pop" name="postFile" accept="image/gif, image/jpeg, image/png" class="hide" onchange="readUrl(this);" />
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-12 text-left">
+            <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Tên đăng nhập </label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <input type="text" id="UserName_popup" name="UserName" value="@Model.UserName" class="form-control" readonly="readonly" />
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Họ tên </label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <input type="text" id="FullName_popup" name="FullName" value="@Model.FullName" class="form-control" readonly="readonly" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Giới tính</label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <input type="radio" id="Gender1_popup" name="Gender" class="flat-red" value="true" @{ if (Model.Gender) { <text> checked</text>
+                                                                                                             }
+                                                                                                         } /> : Nam
+                    <input type="radio" id="Gender2_popup" name="Gender" class="flat-red" value="false" @{ if (!Model.Gender) { <text> checked</text>
+                                                                                                              }
+                                                                                                          } /> : Nữ
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Địa chỉ</label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <input type="text" id="Address_popup" name="Address" value="@Model.Address" class="form-control" readonly="readonly" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Email</label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <input type="text" id="Email_popup" name="Email" value="@Model.Email" class="form-control" readonly="readonly" />
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Số điện thoại</label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <input type="text" id="PhoneNumber_popup" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" readonly="readonly" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Ngày sinh</label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <input type="datetime" id="Birthday_popup" name="Birthday" value="@Model.Birthday.ToShortDateString()" class="form-control" readonly="readonly" />
+                </div>
+            </div>
+        </div>
+        <div class="row" style="float: right; padding-right: 20px">
+            <button type="button" class="btn btn-success btn_edit ">Sửa thông tin</button>
+            <button type="submit" class="btn btn-primary submit_add_post hide ">Ghi lại</button>
+            <button type="button" class="btn btn-default btn_close" data-dismiss="modal">Đóng</button>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+</div>
+

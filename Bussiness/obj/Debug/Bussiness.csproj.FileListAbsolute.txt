@@ -1,0 +1,20 @@
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\Bussiness\bin\Debug\Bussiness.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\Bussiness\bin\Debug\Bussiness.pdb
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\Bussiness\obj\Debug\Bussiness.csprojResolveAssemblyReference.cache
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\Bussiness\obj\Debug\Bussiness.dll
+C:\Users\luudi\documents\visual studio 2015\Projects\nongsanxanh\Bussiness\obj\Debug\Bussiness.pdb
+D:\nongsanxanh\Bussiness\bin\Debug\Bussiness.dll
+D:\nongsanxanh\Bussiness\bin\Debug\Bussiness.pdb
+D:\nongsanxanh\Bussiness\bin\Debug\DataAccess.dll
+D:\nongsanxanh\Bussiness\bin\Debug\NSX_Common.dll
+D:\nongsanxanh\Bussiness\bin\Debug\ClosedXML.dll
+D:\nongsanxanh\Bussiness\bin\Debug\Newtonsoft.Json.dll
+D:\nongsanxanh\Bussiness\bin\Debug\DocumentFormat.OpenXml.dll
+D:\nongsanxanh\Bussiness\bin\Debug\DataAccess.pdb
+D:\nongsanxanh\Bussiness\bin\Debug\NSX_Common.pdb
+D:\nongsanxanh\Bussiness\bin\Debug\ClosedXML.pdb
+D:\nongsanxanh\Bussiness\bin\Debug\ClosedXML.xml
+D:\nongsanxanh\Bussiness\bin\Debug\Newtonsoft.Json.xml
+D:\nongsanxanh\Bussiness\obj\Debug\Bussiness.csprojResolveAssemblyReference.cache
+D:\nongsanxanh\Bussiness\obj\Debug\Bussiness.dll
+D:\nongsanxanh\Bussiness\obj\Debug\Bussiness.pdb
