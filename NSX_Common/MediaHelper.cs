@@ -157,32 +157,34 @@ namespace NSX_Common
         /// <param name="postedFile"></param>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public static string SaveImageFile(HttpPostedFileBase postedFile, string fileName = null)
+        public static string SaveImageFile(HttpPostedFileBase postedFile, string subfolder, string fileName = null)
         {
+            string Folder = "";
             fileName = fileName ?? postedFile.FileName;
 
-            if (!fileName.EndsWith(".jpg") || fileName.EndsWith(".png") || fileName.EndsWith(".gif"))
+            if (postedFile.FileName.ToLower().EndsWith(".jpg") || postedFile.FileName.ToLower().EndsWith(".png") || postedFile.FileName.ToLower().EndsWith(".gif") || postedFile.FileName.ToLower().EndsWith(".jpeg"))
             {
                 fileName += ".jpg";
             }
 
             var filename = GetNewFileName(fileName);
+            Folder = ImgFolder + subfolder;
             var filePath = Path.Combine(Folder, filename);
             var thumbFilePath = Path.Combine(Folder, "thumb_" + filename);
             //Save original file
             postedFile.SaveAs(filePath);
 
             //Create thumb file
-            var imageProcessing = new ImageProcessingTools();
-            var thumb = imageProcessing.ScaleToSize(Bitmap.FromFile(filePath), DefaultImageSize);
-            thumb.Save(thumbFilePath);
-            thumb.Dispose();
-            //Revise the original file
-            thumb = imageProcessing.ZomeByWidth(Bitmap.FromFile(filePath), 599);
-            thumb.Save(filePath + "tmp");
-            thumb.Dispose();
-            File.Delete(filePath);
-            File.Move(filePath + "tmp", filePath);
+            //var imageProcessing = new ImageProcessingTools();
+            //var thumb = imageProcessing.ScaleToSize(Bitmap.FromFile(filePath), DefaultImageSize);
+            //thumb.Save(thumbFilePath);
+            //thumb.Dispose();
+            ////Revise the original file
+            //thumb = imageProcessing.ZomeByWidth(Bitmap.FromFile(filePath), 599);
+            //thumb.Save(filePath + "tmp");
+            //thumb.Dispose();
+            //File.Delete(filePath);
+            //File.Move(filePath + "tmp", filePath);
             return filename;
         }
 

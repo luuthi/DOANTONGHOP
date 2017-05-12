@@ -1,0 +1,213 @@
+﻿@using System.Globalization
+@model List<Bussiness.ViewModel.OrderViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_rootLayoutAdmin.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Danh sách đơn hàng
+                </h2>
+            </div>
+
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Người đặt hàng</th>
+                            <th>Ngày đặt hàng</th>
+                            <th>ngày nhận dự tính</th>
+                            <th>Tổng tiền</th>
+                            <th>Hình thức thanh toán</th>
+                            <th>Tình trạng</th>
+                            <th style="width: 120px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                        <tr>
+                            <td>@item.OrderCode</td>
+                            <td>@item.FullName</td>
+                            <td>@item.OrderDate.ToString("dd/MM/yyyy")</td>
+                            <td>@item.ExpectedDate.ToString("dd/MM/yyyy")</td>
+                            <td>@item.TotalMoney.ToString("##,###")</td>
+                            <td>@item.TypePayment_str</td>
+                            <td>@item.Status_str</td>
+                            <td>
+                                <a data-id="@item.Id" class="btn btn-primary btn-sm btn-trangthai" data-status="@item.Status">Trạng thái</a>
+                                <a href="/Admin/Order/Edit/@item.Id" class="btn btn-success btn-sm">Chi tiết</a>
+                                <a data-id="@item.Id" type="button" class="btn btn-danger btn-sm DelRole">Hủy</a>
+                            </td>
+                        </tr>
+                            }
+                        }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="box-footer">
+                <a class="text-danger" id="btnDisabled" style='float:right;text-decoration:underline; font-weight: bold; cursor: pointer'>Danh sách đơn hàng đã hủy</a>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<div class="modal fade" id="statusOrder" role="dialog">
+    <div class="modal-dialog" id="list-status" style="text-align: center; width: 90%">
+       
+    </div>
+</div>
+<div class="modal fade" id="disabledOrders" role="dialog">
+    <div class="modal-dialog" id="list-order" style="text-align: center;width: 90%">
+        <span class="text-center" style="color:black"><i class="fa fa-spinner fa-spin  fa-5x "></i></span>
+
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        //
+        var tt;
+        $(document)
+            .on("click",
+                ".btn-trangthai",
+                function() {
+                    var id = $(this).attr("data-id");
+                    $.ajax({
+                        type: "POST",
+                        url: '/Admin/Order/Details/',
+                        data: { orderid: id},
+
+                        success: function (r) {
+                            $("#list-status").empty();
+                            $("#list-status").append(r);
+                        },
+
+                        error: function (req, status, error) {
+                        }
+                    });
+                    $("#statusOrder").modal({ backdrop: 'static', keyboard: false });
+                });
+        $(document)
+            .on("click",
+                ".btn-chuyentt",
+                function() {
+                    var id = $("#Id").val();
+                    var tt = $("#Status option:selected").val();
+                    $.ajax({
+                        type: "POST",
+                        url: '/Admin/Order/Edit/',
+                        data: { Id: id, Status: tt },
+                        success: function() {
+                            $("#statusOrder").hide();
+                            location.reload(true);
+                        },
+
+                        error: function(req, status, error) {
+                        }
+                    });
+                });
+        $(document)
+            .on("click",
+                "#btnDisabled",
+                function() {
+                    $("#disabledOrders").modal({ backdrop: 'static', keyboard: false });
+                    $.ajax({
+                        type: "POST",
+                        url: '/Admin/Order/LoadDisabled/',
+                        data: {},
+
+                        success: function(r) {
+                            $("#list-order").empty();
+                            $("#list-order").append(r);
+                        },
+
+                        error: function(req, status, error) {
+                        }
+                    });
+                });
+        $(document).on("click", ".btn-khoiphuc",function() {
+            var id = $(this).attr("data-id");
+            var tt = 0;
+            $.ajax({
+                type: "POST",
+                url: '/Admin/Order/Restore/',
+                data: { Id: id,Status:tt },
+
+                success: function (r) {
+                    $("#list-order").empty();
+                    $("#list-order").append(r);
+                },
+
+                error: function (req, status, error) {
+                }
+            });
+        })
+        //
+        var id;
+        $(".DelRole")
+            .click(function () {
+                id = $(this).attr('data-id');
+
+                $.notify({
+                    title: 'Bạn có thực sự muốn hủy ?',
+                    button: 'Xác nhận'
+                },
+                {
+                    style: 'foo',
+                    autoHide: false,
+                    clickToHide: false,
+                    position: "top center",
+                    arrowShow: true,
+
+                });
+
+            });
+        //add a new style 'foo'
+        $.notify.addStyle('foo', {
+            html:
+              "<div>" +
+                "<div class='clearfix'>" +
+                  "<div class='title' data-notify-html='title'/>" +
+                  "<div class='buttons'>" +
+                    "<button class='no btn-primary'>Cancel</button>" +
+                    "<button class='yes btn-danger' style='margin-left:10px' data-notify-text='button'></button>" +
+                  "</div>" +
+                "</div>" +
+              "</div>"
+        });
+
+        //listen for click events from this style
+        $(document).on('click', '.notifyjs-foo-base .no', function () {
+            //programmatically trigger propogating hide event
+            $(this).trigger('notify-hide');
+        });
+        $(document).on('click', '.notifyjs-foo-base .yes', function () {
+            $.ajax({
+                type: "POST",
+                url: '/Admin/Order/Delete/',
+                data: { orderid: id },
+                success: function () {
+                    window.location.href = "/Admin/Order";
+                },
+
+                error: function (req, status, error) {
+                }
+            });
+
+            //hide notification
+            $(this).trigger('notify-hide');
+        });
+    })
+</script>

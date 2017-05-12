@@ -30,7 +30,15 @@ namespace nongsanxanh.Areas.Admin.Controllers
             foreach (var item in viewModel)
             {
                 var roleArr = data.Where(m => m.GroupAccId == item.GroupCode).ToArray();
-                var s = roleArr[0].Role;
+                string s;
+                if (roleArr.Length>0)
+                {
+                    s = roleArr[0].Role;
+                }
+                else
+                {
+                    s = String.Empty;
+                }
                 LoadQuyen(item.GroupCode,s);
             }
             return View(viewModel);
@@ -61,7 +69,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
         [System.Web.Mvc.HttpPost]
         public JsonResult Save(RoleDetailViewModel viewModel)
         {
-            viewModel.Role = viewModel.Role ?? String.Empty;
+            viewModel.Role = viewModel.Role =="null" ? String.Empty: viewModel.Role;
             _iRoleDetailService.InsertAccountGroup(viewModel);
             return Json(new { success = 1, msg = "OK" });
         }

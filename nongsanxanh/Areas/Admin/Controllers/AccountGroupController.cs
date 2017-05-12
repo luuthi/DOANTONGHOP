@@ -101,7 +101,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
         {
             Guid g = Guid.Parse(groupid);
             _iGroupAccountService.DeleteAccountGroup(g);
-            return View();
+            return RedirectToAction("Index"); 
         }
         
        

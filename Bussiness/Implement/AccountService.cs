@@ -51,7 +51,16 @@ namespace Bussiness.Implement
         public string GetRoleByGroup(string group)
         {
             DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("GetRoleByGroup","@group",group);
-            string rs =dtb.Rows[0][0].ToString();
+            string rs;
+            if (dtb.Rows.Count>0)
+            {
+
+                rs= dtb.Rows[0][0].ToString() ?? String.Empty;
+            }
+            else
+            {
+                rs = "";
+            }
             return rs;
         }
 
@@ -100,7 +109,6 @@ namespace Bussiness.Implement
                 "@Birthday", viewModel.Birthday,
                 "@Email", viewModel.Email,
                 "@PhoneNumber", viewModel.PhoneNumber,
-                "@Image", viewModel.Image,
                 "@Address", viewModel.Address);
         }
     }

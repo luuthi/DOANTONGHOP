@@ -14,7 +14,6 @@
             </div>
             <div class="row cls-btn-add">
                 <a class="btn btn-primary save" style="float: right"> Ghi lại</a>
-                <i class="mdi mdi-24px mdi-spin mdi-loading hide" style="float: right"  id="loading"></i>
             </div>
             <div class="box-body">
                 <table class="table table-bordered table-hover table-striped table-responsive" id="tbl_right">
@@ -48,7 +47,6 @@
 <script>
     $(document).ready(function() {
         var save = function () {
-            $("#loading").removeClass("hide");
             $.ajax({
                 url: '/Admin/Decentralization/Delete',
                 type: "POST",
@@ -67,7 +65,7 @@
                     if (window.FormData !== undefined) {
                         // Create FormData object
                         var fileData = new FormData();
-                        fileData.append('GroupAccId', GroupAccId)
+                        fileData.append('GroupAccId', GroupAccId);
                         fileData.append('Role', arr+"");
                         $.ajax({
                             url: '/Admin/Decentralization/Save',
@@ -77,7 +75,7 @@
                             data: fileData,
                             success: function (result) {
                                 if (result.success == 1) {
-                                    
+                                    $.notify("Cập nhật thành công", "success", "top left");
                                 }
                             },
                             error: function (err) {
@@ -85,8 +83,7 @@
                         });
                     }
                 });
-            $("#loading").addClass("hide");
-            alert("Ok");
+           
         };
         $(document).on("click", ".save", save);
     })

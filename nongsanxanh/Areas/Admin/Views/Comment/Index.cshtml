@@ -1,0 +1,152 @@
+﻿@model List<Bussiness.ViewModel.CommentViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_rootLayoutAdmin.cshtml";
+}
+<style>
+    #example1_filter {
+        display: none;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Danh sách bình luận
+                </h2>
+            </div>
+            <div class="box-body">
+                <div class="row" style="margin-bottom: 10px">
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @using (Html.BeginForm("Index", "Comment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.DropDownList("Status", @ViewData["Status"] as SelectList, null, new { @class = "form-control select2" })
+                            <button type="submit" class="btnSearch hide" name="btnSearch" id="btnSearch">
+                                Tìm kiếm
+                            </button>
+                        }
+                    </div>
+
+                </div>
+                <table id="example1" class="table table-bordered table-striped  table-responsive">
+                    <thead>
+                        <tr>
+                            <th style="width: 30px">Email bình luận</th>
+                            <th style="width: 30px">Nội dung</th>
+                            <th style="width: 30px">Mục bình luận</th>
+                            <th style="width: 30px">Ngày bình luận</th>
+                            <th style="width: 100px">Tình trạng</th>
+                            <th style="width: 80px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.EmailComment</td>
+                                        <td>@item.Contents</td>
+                                        <td>@item.Reference_str</td>
+                                        <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@item.Status_str</td>
+                                        <td>
+                                            <a data-id="@item.Id" class="btn btn-success btn-sm btnDuyet">Duyệt</a>
+                                            <a data-id="@item.Id" type="button" class="btn btn-danger btn-sm DelAcc">Hủy</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script>
+    $(document).ready(function () {
+        $(document).on("change", "#Status", function () {
+            $("#btnSearch").trigger("click");
+        });
+
+
+        var id;
+        $(".DelAcc")
+            .click(function () {
+                id = $(this).attr('data-id');
+
+                $.notify({
+                    title: 'Bạn có thực sự muốn huỷ ?',
+                    button: 'Xác nhận'
+                },
+                {
+                    style: 'foo',
+                    autoHide: false,
+                    clickToHide: false,
+                    position: "top center",
+                    arrowShow: true,
+
+                });
+
+            });
+        //add a new style 'foo'
+        $.notify.addStyle('foo', {
+            html:
+              "<div>" +
+                "<div class='clearfix'>" +
+                  "<div class='title' data-notify-html='title'/>" +
+                  "<div class='buttons'>" +
+                    "<button class='no btn-primary'>Cancel</button>" +
+                    "<button class='yes btn-danger' style='margin-left:10px' data-notify-text='button'></button>" +
+                  "</div>" +
+                "</div>" +
+              "</div>"
+        });
+
+        //listen for click events from this style
+        $(document).on('click', '.notifyjs-foo-base .no', function () {
+            //programmatically trigger propogating hide event
+            $(this).trigger('notify-hide');
+        });
+        $(document).on('click', '.notifyjs-foo-base .yes', function () {
+            $.ajax({
+                type: "POST",
+                url: '/Admin/Comment/Delete/',
+                data: { commentid: id },
+                success: function () {
+                    window.location.href = "/Admin/Comment";
+                },
+
+                error: function (req, status, error) {
+                }
+            });
+            //hide notification
+            $(this).trigger('notify-hide');
+        });
+        $(document)
+            .on('click',
+                '.btnDuyet',
+                function () {
+                    var id = $(this).attr('data-id');
+                    debugger;
+                    $.ajax({
+                        type: "POST",
+                        url: '/Admin/Comment/Duyet',
+                        data: { commentid: id },
+                        success: function() {
+                            window.location.href = "/Admin/Comment";
+                        },
+
+                        error: function(req, status, error) {
+                        }
+                    });
+                });
+    })
+</script>
+

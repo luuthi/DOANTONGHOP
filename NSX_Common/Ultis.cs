@@ -16,6 +16,8 @@ namespace NSX_Common
         /// <typeparam name="T">Generic object</typeparam>
         /// <param name="table">DataTable</param>
         /// <returns>List with generic objects</returns>
+        /// 
+       
         public static List<T> DataTableToList<T>(DataTable table) where T : class, new()
         {
             try

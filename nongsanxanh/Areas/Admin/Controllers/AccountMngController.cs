@@ -86,7 +86,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
                         {
                             if (allowedExtensions.Contains(checkextension))
                             {
-                                fileName = MediaHelper.SaveDocumentFile(viewModel.filePosted, Extentions.ToUnsignLinkString(viewModel.UserName));
+                                fileName = MediaHelper.SaveImageFile(viewModel.filePosted, Constants.userlogo, Extentions.ToUnsignLinkString(viewModel.UserName));
                             }
                             else
                             {
@@ -110,7 +110,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
                     return View(viewModel);
                 }
             }
-            catch
+            catch(Exception e)
             {
                 LoadGroupAcc();
                 return View();
@@ -141,7 +141,6 @@ namespace nongsanxanh.Areas.Admin.Controllers
             try
             {
                 Guid g = Guid.Parse(accountid);
-                ModelState.Remove("Password");
                 // TODO: Add update logic here
                 if (ModelState.IsValid)
                 {
@@ -161,7 +160,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
                             {
                                 if (allowedExtensions.Contains(checkextension))
                                 {
-                                    fileName = MediaHelper.SaveDocumentFile(viewModel.filePosted,
+                                    fileName = MediaHelper.SaveImageFile(viewModel.filePosted, Constants.userlogo,
                                         Extentions.ToUnsignLinkString(viewModel.UserName));
                                 }
                                 else

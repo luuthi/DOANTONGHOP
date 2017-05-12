@@ -38,7 +38,7 @@
                                 foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td><img src="../../Images/@item.Image" alt="@item.UserName" width="50px" height="50px" class="img-responsive text-center"/> </td>
+                                        <td><img src="~/Images/images/user-logo/@item.Image" alt="@item.UserName" width="50px" height="50px" class="img-responsive text-center"/> </td>
                                         <td>@item.UserName</td>
                                         <td>@item.FullName</td>
                                         <td>@item.Gender_string</td>
@@ -64,22 +64,61 @@
     <!-- /.panel -->
 </div>
 <script>
-    $(document)
-        .ready(function () {
-            $(".btn-info")
-                .click(function () {
-                    debugger;
-                    var id = $(this).attr("data-id");
-                    $.ajax({
-                        url: '/Admin/AccountMng/Delete',
-                        type: "POST",
-                        data: { accountid: id },
-                        success: function (result) {
-                            $("#detail-account").html(result);
-                        },
-                        error: function (err) {
-                        }
-                    });
+    $(document).ready(function () {
+        var id;
+        $(".DelAcc")
+            .click(function () {
+                id = $(this).attr('data-id');
+
+                $.notify({
+                    title: 'Bạn có thực sự muốn xóa ?',
+                    button: 'Xác nhận'
+                },
+                {
+                    style: 'foo',
+                    autoHide: false,
+                    clickToHide: false,
+                    position: "top center",
+                    arrowShow: true,
+
                 });
-        })
+
+            });
+        //add a new style 'foo'
+        $.notify.addStyle('foo', {
+            html:
+              "<div>" +
+                "<div class='clearfix'>" +
+                  "<div class='title' data-notify-html='title'/>" +
+                  "<div class='buttons'>" +
+                    "<button class='no btn-primary'>Cancel</button>" +
+                    "<button class='yes btn-danger' style='margin-left:10px' data-notify-text='button'></button>" +
+                  "</div>" +
+                "</div>" +
+              "</div>"
+        });
+
+        //listen for click events from this style
+        $(document).on('click', '.notifyjs-foo-base .no', function () {
+            //programmatically trigger propogating hide event
+            $(this).trigger('notify-hide');
+        });
+        $(document).on('click', '.notifyjs-foo-base .yes', function () {
+            $.ajax({
+                type: "POST",
+                url: '/Admin/AccountMng/Delete/',
+                data: { accountid: id },
+                success: function () {
+                    debugger;
+                    window.location.href = "/Admin/AccountMng";
+                },
+
+                error: function (req, status, error) {
+                }
+            });
+
+            //hide notification
+            $(this).trigger('notify-hide');
+        });
+    })
 </script>

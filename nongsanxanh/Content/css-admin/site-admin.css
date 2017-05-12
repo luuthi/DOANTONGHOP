@@ -3,19 +3,19 @@
     margin: 0 auto;
     margin-top: 50px;
     padding: 0 50px;
+    font-family: Arial;
 }
 
 .login_content {
     border: #DDDDDD 1px solid;
     border-radius: 10px;
-    width: 80%;
+    width: 100%%;
     margin: 0 auto;
     box-shadow: 10px 10px 5px #888888;
 }
 
     .login_content h3 {
         text-align: center;
-        font-family: "Tahoma, Geneva, sans-serif";
         background-color: #001f3f;
         color: #fff;
         padding: 15px;
@@ -26,7 +26,7 @@
     .login_content input {
         position: relative;
         border: none;
-        padding: 15px 50px;
+        padding: 0px 50px;
         font-size: 16px;
     }
 
@@ -42,6 +42,7 @@
         }
         .login_content .button input#btnLogin {
             border-radius: 0 0 10px 10px;
+            padding: 20px;
         }
     .login_content .form-group {
         margin-top: 15px;
@@ -74,3 +75,37 @@
       #accountModal .row input {
           border: none;
       }
+
+
+/*css for notification*/
+ .notifyjs-foo-base {
+    width: 300px;
+    background: #001f3f;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    min-height: 52px;
+    color:#444;
+}
+
+.notifyjs-foo-base .title {
+      width: 100%;
+    /* float: left; */
+    /* margin: 10px 0 0 10px; */
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold
+}
+
+    .notifyjs-foo-base .buttons {
+        width: 100%;
+        font-size: 16px;
+        padding: 5px;
+        margin-top: 16px;
+        text-align: center;
+    }
+    .field-validation-error {
+        color: red;
+        font-size: bold;
+    }

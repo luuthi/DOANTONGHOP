@@ -13,7 +13,7 @@
 }
 <header class="main-header">
     <!-- Logo -->
-    <a href="javascript:void()" class="logo">
+    <a href="~/Admin/AdminHome" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><i class="mdi mdi-24px mdi-react"></i></span>
         <!-- logo for regular state and mobile devices -->
@@ -29,15 +29,15 @@
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="~/Images/@acc.Image" class="user-image" alt="@acc.UserName">
+                <li class="dropdown user user-menu" style="cursor: pointer">
+                    <a  class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="~/Images/images/user-logo/@acc.Image" class="user-image" alt="@acc.UserName">
                         <span class="">@acc.FullName</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="~/Images/@acc.Image" class="img-circle" alt="@acc.UserName">
+                            <img src="~/Images/images/user-logo/@acc.Image" class="img-circle" alt="@acc.UserName">
 
                             <p>
                                 @acc.FullName - @acc.UserName
@@ -113,16 +113,16 @@
                     $(".btn_edit").removeClass("hide");
                 });
 
-            $(document).on("click", ".submit_add_post", function () {
+            $(document).on("click", ".submit_add_post_info", function () {
                     if (window.FormData !== undefined) {
                         // Create FormData object
                         debugger;
                         var fileData = new FormData();
                         fileData.append('Id', $("#txtId").val());
                         var gender;
-                        if ($("#Gender1_popup:checkbox:checked").val()) {
+                        if ($("#Gender1_popup:radio:checked").val()=='true') {
                             gender = true;
-                        } else {
+                        } else if ($("#Gender2_popup:radio:checked").val()=='false') {
                             gender = false;
                         };
                         fileData.append('Gender', gender);
@@ -131,8 +131,6 @@
                         fileData.append('FullName', $("#FullName_popup").val());
                         fileData.append('Address', $("#Address_popup").val());
                         fileData.append('PhoneNumber', $("#PhoneNumber_popup").val());
-                        var src = $("#postFile_pop").val();
-                        fileData.append('Image', src.substring(13,src.length));
                         $.ajax({
                             url: '/Admin/AccountMng/UpdatePopUp',
                             type: "POST",

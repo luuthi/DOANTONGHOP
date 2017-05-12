@@ -4,13 +4,13 @@
     Layout = "~/Views/Shared/_LoginPartial.cshtml";
 }
 
-<div class="login_wrapper">
+<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col-lg-push-4 col-md-push-4 col-sm-push-3" style="margin: 0;padding: 0">
     <div class="animate form login_form">
-        <center>
+        <div class="text-center">
             @Html.ValidationMessageFor(m => m.UserName) <br/>
             @Html.ValidationMessageFor(m => m.Password)<br/>
             <span style="color: red; text-align: center">@TempData["Error"]</span>
-        </center>
+        </div>
 
         <section class="login_content">
             @using (Html.BeginForm("Login", "LoginAdmin", FormMethod.Post, new { enctype = "multipart/form-data", @id = "form_login" }))
@@ -41,9 +41,9 @@
             <div class="clearfix"></div>
             <br>
             <div>
-                <h1>
+                <h3>
                     <i class="mdi mdi-36px mdi-city"></i> NÔNG SẢN XANH VER 1.0.0
-                </h1>
+                </h3>
                 <p>©2016 All Rights Reserved. NÔNG SẢN XANH Version 1.0.0</p>
             </div>
         </div>

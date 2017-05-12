@@ -9,7 +9,7 @@
         <div class="col-md-3 col-sm-3 col-xs-12">
             <input type="hidden" value="@Model.Id" id="txtId" />
             <div class="form-group">
-                <img src="~/Images/@Model.Image" class="img-circle " id="Image2" width="200" height="200" />
+                <img src="~/Images/images/user-logo/@Model.Image" class="img-circle " id="Image2" width="200" height="200" />
                 <br />
                 <label class="hide" for="postFile_pop" style="text-decoration: underline; cursor: pointer">Tải ảnh lên...</label>
                 <input type="file" id="postFile_pop" name="postFile" accept="image/gif, image/jpeg, image/png" class="hide" onchange="readUrl(this);" />
@@ -75,7 +75,7 @@
         </div>
         <div class="row" style="float: right; padding-right: 20px">
             <button type="button" class="btn btn-success btn_edit ">Sửa thông tin</button>
-            <button type="submit" class="btn btn-primary submit_add_post hide ">Ghi lại</button>
+            <button type="submit" class="btn btn-primary submit_add_post_info hide ">Ghi lại</button>
             <button type="button" class="btn btn-default btn_close" data-dismiss="modal">Đóng</button>
         </div>
         <!-- /.panel-body -->

@@ -1,0 +1,14 @@
+﻿
+@model Bussiness.ViewModel.ProductAttributeValueViewModel
+
+<tr>
+    <td class="hide">@Model.Id</td>
+    <td>@Html.DropDownListFor(m => m.AttributeId, Model.lstAttribute, new {@class = "form-control"})</td>
+    <td class="visible-md visible-sm visible-lg"><a class="btn btn-success btn-sm mdi mdi-plus mdi-14px btnAddAttr"
+     data-toggle="modal" data-target="#addAttr" data-backdrop="static" data-keyboard="false" >Thêm thuộc tính mới</a></td>
+    <td class="visible-xs"><span class="btn btn-success btn-sm mdi mdi-plus mdi-14px btnAddAttr" data-toggle="modal" data-target="#detailInfo" data-backdrop="static" data-keyboard="false" ></span></td>
+    <td>@Html.TextBoxFor(m=>m.Value,new {@class="form-control"})</td>
+    <td>
+        <a class="btn btn-sm btn-danger btn-xoa">Xóa</a>
+    </td>
+</tr>

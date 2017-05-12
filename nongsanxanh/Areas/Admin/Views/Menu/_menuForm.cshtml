@@ -1,0 +1,40 @@
+﻿@model Bussiness.ViewModel.MenuViewModel
+<div class="row" style="margin-bottom:5px; margin-right:0px;">
+    @Html.ActionLink("Quay lại", "Index", "Menu", null, new { @class = "btn btn-default", @style = "float:right; margin-right: 20px; margin-top: 10px" })
+</div>
+<div class="box-body">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Title)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Order)
+                @Html.TextBoxFor(m => m.Order, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Order)
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.ParrentId)
+                @Html.DropDownListFor(m => m.ParrentId, Model.lstParentMenu, new {@class = "form-control select2"})
+                @Html.ValidationMessageFor(m => m.ParrentId)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Status)
+                @Html.RadioButtonFor(m => m.Status, true, new { @class = "flat-red", @id = "rd_active" }) :Kích hoạt
+                @Html.RadioButtonFor(m => m.Status, false, new { @class = "flat-red", @id = "rd_disabled" }) :Vô hiêu hóa
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="float: right; padding-right: 20px">
+        <button type="submit" class="btn btn-primary submit_add_post ">Ghi lại</button>
+    </div>
+    <!-- /.panel-body -->
+</div>
+<script>
+
+</script>

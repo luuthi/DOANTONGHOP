@@ -1,0 +1,100 @@
+﻿@model Bussiness.ViewModel.CompanyInfoViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_rootLayoutAdmin.cshtml";
+}
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Thông tin công ty
+                </h2>
+            </div>
+            <div class="box-body">
+                @using (Html.BeginForm("Create", "CompanyInfo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                @Html.TextBoxFor(m => m.Logo, new { @class = "hide" })
+                                <img src="~/Images/images/he-thong/@Model.Logo" class="img-circle " id="Image1" width="200" height="200" />
+                                <br />
+                                <label class="p" for="filePosted" style="text-decoration: underline; cursor: pointer">Tải ảnh lên...</label>
+                                <input type="file" id="filePosted" name="filePosted" accept="image/gif, image/jpeg, image/png" class="hide" onchange="readUrl(this);" />
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.CompanyName)
+                                @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.CompanyName)
+                            </div>
+                            <div class="form-group pass">
+                                @Html.LabelFor(m => m.Phone)
+                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Phone)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email)
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Address)
+                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Address)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Fax)
+                                @Html.TextBoxFor(m => m.Fax, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Fax)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Mobile)
+                                @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Mobile)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Facebook)
+                                @Html.TextBoxFor(m => m.Facebook, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Facebook)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Website)
+                                @Html.TextBoxFor(m => m.Website, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Website)
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row" style="float: right; padding-right: 20px">
+                        <button type="submit" class="btn btn-primary submit_add_post ">Ghi lại</button>
+                    </div>
+                <!-- /.panel-body -->
+                }
+            </div>
+
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script>
+    function readUrl(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#Image1')
+                    .attr('src', e.target.result)
+                    .width(200)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>

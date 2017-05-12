@@ -1,0 +1,142 @@
+﻿@using NSX_Common
+@model Bussiness.ViewModel.ProductViewModel
+<script src="~/Scripts/js-admin/app/product.js"></script>
+<div class="row" style="margin-bottom:5px; margin-right:0px;">
+    @Html.ActionLink("Quay lại", "Index", "Product", null, new { @class = "btn btn-default", @style = "float:right; margin-right: 20px; margin-top: 10px" })
+</div>
+<div class="box-body">
+    <div class="cls-tab-info">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#tabOverview" data-toggle="tab">Thông tin chung</a>
+            </li>
+            <li>
+                <a href="#tabDetail" data-toggle="tab">Thông tin chi tiết</a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="tab-content" style="border: none; padding: 10px 0; border-top: none;">
+        <div class="tab-pane fade in active" id="tabOverview">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ProductName)
+                        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ProductName)
+                    </div>
+                    <div class="form-group pass">
+                        @Html.LabelFor(m => m.Description)
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Description)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Price)
+                        @Html.TextBoxFor(m => m.Price, new { @class = "form-control text-right" })
+                        @Html.ValidationMessageFor(m => m.Price)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Unit)
+                        @Html.TextBoxFor(m => m.Unit, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Unit)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CanComment)
+                        @Html.RadioButtonFor(m => m.CanComment, true, new { @class = "flat-red", @id = "rd_active" }) :Có
+                        @Html.RadioButtonFor(m => m.CanComment, false, new { @class = "flat-red", @id = "rd_disable" }):Không
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Category)
+                        @Html.DropDownListFor(m => m.EnumCategory, ViewData["EnumCategory"] as SelectList, new { @class = "form-control select2", @multiple = "multiple" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Status)
+                        @Html.RadioButtonFor(m => m.Status, true, new { @class = "flat-red", @id = "rd_active" }) :Hoạt động
+                        @Html.RadioButtonFor(m => m.Status, false, new { @class = "flat-red", @id = "rd_disable" }):Vô hiệu hóa
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.GroupId)
+                        @Html.DropDownListFor(m => m.GroupId, Model.lstGroup, new { @class = "form-control select2" })
+                        @Html.ValidationMessageFor(m => m.GroupId)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Vendor)
+                        @Html.TextBoxFor(m => m.Vendor, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Vendor)
+                    </div>
+                    <div class="form-group text-center">
+                        @Html.TextBoxFor(m => m.Image, new { @class = "hide" })
+                        <img src="~/Images/images/san-pham/@Model.Image" class="img-responsive  " id="Image1" width="450" height="300" />
+                        <br />
+                        <label class="p" for="filePosted" style="text-decoration: underline; cursor: pointer">Tải ảnh lên...</label>
+                        <input type="file" id="filePosted" name="filePosted" accept="image/gif, image/jpeg, image/png" class="hide" onchange="readUrl(this);" />
+                    </div>
+                </div>
+                
+                <div class="col-md-12 col-sm-12 col-xs-12 pull-left">
+
+                    <div class="form-group">
+                        <label>Album ảnh</label>
+                        @Html.TextAreaFor(m => m.Gallery, new { @class = "form-control" })
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- /.panel-body -->
+        </div>
+        <div class="tab-pane fade" id="tabDetail">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 pull-left">
+
+                    <div class="form-group">
+                        <label>Thông tin sản phẩm</label>
+                        @Html.TextAreaFor(m => m.DetailInfo, new { @class = "form-control" })
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="text-align: right; padding-right: 20px; margin-bottom: 10px">
+            <button type="submit" class="btn btn-primary submit_add_post" style="">Ghi lại</button>
+        </div>
+    </div>
+    <script>
+
+        //ckeditor
+        function readUrl(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#Image1')
+                        .attr('src', e.target.result)
+                        .width(450)
+                        .height(300);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+        CKEDITOR.replace('DetailInfo',
+            {
+                width: "100%",
+                language: "vi"
+            }
+        );
+
+        CKEDITOR.replace('Gallery',
+            {
+                width: "100%",
+                language: "vi"
+            }
+        );
+    </script>
+

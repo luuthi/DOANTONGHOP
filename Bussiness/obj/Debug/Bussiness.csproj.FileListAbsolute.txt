@@ -18,3 +18,16 @@ D:\nongsanxanh\Bussiness\bin\Debug\Newtonsoft.Json.xml
 D:\nongsanxanh\Bussiness\obj\Debug\Bussiness.csprojResolveAssemblyReference.cache
 D:\nongsanxanh\Bussiness\obj\Debug\Bussiness.dll
 D:\nongsanxanh\Bussiness\obj\Debug\Bussiness.pdb
+D:\nongsanxanh\Bussiness\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.Helpers.dll
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.Mvc.dll
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.Razor.dll
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.WebPages.dll
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.WebPages.Razor.dll
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.Helpers.xml
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.Mvc.xml
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.Razor.xml
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.WebPages.xml
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\nongsanxanh\Bussiness\bin\Debug\System.Web.WebPages.Razor.xml

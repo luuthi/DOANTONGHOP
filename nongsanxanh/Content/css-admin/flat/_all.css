@@ -124,6 +124,7 @@
     background: url(green.png) no-repeat;
     border: none;
     cursor: pointer;
+    margin: 0 5px 0 20px;
 }
 
 .icheckbox_flat-green {
