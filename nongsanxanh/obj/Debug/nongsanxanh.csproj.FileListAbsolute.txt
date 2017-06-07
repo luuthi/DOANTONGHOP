@@ -196,3 +196,7 @@ D:\nongsanxanh\nongsanxanh\bin\DataAccess.pdb
 D:\nongsanxanh\nongsanxanh\bin\NSX_Common.pdb
 D:\nongsanxanh\nongsanxanh\bin\ClosedXML.pdb
 D:\nongsanxanh\nongsanxanh\bin\ClosedXML.xml
+D:\nongsanxanh\nongsanxanh\bin\PagedList.dll
+D:\nongsanxanh\nongsanxanh\bin\PagedList.Mvc.dll
+D:\nongsanxanh\nongsanxanh\bin\PagedList.xml
+D:\nongsanxanh\nongsanxanh\bin\PagedList.Mvc.xml

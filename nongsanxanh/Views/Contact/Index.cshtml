@@ -1,0 +1,46 @@
+﻿@model Bussiness.ViewModel.CompanyInfoViewModel
+
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="title-header">
+                <span>Liên hệ</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page-header -->
+
+<main>
+<div class="container">
+    <div class="wrapper-content">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="info-company">
+                    <h4 class="title-contact">Liên hệ với chúng tôi</h4>
+                    <h4 class="name-company">@Model.CompanyName</h4>
+                    <p><span class="fa fa-map-marker ">  @Model.Address</span></p>
+                    <p><span class="fa fa-phone">Di động: @Model.Mobile - Điện thoại: @Model.Phone</span></p>
+                    <p><span class="fa  fa-envelope">@Model.Email</span></p>
+                </div>
+            </div>
+
+            <div class="col-md-8 info-contact-customer">
+                <h4 class="title-contact">Tin nhắn của bạn</h4>
+                <div class="col-md-4">
+                    <input class="input-info" type="text" name="txt_hoten" placeholder="Họ tên*">
+                </div>
+                <div class="col-md-4">
+                    <input class="input-info" type="text" name="txt_hoten" placeholder="Email">
+                </div>
+                <div class="col-md-4">
+                    <input class="input-info"  type="text" name="txt_hoten" placeholder="Số điện thoại">
+                </div>
+                <div class="col-md-12">
+                    <textarea name="txt_msg" class="input-info"  placeholder="Tin nhắn..."></textarea>
+                </div>
+                <button name="btn-sub" class="btn-sub fl-right"><span class="fa fa-send"> Gửi</span></button>
+            </div>
+        </div>
+    </div>
+</div>	

@@ -36,9 +36,23 @@ namespace Bussiness.Implement
             return role;
         }
 
+        public List<CommentViewModel> GetCommentByNewsId(Guid id)
+        {
+            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_CommentSelectByNewsId","@Id",id);
+            var lst = Ultis.DataTableToList<CommentViewModel>(dtb);
+            return lst;
+        }
+
         public List<CommentViewModel> GetCommentByPId(Guid id)
         {
             DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_CommentSelectByPID","@Id",id);
+            var lst = Ultis.DataTableToList<CommentViewModel>(dtb);
+            return lst;
+        }
+
+        public List<CommentViewModel> GetCommentByProductId(Guid id)
+        {
+            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_CommentSelectByProductId", "@Id", id);
             var lst = Ultis.DataTableToList<CommentViewModel>(dtb);
             return lst;
         }
@@ -50,8 +64,9 @@ namespace Bussiness.Implement
                 "@Contents", viewModel.Contents,
                 "@Category",String.Empty,
                 "@Status", viewModel.Status,
-                "@ReferenceId", viewModel.ReferenceId,
                 "@ParrentId", viewModel.ParrentId,
+                "@ProductId", viewModel.ProductId,
+                "@NewsId",viewModel.NewsId,
                 "@EmailComment", viewModel.EmailComment,
                 "@CreatedDate", viewModel.CreatedDate,
                 "@ModiyDate", viewModel.ModifyDate);
@@ -64,8 +79,9 @@ namespace Bussiness.Implement
                 "@Contents", viewModel.Contents,
                 "@Category", String.Empty,
                 "@Status", viewModel.Status,
-                "@ReferenceId", viewModel.ReferenceId,
                 "@ParrentId", viewModel.ParrentId,
+                "@ProductId", viewModel.ProductId,
+                "@NewsId", viewModel.NewsId,
                 "@EmailComment", viewModel.EmailComment,
                 "@ModiyDate", viewModel.ModifyDate);
         }

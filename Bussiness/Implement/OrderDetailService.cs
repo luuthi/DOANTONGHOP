@@ -20,6 +20,11 @@ namespace Bussiness.Implement
             return lst;
         }
 
+        public int GetOrderDetailByProduct(Guid id)
+        {
+           return  SqlDb_Ultis.ExeStoredGetInt("Tbl_OrderDetailSelectByProduct", "@Id", id);
+
+        }
         public OrderDetailViewModel GetOrderEtailById(Guid id)
         {
             DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_OrderDetailSelectByID", "@Id", id);

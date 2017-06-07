@@ -1,14 +1,63 @@
-﻿
-@model Bussiness.ViewModel.ProductAttributeValueViewModel
+﻿@model List<Bussiness.ViewModel.ProductAttributeViewModel>
+<style>
+    .chk_choose {
+        display: block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Danh sách thuộc tính sản phẩm
+                </h2>
+            </div>
 
-<tr>
-    <td class="hide">@Model.Id</td>
-    <td>@Html.DropDownListFor(m => m.AttributeId, Model.lstAttribute, new {@class = "form-control"})</td>
-    <td class="visible-md visible-sm visible-lg"><a class="btn btn-success btn-sm mdi mdi-plus mdi-14px btnAddAttr"
-     data-toggle="modal" data-target="#addAttr" data-backdrop="static" data-keyboard="false" >Thêm thuộc tính mới</a></td>
-    <td class="visible-xs"><span class="btn btn-success btn-sm mdi mdi-plus mdi-14px btnAddAttr" data-toggle="modal" data-target="#detailInfo" data-backdrop="static" data-keyboard="false" ></span></td>
-    <td>@Html.TextBoxFor(m=>m.Value,new {@class="form-control"})</td>
-    <td>
-        <a class="btn btn-sm btn-danger btn-xoa">Xóa</a>
-    </td>
-</tr>
+            <div class="box-body" style="text-align:center">
+                <input type="hidden" name="ProId" id="ProId" />
+                <h3 id="ProductName"></h3>
+                <table class="table table-bordered table-striped " id="table_attr">
+                    <thead>
+                        <tr>
+                            <th>Chọn</th>
+                            <th>Tên thuộc tính</th>
+                            <th>Giá trị</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+
+                                    <tr data-id="@item.Id">
+                                        @if (@item.stt == 0)
+                                        {
+                                            <td> <input type="checkbox" name="chk_choose" id="@item.Id" class="chk_choose" /></td>
+                                        }
+                                        else if (@item.stt == 1)
+                                        {
+                                            <td> <input type="checkbox" name="chk_choose" id="@item.Id" class="chk_choose" checked /></td>
+                                        }
+
+                                        <td>@item.AttributeName</td>
+                                        <td><input type="text" name="txtValue" id="value-@item.Id" value="@item.Value" class="form-control" /></td>
+                                    </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="box-footer">
+                <button type="button" class="btn btn-default pull-right btnClose" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-success pull-right btnSave" style="margin-right:10px;">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <!-- /.panel -->
+</div>

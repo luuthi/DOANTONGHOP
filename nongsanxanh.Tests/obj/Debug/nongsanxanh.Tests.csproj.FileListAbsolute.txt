@@ -144,3 +144,4 @@ D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\DataAccess.pdb
 D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\NSX_Common.pdb
 D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\ClosedXML.pdb
 D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\ClosedXML.xml
+D:\nongsanxanh\nongsanxanh.Tests\bin\Debug\nongsanxanh.dll.config

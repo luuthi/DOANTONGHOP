@@ -20,6 +20,7 @@ namespace Bussiness.ViewModel
         [DisplayName("Tình trạng")]
         public bool Status { get; set; }
 
+        public string Url { get; set; }
 
         [DisplayName("Người tạo")]
         public string Creator { get; set; }

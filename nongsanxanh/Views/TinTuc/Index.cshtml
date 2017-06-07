@@ -1,0 +1,73 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Bussiness.ViewModel.NewsViewModel>
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="title-header">
+                <span>Tin Tức</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="current-page">
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="">Trang Chủ</a></li>
+                <li>/</li>
+                <li>Tin Tức</li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9">
+                    <div class="content-news">
+                        <h4 class="title-content-new">Tin Tức</h4>
+                        <div class="inner-content-new">
+                            @{
+                                if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <div class="row post-content">
+                                            <div class="col-md-6">
+                                                <a href="/TinTuc/@item.NameGroup/@item.Id" class="img-new"><img src="~/Images/images/tin-tuc/@item.Image" class="img-responsive"></a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="summary-news">
+                                                    <a href="/TinTuc/@item.NameGroup/@item.Id"><h4 class="title-summary">@item.Title</h4></a>
+                                                    <p class="content-summary">
+                                                        @item.Description ...
+                                                    </p>
+                                                    <a href="/TinTuc/@item.NameGroup/@item.Id" class="see-more fl-right">Xem thêm</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            }
+                            <div>
+                                @Html.PagedListPager(Model, page => Url.Action("Index",
+                                    new { page }))
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3">
+                    <div class="widget">
+                        @Html.Partial("_parDanhMucTin")
+                        @Html.Partial("_parTinNoiBat")
+                        <div class="fanpage">
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fquapho.net%2F&tabs=S%E1%BB%B1%20ki%E1%BB%87n&width=255px&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="255px" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

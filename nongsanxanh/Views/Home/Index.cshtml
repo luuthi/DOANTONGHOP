@@ -1,3 +1,68 @@
-﻿@{
+﻿@model Bussiness.ViewModel.HomeViewModel
+@{
     ViewBag.Title = "Home Page";
 }
+@Html.Partial("_slide")
+<main>
+    <div class=" container">
+        <div class="top" style="margin-top: -25px;">
+
+            <ul class="row">
+                <li>
+                    <div>
+                        <a href="">
+                            <img class="img-responsive" src="~/Images/images/slide/details.png">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="">
+                            <img class="img-responsive" src="~/Images/images/slide/register.png">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="">
+                            <img class="img-responsive" src="~/Images/images/slide/schedule.png">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="">
+                            <img class="img-responsive" src="~/Images/images/slide/speakers.png">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="">
+                            <img class="img-responsive" src="~/Images/images/slide/sponsors.png">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="">
+                            <img class="img-responsive" src="~/Images/images/slide/team.png">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- end.top -->
+
+        @Html.Partial("_topCate",Model.lstTopSellProduct)
+        <!-- end.top-cate -->
+
+        @Html.Partial("_sanphammoi",Model.lstNewProduct)
+        <!-- end.best-sell -->
+        @Html.Partial("_sanphamtieubieu",Model.lstOutstandingProduct)
+
+
+        @Html.Partial("_News",Model.lstNews)
+    </div>
+</main>
+<!-- end.blog -->

@@ -15,7 +15,7 @@ namespace Bussiness.Implement
     {
         public void DeleteNews(Guid Id)
         {
-            SqlDb_Ultis.ExeNonStored("Tbl_NewsDelete","@Id",Id);
+            SqlDb_Ultis.ExeNonStored("Tbl_NewsDelete", "@Id", Id);
         }
         public void DeleteNews_Del(Guid Id)
         {

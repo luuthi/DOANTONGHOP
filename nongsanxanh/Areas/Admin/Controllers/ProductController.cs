@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Bussiness.Interface;
 using Bussiness.ViewModel;
 using NSX_Common;
+using System.ComponentModel;
 
 namespace nongsanxanh.Areas.Admin.Controllers
 {
@@ -16,17 +17,20 @@ namespace nongsanxanh.Areas.Admin.Controllers
         private readonly IProductService _iProductService;
         private readonly ICategoryService _iCategoryService;
         private readonly IProductAttributeService _iProductAttributeService;
-        private readonly ProductAttributeValueService _iProductAttributeValueService;
+        private readonly IProductAttributeValueService _iProductAttributeValueService;
+        private readonly IOrderDetailService _iOderDetailService;
         string[] allowedExtensions = new[] { ".jpg", ".png", ".gif", ".jpeg" };
 
-        public ProductController(IProductGroupService iProductGroupService, IProductService iProductService, ICategoryService iCategoryService, IProductAttributeService iProductAttributeService, ProductAttributeValueService iProductAttributeValueService)
+        public ProductController(IProductGroupService iProductGroupService, IProductService iProductService, ICategoryService iCategoryService, IProductAttributeService iProductAttributeService, IProductAttributeValueService iProductAttributeValueService, IOrderDetailService iOderDetailService)
         {
             _iProductGroupService = iProductGroupService;
             _iProductAttributeService = iProductAttributeService;
             _iProductAttributeValueService = iProductAttributeValueService;
             _iCategoryService = iCategoryService;
             _iProductService = iProductService;
+            _iOderDetailService = iOderDetailService;
         }
+        #region Load data combo
         private List<SelectListItem> LoadProGroup()
         {
             var units = _iProductGroupService.GetAllProductGroup();
@@ -65,25 +69,44 @@ namespace nongsanxanh.Areas.Admin.Controllers
             });
             return lst;
         }
+        public static string GetDescriptionFromEnumValue(Enum value)
+        {
+            DescriptionAttribute attribute = value.GetType()
+                .GetField(value.ToString())
+                .GetCustomAttributes(typeof(DescriptionAttribute), false)
+                .SingleOrDefault() as DescriptionAttribute;
+            return attribute == null ? value.ToString() : attribute.Description;
+        }
         private void LoadCategory(string selected)
         {
-            var cate = _iCategoryService.GetlAllCategories();
+            var lstEnum = Enum.GetValues(typeof(CategoryNew)).Cast<CategoryNew>().ToList();
             var lst = new List<SelectListItem>();
-            cate.ForEach(m =>
+
+            foreach (var item in lstEnum)
             {
                 lst.Add(new SelectListItem
                 {
-                    Value = m.Id.ToString(),
-                    Text = m.CategoryName,
-                    Selected = selected.Contains(m.Id.ToString())
+                    Value = item.ToString(),
+                    Text = GetDescriptionFromEnumValue((CategoryNew)item),
+                    Selected = selected.Contains(item.ToString())
                 });
-            });
+            }
             ViewData["EnumCategory"] = lst;
         }
+
+        [HttpPost]
+        public ActionResult LoadAtrr(string masanpham)
+        {
+            Guid g = Guid.Parse(masanpham);
+            var viewModel = _iProductAttributeService.GetAllProducAttributebySP(g);
+            return PartialView("_parAttrValPro", viewModel);
+        }
+        #endregion
+
         // GET: Admin/Product
         public ActionResult Index()
         {
-            var viewModel = _iProductService.GetAllProduct();
+            var viewModel = _iProductService.GetAllProduct().Where(m => m.Status == true).ToList();
             return View(viewModel);
         }
 
@@ -118,6 +141,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
                     AccountViewModel account = Session["Account"] as AccountViewModel;
                     viewModel.Description = viewModel.Description ?? String.Empty;
                     viewModel.DetailInfo = viewModel.DetailInfo ?? String.Empty;
+                    viewModel.Vendor = viewModel.Vendor ?? String.Empty;
                     viewModel.Gallery = viewModel.Gallery ?? String.Empty;
                     string fileName = "";
                     if (viewModel.filePosted != null)
@@ -152,14 +176,21 @@ namespace nongsanxanh.Areas.Admin.Controllers
                     viewModel.CreatedDate = DateTime.Now;
                     viewModel.ModifyDate = DateTime.Now;
                     viewModel.Modifier = account.UserName;
-                    viewModel.Category = string.Join(",", viewModel.EnumCategory);
+                    if (viewModel.EnumCategory != null)
+                    {
+                        viewModel.Category = string.Join(",", viewModel.EnumCategory);
+                    }
+                    else
+                    {
+                        viewModel.Category = String.Empty;
+                    }
                     _iProductService.InsertProduct(viewModel);
                     return RedirectToAction("Index");
                 }
                 else
                 {
                     viewModel.lstGroup = LoadProGroup();
-                    LoadCategory(viewModel.Category);
+                    LoadCategory(viewModel.Category??String.Empty);
                     return View(viewModel);
                 }
             }
@@ -195,6 +226,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
                     viewModel.Description = viewModel.Description ?? String.Empty;
                     viewModel.DetailInfo = viewModel.DetailInfo ?? String.Empty;
                     viewModel.Gallery = viewModel.Gallery ?? String.Empty;
+                    viewModel.Vendor = viewModel.Vendor ?? String.Empty;
                     string fileName = "";
                     if (viewModel.filePosted != null)
                     {
@@ -226,14 +258,21 @@ namespace nongsanxanh.Areas.Admin.Controllers
                     viewModel.Image = fileName;
                     viewModel.ModifyDate = DateTime.Now;
                     viewModel.Modifier = account.UserName;
-                    viewModel.Category = string.Join(",", viewModel.EnumCategory);
+                    if (viewModel.EnumCategory!=null)
+                    {
+                        viewModel.Category = string.Join(",", viewModel.EnumCategory);
+                    }
+                    else
+                    {
+                        viewModel.Category = String.Empty;
+                    }
                     _iProductService.UpdateProduct(viewModel);
                     return RedirectToAction("Index");
                 }
                 else
                 {
                     viewModel.lstGroup = LoadProGroup();
-                    LoadCategory(viewModel.Category);
+                    LoadCategory(viewModel.Category ?? String.Empty);
                     return View(viewModel);
                 }
             }
@@ -243,20 +282,16 @@ namespace nongsanxanh.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/Product/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
+       
         // POST: Admin/Product/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(string proid)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                Guid g = Guid.Parse(proid);
+                _iProductService.DeleteProduct(g);
                 return RedirectToAction("Index");
             }
             catch
@@ -264,37 +299,65 @@ namespace nongsanxanh.Areas.Admin.Controllers
                 return View();
             }
         }
-
-
         [HttpPost]
-        public ActionResult AddRow()
+        public ActionResult Delete_Del(string proid)
         {
-            var viewModel = new ProductAttributeValueViewModel();
-            viewModel.lstAttribute = LoadAttribute();
-            return PartialView("_parAttrValPro", viewModel);
-        }
 
+            // TODO: Add delete logic here
+            Guid g = Guid.Parse(proid);
+            if (_iOderDetailService.GetOrderDetailByProduct(g)>0)
+            {
+                JsonClasses cls = new JsonClasses()
+                {
+                    Status = true,
+                    Html = "Sản phẩm đã được bán.Không xóa được!"
+                };
+                return Json(cls);
+            }
+            else
+            {
+                _iProductService.DeleteProduct_del(g);
+                var lst = _iProductService.GetAllProduct().Where(m => m.Status == false).ToList();
+                JsonClasses cls = new JsonClasses()
+                {
+                    Status = true,
+                    Html = JsonClasses.ToPartialView(this, "_parDisabledProduct", lst)
+                };
+                return Json(cls);
+            }
+            
+
+        }
         [HttpPost]
-        public ActionResult AddAttr()
+        public ActionResult LoadDisabledPro()
         {
-            var viewModel = new ProductAttributeViewModel();
-            return PartialView("_parAddNewAttr", viewModel);
+            var lst = _iProductService.GetAllProduct().Where(m => m.Status == false).ToList();
+            return PartialView("_parDisabledProduct", lst);
         }
-
         [HttpPost]
-        public ActionResult LoadAttrByProId(string proid)
+        public ActionResult Restore(string proid)
         {
             Guid g = Guid.Parse(proid);
-            var viewModel = _iProductAttributeValueService.GetProductAttributeValueByProId(g);
-            return PartialView("_parModalDetail", viewModel);
+            var viewModel = _iProductService.GetProductById(g);
+            viewModel.Status = true;
+            _iProductService.UpdateProduct(viewModel);
+            var lst = _iProductService.GetAllProduct().Where(m => m.Status == false).ToList();
+            return PartialView("_parDisabledProduct", lst);
         }
 
         [HttpPost]
-        public ActionResult SaveAttr(ProductAttributeViewModel viewModel)
+        public ActionResult DeleteByPro(string masanpham)
         {
-            viewModel.AttributeType = viewModel.AttributeType ?? String.Empty;
-            _iProductAttributeService.InsertProductAttribute(viewModel);
+            Guid g = Guid.Parse(masanpham);
+            _iProductAttributeValueService.DeleteProductAttributeValue(g);
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult SaveAttr(ProductAttributeValueViewModel viewModel)
+        {
+            _iProductAttributeValueService.InsertProductAttributeValue(viewModel);
+            return Json(new { success = 1, msg = "OK" });
         }
     }
 }

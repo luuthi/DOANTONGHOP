@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Bussiness.Interface;
 using Bussiness.ViewModel;
 using NSX_Common;
+using System.ComponentModel;
 
 namespace nongsanxanh.Areas.Admin.Controllers
 {
@@ -41,21 +42,45 @@ namespace nongsanxanh.Areas.Admin.Controllers
             });
             ViewData["GroupId"] = lst;
         }
+        public static string GetDescriptionFromEnumValue(Enum value)
+        {
+            DescriptionAttribute attribute = value.GetType()
+                .GetField(value.ToString())
+                .GetCustomAttributes(typeof(DescriptionAttribute), false)
+                .SingleOrDefault() as DescriptionAttribute;
+            return attribute == null ? value.ToString() : attribute.Description;
+        }
         private void LoadCategory(string selected)
         {
-            var cate = _iCategoryService.GetlAllCategories();
+            var lstEnum = Enum.GetValues(typeof(CategoryNew)).Cast<CategoryNew>().ToList();
             var lst = new List<SelectListItem>();
-            cate.ForEach(m =>
+
+            foreach (var item in lstEnum)
             {
                 lst.Add(new SelectListItem
                 {
-                    Value = m.Id.ToString(),
-                    Text = m.CategoryName,
-                    Selected = selected.Contains(m.Id.ToString())
+                    Value = item.ToString(),
+                    Text = GetDescriptionFromEnumValue((CategoryNew)item),
+                    Selected = selected.Contains(item.ToString())
                 });
-            });
+            }
             ViewData["EnumCategory"] = lst;
         }
+        //private void LoadCategory(string selected)
+        //{
+        //    var cate = _iCategoryService.GetlAllCategories();
+        //    var lst = new List<SelectListItem>();
+        //    cate.ForEach(m =>
+        //    {
+        //        lst.Add(new SelectListItem
+        //        {
+        //            Value = m.Id.ToString(),
+        //            Text = m.CategoryName,
+        //            Selected = selected.Contains(m.Id.ToString())
+        //        });
+        //    });
+        //    ViewData["EnumCategory"] = lst;
+        //}
         // GET: Admin/News
         public ActionResult Index()
         {
@@ -120,13 +145,21 @@ namespace nongsanxanh.Areas.Admin.Controllers
                     viewModel.PostedDate =DateTime.Now;
                     viewModel.ModifyDate = DateTime.Now;
                     viewModel.Modifier = account.UserName;
-                    viewModel.Category = string.Join(",", viewModel.EnumCategory);
+                    if (viewModel.EnumCategory != null)
+                    {
+                        viewModel.Category = string.Join(",", viewModel.EnumCategory);
+                    }
+                    else
+                    {
+                        viewModel.Category = String.Empty;
+                    }
                     _iNewsService.InsertNews(viewModel);
                     return RedirectToAction("Index");
                 }
                 else
                 {
                     LoadNewsGroup();
+                    LoadCategory(viewModel.Category ?? String.Empty);
                     return View(viewModel);
                 }
             }
@@ -187,19 +220,28 @@ namespace nongsanxanh.Areas.Admin.Controllers
                     viewModel.Image = fileName;
                     viewModel.ModifyDate = DateTime.Now;
                     viewModel.Modifier = account.UserName;
-                    viewModel.Category = string.Join(",", viewModel.EnumCategory);
+                    if (viewModel.EnumCategory != null)
+                    {
+                        viewModel.Category = string.Join(",", viewModel.EnumCategory);
+                    }
+                    else
+                    {
+                        viewModel.Category = String.Empty;
+                    }
                     _iNewsService.UpdateNews(viewModel);
                     return RedirectToAction("Index");
                 }
                 else
                 {
                     LoadNewsGroup();
+                    LoadCategory(viewModel.Category ?? String.Empty);
                     return View(viewModel);
                 }
             }
             catch
             {
                 LoadNewsGroup();
+                LoadCategory("");
                 return View();
             }
         }

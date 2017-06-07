@@ -89,6 +89,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -237,9 +243,14 @@
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleMngController.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Models\City.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AccountInfoController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\TinTucController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -266,15 +277,87 @@
     <Content Include="Content\css-admin\select2.min.css" />
     <Content Include="Content\css-admin\site-admin.css" />
     <Content Include="Content\css-admin\_all-skins.min.css" />
+    <Content Include="Content\css-frontend\animate.css" />
+    <Content Include="Content\css-frontend\box.css" />
+    <Content Include="Content\css-frontend\font-awesome.min.css" />
+    <Content Include="Content\css-frontend\owl.carousel.min.css" />
+    <Content Include="Content\css-frontend\owl.theme.css" />
+    <Content Include="Content\css-frontend\owl.theme.default.min.css" />
+    <Content Include="Content\css-frontend\owl.theme.green.min.css" />
+    <Content Include="Content\css-frontend\reset.css" />
+    <Content Include="Content\css-frontend\responsive.css" />
+    <Content Include="Content\css-frontend\revslider.css" />
+    <Content Include="Content\css-frontend\smoothproducts.css" />
+    <Content Include="Content\css-frontend\style.css" />
     <Content Include="Content\custom.min.css" />
     <Content Include="Content\green.css" />
     <Content Include="Content\materialdesignicons.css" />
     <Content Include="Content\materialdesignicons.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\materialdesignicons-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Images\green.png" />
+    <Content Include="Images\images\he-thong\cong-ty-nong-san-xanh-bao-ngoc-minh.jpg" />
+    <Content Include="Images\images\he-thong\logo.png" />
+    <Content Include="Images\images\he-thong\slide1.jpg" />
+    <Content Include="Images\images\he-thong\slide2.jpg" />
+    <Content Include="Images\images\he-thong\slide3.jpg" />
+    <Content Include="Images\images\san-pham\bi-do.jpg" />
+    <Content Include="Images\images\he-thong\category-banner.jpg" />
+    <Content Include="Images\images\san-pham\landscape-wallpaper %281%29.jpg" />
+    <Content Include="Images\images\san-pham\landscape-wallpaper %281%29.png" />
+    <Content Include="Images\images\san-pham\landscape-wallpaper %282%29.jpg" />
+    <Content Include="Images\images\san-pham\noimage.png" />
+    <Content Include="Images\images\san-pham\p1.jpg" />
+    <Content Include="Images\images\san-pham\p10.jpg" />
+    <Content Include="Images\images\san-pham\p11.jpg" />
+    <Content Include="Images\images\san-pham\p15.jpg" />
+    <Content Include="Images\images\san-pham\p2.jpg" />
+    <Content Include="Images\images\san-pham\p3.jpg" />
+    <Content Include="Images\images\san-pham\p4.jpg" />
+    <Content Include="Images\images\san-pham\p5.jpg" />
+    <Content Include="Images\images\san-pham\p6.jpg" />
+    <Content Include="Images\images\san-pham\p7.jpg" />
+    <Content Include="Images\images\san-pham\p8.jpg" />
+    <Content Include="Images\images\san-pham\p9.jpg" />
+    <Content Include="Images\images\slide\details.png" />
+    <Content Include="Images\images\slide\left-a.png" />
+    <Content Include="Images\images\slide\register.png" />
+    <Content Include="Images\images\slide\right-a.png" />
+    <Content Include="Images\images\slide\schedule.png" />
+    <Content Include="Images\images\slide\slide-img1.jpg" />
+    <Content Include="Images\images\slide\slide-img2.jpg" />
+    <Content Include="Images\images\slide\slide1.jpg" />
+    <Content Include="Images\images\slide\slide2.jpg" />
+    <Content Include="Images\images\slide\slide3.jpg" />
+    <Content Include="Images\images\slide\speakers.png" />
+    <Content Include="Images\images\slide\sponsors.png" />
+    <Content Include="Images\images\slide\team.png" />
+    <Content Include="Images\images\tin-tuc\n1.jpg" />
+    <Content Include="Images\images\tin-tuc\n2.jpg" />
+    <Content Include="Images\images\tin-tuc\n3.jpg" />
+    <Content Include="Images\images\tin-tuc\n4.jpg" />
+    <Content Include="Images\images\tin-tuc\n5.jpg" />
+    <Content Include="Images\images\tin-tuc\n7.jpg" />
+    <Content Include="Images\images\tin-tuc\n8.jpg" />
+    <Content Include="Images\images\tin-tuc\noimage.png" />
+    <Content Include="Images\images\tin-tuc\p1.jpg" />
+    <Content Include="Images\images\tin-tuc\p2.jpg" />
+    <Content Include="Images\images\tin-tuc\p3.jpg" />
+    <Content Include="Images\images\tin-tuc\p6.jpg" />
+    <Content Include="Images\images\tin-tuc\rau-diep.jpg" />
+    <Content Include="Images\images\tin-tuc\thanh-long.jpg" />
+    <Content Include="Images\images\tin-tuc\ung-dung-yeu-thich-cua-ban-co-the-trong-nhu-the-nao-tren-iphone-8.jpg" />
+    <Content Include="Images\images\user-logo\23042017070842thiluu.jpg" />
+    <Content Include="Images\images\user-logo\admin.jpg" />
+    <Content Include="Images\images\user-logo\cong-ty-nong-san-xanh-bao-ngoc-minh.jpeg" />
+    <Content Include="Images\images\user-logo\green.png" />
+    <Content Include="Images\images\user-logo\key.png" />
+    <Content Include="Images\images\user-logo\noimage.png" />
+    <Content Include="Images\images\user-logo\user.gif" />
+    <Content Include="Images\images\user-logo\user.png" />
+    <Content Include="Images\images\user-logo\user.svg" />
     <Content Include="Images\key.png" />
     <Content Include="Images\noimage.png" />
     <Content Include="Images\user.gif" />
@@ -352,7 +435,6 @@
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product\_productForm.cshtml" />
     <Content Include="Areas\Admin\Views\Product\_parAttrValPro.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\_parAddNewAttr.cshtml" />
     <Content Include="Areas\Admin\Views\Product\_parModalDetail.cshtml" />
     <Content Include="Areas\Admin\Views\ProductAttribute\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductAttribute\Create.cshtml" />
@@ -368,6 +450,8 @@
     <Content Include="Areas\Admin\Views\Menu\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Menu\_menuForm.cshtml" />
     <Content Include="Areas\Admin\Views\Comment\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\_parDisabledProduct.cshtml" />
+    <Content Include="App_Data\cities.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
@@ -1419,6 +1503,18 @@
     <Content Include="Scripts\js-admin\notify.min.js" />
     <Content Include="Scripts\js-admin\responsive.bootstrap.js" />
     <Content Include="Scripts\js-admin\select2.full.min.js" />
+    <Content Include="Scripts\js-frontend\danhmucsp.js" />
+    <Content Include="Scripts\js-frontend\danhmuctintuc.js" />
+    <Content Include="Scripts\js-frontend\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\js-frontend\owl.carousel.js" />
+    <Content Include="Scripts\js-frontend\owl.carousel.min.js" />
+    <Content Include="Scripts\js-frontend\parallax.js" />
+    <Content Include="Scripts\js-frontend\plugins.js" />
+    <Content Include="Scripts\js-frontend\revslider.js" />
+    <Content Include="Scripts\js-frontend\shoppingcart.js" />
+    <Content Include="Scripts\js-frontend\slide.js" />
+    <Content Include="Scripts\js-frontend\smoothproducts.js" />
+    <Content Include="Scripts\js-frontend\smoothproducts.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -1434,37 +1530,42 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_rootLayoutAdmin.cshtml" />
     <Content Include="Views\Shared\_sidemenuAdmin.cshtml" />
     <Content Include="Views\Shared\_topNavAdmin.cshtml" />
     <Content Include="Views\Shared\_parInforPopup.cshtml" />
+    <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Shared\_slide.cshtml" />
+    <Content Include="Views\Shared\_topCate.cshtml" />
+    <Content Include="Views\Shared\_sanphammoi.cshtml" />
+    <Content Include="Views\Shared\footer.cshtml" />
+    <Content Include="Views\Shared\_sanphamtieubieu.cshtml" />
+    <Content Include="Views\Shared\_News.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Shared\_parDanhMucTin.cshtml" />
+    <Content Include="Views\Shared\_parHotNewRight.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Shared\_parDanhMucSP.cshtml" />
+    <Content Include="Views\Shared\_parSanPhamTheoNhom.cshtml" />
+    <Content Include="Views\Products\group.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Shared\_parSanPham.cshtml" />
+    <Content Include="Views\TinTuc\Index.cshtml" />
+    <Content Include="Views\Shared\_parTinNoiBat.cshtml" />
+    <Content Include="Views\TinTuc\Group.cshtml" />
+    <Content Include="Views\TinTuc\Details.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Shared\_parComment.cshtml" />
+    <Content Include="Views\Shared\_parViewAccount.cshtml" />
+    <Content Include="Views\Shared\_parViewCart.cshtml" />
+    <Content Include="Views\Shared\_parLogin.cshtml" />
+    <Content Include="Views\AccountInfo\Index.cshtml" />
+    <Content Include="Views\AccountInfo\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Content\css-admin\flat\" />
     <Folder Include="Content\css-admin\futurico\" />
@@ -1472,6 +1573,7 @@
     <Folder Include="Content\css-admin\minimal\" />
     <Folder Include="Content\css-admin\polaris\" />
     <Folder Include="Content\css-admin\square\" />
+    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

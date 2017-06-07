@@ -1,0 +1,63 @@
+﻿@using Bussiness.Implement
+@using Bussiness.ViewModel
+@{
+    AccountViewModel acc = new AccountViewModel();
+
+    bool login = false;
+    if (Session["isLoginClient"] != null)
+    {
+        login = (bool)Session["isLoginClient"];
+        if (Session["AccountClient"] != null && (bool)Session["isLoginClient"])
+        {
+            acc = Session["AccountClient"] as AccountViewModel;
+
+        }
+    }
+}
+<div class="row">
+    <div class="col-md-6">
+        <div>
+            <label>Your Name:</label><br>
+            <input type="text" name="txt_name" value="@acc.FullName" disabled="@login">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div>
+            <label>Email Address:</label><br>
+            <input type="text" name="txt_mail" value="@acc.Email" disabled="@login">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <label>Your Comment:</label><br>
+        <textarea name="txt_cmt" id="cmt"></textarea>
+    </div>
+</div>
+<button class="sub-cmt" type="submit">Submit Comment</button>
+
+<div class="Customer-Reviews">
+    <h4 class="tit-cust-rev">Nhận xét</h4>
+    <div class="cont-cus-rev">
+        <ul class="list-cus-rev">
+            @{
+                CommentService cmtser = new CommentService();
+                var cmtLst = cmtser.GetCommentByProductId(@Model.Id);
+                foreach (var item in cmtLst)
+                {
+                    <li class="clearfix">
+                        <a href="#" class="fl-left"><img src="~/Images/images/user-logo/@item.Image"></a>
+                        <ul class="fl-right">
+                            <li class="user-name"><b>@item.FullName</b></li>
+                            <li class="content-rev">
+                                @item.Contents
+                            </li>
+
+                        </ul>
+                    </li>
+                }
+            }
+
+        </ul>
+    </div>
+</div>

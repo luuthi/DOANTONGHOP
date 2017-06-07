@@ -37,7 +37,7 @@ namespace Bussiness.ViewModel
 
         [DisplayName("Danh mục sản phẩm")]
         public string Category { get; set; }
-        public int[] EnumCategory { get; set; }
+        public string[] EnumCategory { get; set; }
         public List<SelectListItem> lstCategory { get; set; }
 
         [DisplayName("Tình trạng")]

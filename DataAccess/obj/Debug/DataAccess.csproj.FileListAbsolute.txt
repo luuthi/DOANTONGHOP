@@ -24,3 +24,14 @@ D:\nongsanxanh\DataAccess\bin\Debug\Newtonsoft.Json.xml
 D:\nongsanxanh\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 D:\nongsanxanh\DataAccess\obj\Debug\DataAccess.dll
 D:\nongsanxanh\DataAccess\obj\Debug\DataAccess.pdb
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.Mvc.dll
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.Razor.dll
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.WebPages.Razor.dll
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.WebPages.dll
+D:\nongsanxanh\DataAccess\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.Mvc.xml
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.Razor.xml
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.WebPages.Razor.xml
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.WebPages.xml
+D:\nongsanxanh\DataAccess\bin\Debug\System.Web.WebPages.Deployment.xml

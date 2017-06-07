@@ -35,5 +35,6 @@ namespace Bussiness.Interface
         /// </summary>
         /// <param name="viewModel"></param>
         void DeleteProduct(Guid Id);
+        void DeleteProduct_del(Guid Id);
     }
 }

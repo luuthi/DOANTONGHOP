@@ -15,6 +15,11 @@ namespace Bussiness.Interface
         /// <returns></returns>
         List<ProductAttributeViewModel> GetAllProducAttributet();
         /// <summary>
+        /// Lấy tất cả tài khoản
+        /// </summary>
+        /// <returns></returns>
+        List<ProductAttributeViewModel> GetAllProducAttributebySP(Guid masanpham);
+        /// <summary>
         /// Lấy tài khoản theo id
         /// </summary>
         /// <param name="Id"></param>

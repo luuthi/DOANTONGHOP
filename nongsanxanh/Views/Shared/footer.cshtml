@@ -1,0 +1,86 @@
+﻿@using Bussiness.Implement;
+@using Bussiness.ViewModel;
+@{
+    CompanyInfoService companyInfoService = new CompanyInfoService();
+    CompanyInfoViewModel viewModel = companyInfoService.GetCompanyInfo();
+}
+<footer>
+    <div class="footer-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                    <div class="com-info">
+                        <div class="com-img">
+                            <a href="#"><img src="~/Images/images/he-thong/@viewModel.Logo" width="170"></a>
+                        </div>
+                        <div class="address">
+                            <div><span class="fa fa-map-marker ">Address: @viewModel.Address</span></div>
+                            <div><span class="fa fa-phone">Phone Number: @viewModel.Phone</span></div>
+                        </div>
+                        <div class="email">
+                            <div><span class="fa  fa-envelope">Email:  @viewModel.Email</span></div>
+                        </div>
+                        <div class="icon">
+                            <span class="fa fa-facebook"></span>
+                            <span class="fa fa-google-plus"></span>
+                            <span class="fa fa-instagram"></span>
+                            <span class="fa fa-twitter"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- end.com-info -->
+
+                <div class="col-md-8 col-xs-12 col-sm-12">
+                    <div class="footer-inner">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="quick">
+                                    <h2>Quick links</h2>
+                                    <ul type="circle">
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                        <li><a href="#">Payment</a></li>
+                                        <li><a href="#">Shipment</a></li>
+                                        <li><a href="#">where is my order</a></li>
+                                        <li><a href="#">Return policy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="style">
+                                    <h2>Style advisor</h2>
+                                    <ul type="circle">
+                                        <li><a href="#">Your Acount</a></li>
+                                        <li><a href="#">Information</a></li>
+                                        <li><a href="#">address</a></li>
+                                        <li><a href="#">Discount</a></li>
+                                        <li><a href="#">Orders Hisstory</a></li>
+                                        <li><a href="#">Additional Information</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-12 col-sm-4">
+                                <div class="info">
+                                    <h2>Information</h2>
+                                    <ul type="circle">
+                                        <li><a href="#">Site Map</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                        <li><a href="#">Payment</a></li>
+                                        <li><a href="#">Shipment</a></li>
+                                        <li><a href="#">where is my order</a></li>
+                                        <li><a href="#">Return policy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <span class="fa fa-copyright">Green Agriculture . All Rights Reserved.</span>
+        </div>
+    </div>
+</footer>

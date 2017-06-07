@@ -1,0 +1,54 @@
+﻿@model PagedList.IPagedList<Bussiness.ViewModel.ProductViewModel>
+@using NSX_Common;
+@if (Model[0].ProductName!=null)
+{
+    <div class="vegetables">
+        <div class="title-vegetable clearfix">
+            <h1 class="pull-left">@Model[0].GroupName</h1>
+            <a href="/Products/@Extentions.ToUnsignLinkString(@Model[0].GroupName)" class="pull-right">Xem thêm<strong class="mdi mdi-arrow-right"></strong> </a>
+        </div>
+        <div class="category-products clearfix">
+            @{
+                foreach (var item in Model)
+                {
+                    <div class="col-md-3 sell-img ">
+                        <div class="sell-inner">
+                            <a href="/Products/@Extentions.ToUnsignLinkString(@Model[0].GroupName)/@item.Id">
+                                <img src="~/Images/images/san-pham/@item.Image" class="img-responsive">
+                            </a>
+                            <div class="details-item">
+                                <div class="pro-details">
+                                    <a href="/Products/@Extentions.ToUnsignLinkString(@Model[0].GroupName)/@item.Id">
+                                        <span class="mdi mdi-magnify mdi-18px ">  Chi tiết sản phẩm</span>
+                                    </a>
+                                </div>
+                                <div class="pro-cart  add-shopping">
+                                    <a href="#">
+                                        <span class="mdi mdi-shopping mdi-18px">  Thêm vào giỏ hàng</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sell-info text-center">
+                            <h5>@item.ProductName</h5>
+                            <span><strong><i>@Extentions.ToCurrencyString(Convert.ToInt32((@item.Price)))</i></strong></span>
+                        </div>
+                    </div>
+                }
+
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="vegetables">
+        <div class="title-vegetable clearfix">
+            <h1 class="pull-left">@Model[0].GroupName</h1>
+        </div>
+        <div class="category-products clearfix">
+            <h4 class="text-danger" style="margin-left:20px;" > Không có dữ liệu</h4>
+        </div>
+    </div>
+}
+

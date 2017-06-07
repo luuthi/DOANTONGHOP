@@ -10,8 +10,10 @@ namespace Bussiness.Interface
     public interface ICommentService
     {
         List<CommentViewModel> GetAllComment();
-        List<CommentViewModel> GetCommentByPId(Guid id);
         CommentViewModel GetCommentById(Guid id);
+        List<CommentViewModel> GetCommentByPId(Guid id);
+        List<CommentViewModel>  GetCommentByProductId(Guid id);
+        List<CommentViewModel> GetCommentByNewsId(Guid id);
         void InsertCooment(CommentViewModel viewModel);
         void UpdateComment(CommentViewModel viewModel);
         void DeletComment(Guid id);

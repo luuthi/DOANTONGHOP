@@ -50,7 +50,8 @@ namespace Bussiness.Implement
                "@Order", viewModel.Order,
                "@ParrentId", viewModel.ParrentId,
                "@Id", viewModel.Id,
-               "@Status", viewModel.Status);
+               "@Status", viewModel.Status,
+               "@Link",viewModel.Link);
         }
 
         public void UpdateMenu(MenuViewModel viewModel)
@@ -60,7 +61,8 @@ namespace Bussiness.Implement
                "@Order", viewModel.Order,
                "@ParrentId", viewModel.ParrentId,
                "@Id", viewModel.Id,
-               "@Status", viewModel.Status);
+               "@Status", viewModel.Status,
+               "@Link", viewModel.Link);
         }
     }
 }

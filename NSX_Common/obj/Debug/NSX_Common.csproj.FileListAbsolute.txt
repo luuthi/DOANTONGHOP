@@ -20,3 +20,16 @@ D:\nongsanxanh\NSX_Common\bin\Debug\Newtonsoft.Json.xml
 D:\nongsanxanh\NSX_Common\obj\Debug\NSX_Common.csprojResolveAssemblyReference.cache
 D:\nongsanxanh\NSX_Common\obj\Debug\NSX_Common.dll
 D:\nongsanxanh\NSX_Common\obj\Debug\NSX_Common.pdb
+D:\nongsanxanh\NSX_Common\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.Helpers.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.Mvc.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.Razor.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.WebPages.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.WebPages.Razor.dll
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.Helpers.xml
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.Mvc.xml
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.Razor.xml
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.WebPages.xml
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\nongsanxanh\NSX_Common\bin\Debug\System.Web.WebPages.Razor.xml

@@ -1,0 +1,58 @@
+﻿@using Bussiness.ViewModel
+ <div class="btn btn-view  pull-right">
+    <span class="mdi mdi-account mdi-24px"></span>
+     <ul class="user-detail">
+         @{
+             if (Session["isLoginClient"] !=null)
+             {
+                 if ((bool)Session["isLoginClient"])
+                 {
+                     AccountViewModel acc = Session["AccountClient"] as AccountViewModel;
+                      <li><a href="/AccountInfo/@acc.Id">Tài khoản</a></li>
+                     <li style="border-bottom: none;"><a href="" id="btnLogout"> Đăng xuất</a></li>
+                 }
+                 else
+                 {
+                     <li><a id="btnOpenLogin" href="#" data-toggle="modal" data-target="#accountModal" data-backdrop="static" data-keyboard="false">Đăng nhập</a></li>
+                     <li><a href="">Đăng ký</a></li>
+                 }
+             }
+             else
+             {
+                 <li><a id="btnOpenLogin" href="#" data-toggle="modal" data-target="#accountModal" data-backdrop="static" data-keyboard="false">Đăng nhập</a></li>
+                 <li><a href="">Đăng ký</a></li>
+             }  
+         }
+        
+     </ul>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(document).on("click",
+            "#btnOpenLogin",
+            function() {
+                $.ajax({
+                    url: '/Home/LoadFormLogin',
+                    type: "POST",
+                    data: { },
+                    success: function (result) {
+                        $("#detail-account").html(result);
+                    }
+                });
+            });
+
+        $(document).on("click",
+            "#btnLogout",
+            function() {
+                $.ajax({
+                    url: '/Home/doLogout',
+                    type: "POST",
+                    data: { },
+                    success: function (result) {
+                        window.location.href = "/Home";
+                    }
+                });
+            });
+    })
+</script>

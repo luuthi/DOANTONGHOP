@@ -1,0 +1,22 @@
+﻿@using Bussiness.ViewModel;
+@using Bussiness.Implement;
+@using NSX_Common;
+@{
+    List<NewsViewModel> lst = new List<NewsViewModel>();
+    NewsService newsService = new NewsService();
+    lst = newsService.GetAllNews().Where(m => m.Category.Contains(CategoryNew.Outstanding.ToString())).ToList();
+    <div class="hot-news">
+        <h4 class="title-hot">Tin nổi bật</h4>
+        <ul class="list-hot-news">
+            @foreach (var item in lst)
+            {
+            <li class="clearfix">
+                <a href="" class="col-sm-4"><img src="~/Images/images/tin-tuc/@item.Image"></a>
+                <a href="news-details" style="font-weight:bold" class="col-sm-8">@item.Title</a>
+            </li>
+            }
+        </ul>
+    </div>
+
+}
+

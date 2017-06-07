@@ -25,6 +25,12 @@ namespace Bussiness.Implement
             return lst;
         }
 
+        public List<ProductAttributeViewModel> GetAllProducAttributebySP(Guid masanpham)
+        {
+            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("LoadAttr", "@Id", masanpham);
+            var lst = Ultis.DataTableToList<ProductAttributeViewModel>(dtb);
+            return lst;
+        }
         public ProductAttributeViewModel GetProductAttributeById(Guid Id)
         {
             DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Product_AttributeSelectByID", "@Id", Id);

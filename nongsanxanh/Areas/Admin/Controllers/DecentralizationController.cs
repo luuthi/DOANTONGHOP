@@ -7,6 +7,9 @@ using System.Web.Management;
 using System.Web.Mvc;
 using Bussiness.Interface;
 using Bussiness.ViewModel;
+using System.Reflection;
+using System.ComponentModel;
+using NSX_Common;
 
 namespace nongsanxanh.Areas.Admin.Controllers
 {
@@ -39,27 +42,50 @@ namespace nongsanxanh.Areas.Admin.Controllers
                 {
                     s = String.Empty;
                 }
-                LoadQuyen(item.GroupCode,s);
+                LoadQuyenEnum(item.GroupCode,s);
             }
             return View(viewModel);
         }
-
-        private void LoadQuyen(string group, string role)
+        public static string GetDescriptionFromEnumValue(Enum value)
         {
-            var units = _iRoleService.GetAllRole();
+            DescriptionAttribute attribute = value.GetType()
+                .GetField(value.ToString())
+                .GetCustomAttributes(typeof(DescriptionAttribute), false)
+                .SingleOrDefault() as DescriptionAttribute;
+            return attribute == null ? value.ToString() : attribute.Description;
+        }
+        private void LoadQuyenEnum(string group, string role)
+        {
+            var lstEnum = Enum.GetValues(typeof(RightAdmin)).Cast<RightAdmin>().ToList();
             var lst = new List<SelectListItem>();
-           
-            units.ForEach(m =>
+
+            foreach (var item in lstEnum)
             {
                 lst.Add(new SelectListItem
                 {
-                    Value = m.Code.ToString(),
-                    Text = m.Role,
-                    Selected = role.Contains(m.Code.ToString())
+                    Value = item.ToString(),
+                    Text = GetDescriptionFromEnumValue((RightAdmin)item),
+                    Selected = role.Contains(item.ToString())
                 });
-            });
-            ViewData["RightAdmin"+group] = lst;
+            }
+            ViewData["RightAdmin" + group] = lst;
         }
+        //private void LoadQuyen(string group, string role)
+        //{
+        //    var units = _iRoleService.GetAllRole();
+        //    var lst = new List<SelectListItem>();
+           
+        //    units.ForEach(m =>
+        //    {
+        //        lst.Add(new SelectListItem
+        //        {
+        //            Value = m.Code.ToString(),
+        //            Text = m.Role,
+        //            Selected = role.Contains(m.Code.ToString())
+        //        });
+        //    });
+        //    ViewData["RightAdmin"+group] = lst;
+        //}
         [System.Web.Mvc.HttpPost]
         public JsonResult Delete()
         {

@@ -1,0 +1,56 @@
+﻿@model List<Bussiness.ViewModel.ProductViewModel>
+
+<script src="~/Scripts/js-frontend/shoppingcart.js"></script>
+<div class="best-sell">
+    <div class=" body-sell">
+        <div class="row">
+            <div class=" title-sell">
+                <div><h2>Sản phẩm mới</h2></div>
+            </div>
+            <div class="img-sell visible-md visible-lg" style="float: left;">
+                <img src="~/Images/images/he-thong/category-banner.jpg">
+            </div>
+            <div id="best-sell">
+                <div class="slider-sell">
+                    <div class="owl-carousel owl-theme" style="display:block;">
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <div class="owl-item">
+                                        <div class="item">
+                                            <div class="sell-img">
+                                                <div class="sell-inner">
+                                                    <a href="/Products/@item.GroupName/@item.Id">
+                                                        <img src="~/Images/images/san-pham/@item.Image" class="img-responsive">
+                                                    </a>
+                                                    <div class="new-item">New</div>
+                                                    <div class="details-item">
+                                                        <a href="/Products/@item.GroupName/@item.Id" class="pro-details">
+                                                            <span class="mdi mdi-18px mdi-magnify visible-md visible-lg visible-sm">Chi tiết sản phẩm</span>
+                                                            <span class="mdi mdi-18px mdi-magnify visible-xs fl-left"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="pro-cart  add-shopping" data-id ="@item.Id">
+                                                            <span class="mdi mdi-18px mdi-shopping visible-md visible-lg  visible-sm">  Thêm vào giỏ hàng</span>
+                                                            <span class="mdi mdi-18px mdi-shopping visible-xs fl-right"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="sell-info text-center">
+                                                    <h5>@item.ProductName</h5>
+                                                    <span><strong><i>@item.Price</i></strong></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

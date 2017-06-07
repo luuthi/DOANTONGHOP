@@ -10,7 +10,7 @@ using NSX_Common;
 
 namespace Bussiness.Implement
 {
-    class ProductAttributeValueService : Interface.ProductAttributeValueService
+    public class ProductAttributeValueService : Interface.IProductAttributeValueService
     {
         public void DeleteProductAttributeValue(Guid Id)
         {
@@ -26,7 +26,7 @@ namespace Bussiness.Implement
 
         public ProductAttributeValueViewModel GetProductAttributeValueById(Guid Id)
         {
-            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Product_Attribute_ValueSelectByProId", "@Id", Id);
+            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Product_Attribute_ValueSelectByID", "@Id", Id);
             ProductAttributeValueViewModel role = new ProductAttributeValueViewModel();
             foreach (DataRow item in dtb.Rows)
             {
@@ -37,7 +37,7 @@ namespace Bussiness.Implement
 
         public List<ProductAttributeValueViewModel> GetProductAttributeValueByProId(Guid Id)
         {
-            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Product_Attribute_ValueSelectByID", "@Id", Id);
+            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Product_Attribute_ValueSelectByProId", "@Id", Id);
             var lst = Ultis.DataTableToList<ProductAttributeValueViewModel>(dtb);
             return lst;
         }
@@ -46,8 +46,8 @@ namespace Bussiness.Implement
         {
            SqlDb_Ultis.ExeNonStored("Product_Attribute_ValueInsert",
                "@Id", viewModel.Id,
-               "@ProductId", viewModel.AttributeId,
-               "@AttributeId", viewModel.ProductId,
+               "@ProductId", viewModel.ProductId,
+               "@AttributeId", viewModel.AttributeId,
                "@Value", viewModel.Value);
         }
 

@@ -1,0 +1,43 @@
+﻿
+@model List<Bussiness.ViewModel.ShoppingCartViewModel>
+
+
+    <span class="mdi mdi-cart  mdi-24px"></span>
+    <span class="count">@Model.Count</span>
+    @{
+        if (Model.Count>0)
+        {
+            decimal total = 0;
+            foreach (var item in Model)
+            {
+
+                total += (decimal)item.Price*item.Quantity;
+            }
+            <div class="cart-detail">
+                <div class="items-total">
+                    <h4> @Model.Count items - <span>@total.ToString("##,###") VND</span></h4>
+                </div>
+                <ul class="items-selected">
+                    @{
+                        foreach (var i in Model)
+                        {
+                            <li class="clearfix">
+                                <a href="#" class=""><img src="~/Images/images/san-pham/@i.Image"></a>
+                                <div class="prices">
+                                    <strong>@i.Quantity</strong>x
+                                    <span>@i.Price.ToString("##,###") đ</span>
+                                    <h4>@i.ProductName</h4>
+                                </div>
+
+                            </li>
+                        }
+                    }
+
+                </ul>
+                <div class="check-out">
+                    <h5><span class="mdi mdi-feather"></span> Check out</h5>
+                </div>
+            </div>
+
+                        }
+    }

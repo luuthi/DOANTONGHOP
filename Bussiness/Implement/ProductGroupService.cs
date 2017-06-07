@@ -46,7 +46,8 @@ namespace Bussiness.Implement
                  "@Creator", viewModel.Creator,
                  "@CreatedDate", viewModel.CreatedDate,
                  "@Modifier", viewModel.Modifier,
-                 "@ModifyDate", viewModel.ModifyDate);
+                 "@ModifyDate", viewModel.ModifyDate,
+                 "@Url",viewModel.Url);
         }
 
         public void UpdateProductGroup(ProductGroupViewModel viewModel)
@@ -57,7 +58,8 @@ namespace Bussiness.Implement
                 "@Description", viewModel.Description,
                 "@Status", viewModel.Status,
                 "@Modifier", viewModel.Modifier,
-                "@ModifyDate", viewModel.ModifyDate);
+                "@ModifyDate", viewModel.ModifyDate,
+                 "@Url", viewModel.Url);
         }
     }
 }

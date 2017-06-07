@@ -1,0 +1,153 @@
+﻿@model Bussiness.ViewModel.AccountViewModel
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="title-header">
+                <span>Thông tin tài khoản</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page-header -->
+<main>
+    <div class="current-page">
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="">Trang Chủ</a></li>
+                <li>/</li>
+                <li>Thông tin cá nhân</li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9">
+                    <div class="info-acount clearfix">
+                        <div class="title-info-acount">
+                            <h1>Thông tin cá nhân</h1>
+                        </div>
+                        <div class="acount-detail clearfix">
+                            <table class="col-md-12 table-bordered">
+                                <tr class="active">
+                                    <td width="40%">Họ và tên :</td>
+                                    <td>@Model.FullName</td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td>@Model.Email</td>
+                                </tr>
+                                <tr class="active">
+                                    <td>Số điện thoại: </td>
+                                    <td>@Model.PhoneNumber</td>
+                                </tr>
+                                <tr>
+                                    <td>Tên tài khoản</td>
+                                    <td>@Model.UserName</td>
+                                </tr>
+                                <tr class="active">
+                                    <td>Hình đại diện:</td>
+                                    <td><img class="img-responsive" width="100" src="~/Images/images/user-logo/@Model.Image" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Mật khẩu</td>
+                                    <td><a id="btnDoiMK" style="cursor: pointer">Đổi mật khẩu</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <a class="btn btn-primary" id="btnSuaTK" href="/AccountInfo/Edit/@Model.Id"><span class="mdi mdi-account-edit"></span>Chỉnh sửa thông tin</a>
+                                        <a href="#" class="btn btn-warning" id="btnLichSu"><span class="mdi mdi-shopping"></span>Lịch sử mua hàng</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-change-pass hide">
+                            @using (Html.BeginForm("Change", "AccountInfo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <table>
+                                    <tr>
+                                        <td>Mật khẩu cũ :</td>
+                                        <td><input type="password" id="old_pass" name="old_pass" class="form-control" />
+                                        @Html.HiddenFor(m=>m.UserName)</td>
+                                        <td><label class="field-validation-error" id="old_pass_label"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mật khẩu mới: </td>
+                                        <td><input type="password" id="new_pass" name="new_pass" class="form-control" /></td>
+                                        <td><label class="field-validation-error" id="new_pass_label"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nhập lại mật khẩu mới: </td>
+                                        <td><input type="password" id="re_new_pass" name="re_new_pass" class="form-control" /></td>
+                                        <td><label class="field-validation-error" id="re_new_pass_label"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <input type="submit" class="btn btn-primary" id="btnChange" value="Lưu lại" disabled="disabled">
+                                            <a type="button" class="btn btn-warning" id="btnCancel">Hủy</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3">
+                    <div class="widget">
+                        @Html.Partial("_parDanhMucTin")
+                        @Html.Partial("_parHotNewRight")
+                        <div class="fanpage">
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fquapho.net%2F&tabs=S%E1%BB%B1%20ki%E1%BB%87n&width=255px&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="255px" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    $(document).ready(function () {
+        $("#btnDoiMK").click(function () {
+            $(".tab-change-pass").removeClass("hide");
+        });
+        $("#btnCancel").click(function () {
+            $(".tab-change-pass").addClass("hide");
+        });
+    })
+    var check = function () {
+        debugger;
+        var old = $("#old_pass").val();
+        if (old !== "") {
+            $("#old_pass_label").val("");
+            var new_pass = $("#new_pass").val();
+            if (new_pass !== "") {
+                $("#new_pass_label").val("");
+                var renew = $("#re_new_pass").val();
+                if (new_pass !== renew) {
+                    $("#re_new_pass_label").html("Mật khẩu chưa trùng nhau");
+                } else {
+                    $("#re_new_pass_label").html("");
+                    $("#btnChange").removeAttr("disabled");
+                }
+            }
+        }
+    }
+    $("#old_pass").blur(function() {
+        check();
+        var username = $("#UserName").val();
+        var pass = $("#old_pass").val();
+        $.ajax({
+            url: '/AccountInfo/Check',
+            type: "POST",
+            data: { UserName: username, Password: pass },
+            success: function(r) {
+                if (r.Status == false) {
+                    $("#old_pass_label").val("Mật khẩu chưa chính xác");
+                }
+            }
+        });
+    });
+    $("#new_pass").blur(check);
+    $("#re_new_pass").blur(check);
+</script>

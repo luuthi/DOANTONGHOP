@@ -18,6 +18,10 @@ namespace Bussiness.Implement
             SqlDb_Ultis.ExeNonStored("Tbl_ProductDelete", "@Id", Id);
         }
 
+        public void DeleteProduct_del(Guid Id)
+        {
+            SqlDb_Ultis.ExeNonStored("Tbl_ProductDelete_del", "@Id", Id);
+        }
         public List<ProductViewModel> GetAllProduct()
         {
             DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_ProductSelectAll");

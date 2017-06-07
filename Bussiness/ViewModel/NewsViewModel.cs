@@ -34,7 +34,7 @@ namespace Bussiness.ViewModel
 
         [DisplayName("Loại tin tức")]
         public string Category { get; set; }
-        public int[] EnumCategory { get; set; }
+        public string[] EnumCategory { get; set; }
 
         [DisplayName("Có thể bình luận")]
         public bool CanComment { get; set; }

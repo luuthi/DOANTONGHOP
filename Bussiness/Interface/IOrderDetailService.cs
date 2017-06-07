@@ -13,5 +13,6 @@ namespace Bussiness.Interface
         OrderDetailViewModel GetOrderEtailById(Guid id);
         void InsertOrderDetail(OrderDetailViewModel viewModel);
         void UpdateOrderDetail(OrderDetailViewModel viewModel);
+        int GetOrderDetailByProduct(Guid id);
     }
 }

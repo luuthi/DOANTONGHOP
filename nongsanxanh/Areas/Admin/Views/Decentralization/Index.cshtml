@@ -59,7 +59,6 @@
             });
             $('#tbl_right > tbody  > tr')
                 .each(function () {
-                    debugger;
                     var GroupAccId = $('td:first', this).attr("data-id");
                     var arr = $('td:nth-child(2)#' + GroupAccId + ' > #RightAdmin'+GroupAccId).val();
                     if (window.FormData !== undefined) {

@@ -1,0 +1,32 @@
+﻿@model List<Bussiness.ViewModel.NewsViewModel>
+<div class="blog">
+    <div>
+        <div class="title-blog text-center"><span>Tin mới nhất</span></div>
+        @{
+            if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="col-xs-12 col-md-4 blog-read">
+                        <div class="blog-inner">
+                            <div class="blog-img">
+                                <a href="#">
+                                    <img src="~/Images/images/tin-tuc/@item.Image" class="img-responsive">
+                                </a>
+                                <div class="read-hover">
+                                    <span class="read-more">Đọc thêm</span>
+                                </div>
+                                <div class="date-up">@item.PostedDate.ToShortDateString()</div>
+                            </div>
+                            <div class="blog-info">
+                                <a href="#"><h3>@item.Title</h3></a>
+                                <p>@item.Description...</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>

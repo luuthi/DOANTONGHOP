@@ -1,0 +1,155 @@
+﻿@using System.Text.RegularExpressions
+@using Bussiness.Implement
+@using Bussiness.ViewModel
+@using NSX_Common
+@model Bussiness.ViewModel.ProductViewModel
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="title-header">
+                <span>Chi tiết sản phẩm</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page-header -->
+
+<main>
+    <div class="container">
+        <div class="wrapper-content">
+            <div class="row">
+                <div class="col-md-4">
+                    @{
+                        Regex reImg = new Regex(@"<img\s[^>]*>", RegexOptions.IgnoreCase);
+                        //Ultis.GetImageUrlInString(item["AlbumNews"].ToString());
+                        string test = Model.Gallery;
+                        Regex reSrc = new Regex(@"src=(?:(['""])(?<src>(?:(?!\1).)*)\1|(?<src>\S+))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                        Regex reAlt = new Regex(@"alt=(?:(['""])(?<alt>(?:(?!\1).)*)\1|(?<alt>\S+))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                        MatchCollection mc = reImg.Matches(test);
+                    }
+
+                    <div class="sp-loading">
+                        <img src="~/Images/images/san-pham/@Model.Image" class="img-responsive" alt=""><br>
+                        Đang tải ảnh...
+                    </div>
+                    <div class="sp-wrap">
+                        @foreach (Match mImg in mc)
+                        {
+                            Match mSrc = reSrc.Match(mImg.ToString());
+                            string src = mSrc.Groups["src"].Value;
+                            Match mAlt = reAlt.Match(mImg.ToString());
+                            string alt = mAlt.Groups["alt"].Value;
+                            <a href="@src">
+                                <img src="@src" alt="@alt">
+                            </a>
+                        }
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-8">
+                    <div class="info-pro-details">
+                        <h1 class="title-pro-details">@Model.ProductName</h1>
+                        <div class="prices-pro">
+                            @Extentions.ToCurrencyString(Convert.ToInt32((@Model.Price))) VNĐ
+                        </div>
+                        <div class="judge-pro">
+                            <span>Đơn vị: @Model.Unit</span>
+                        </div>
+                        <div class="quick-overview">
+                            <h4 class="title-overview">Tổng quan</h4>
+                            <p class="content-overview">@Model.Description.</p>
+                        </div>
+                        <div class="interative clearfix">
+                            <div class="count-pro fl-left">
+                                <i class="mdi mdi-plus"></i>
+                                <input type="text" class="count" id="quantity" value="0" style="width: 50px;
+                                      text-align: center"/>
+                                <i class="mdi mdi-minus"></i>
+                            </div>
+                            <div class="add-to-cart fl-right add-shopping">
+                                <span class="mdi mdi-cart"></span>
+                                <span class="add">Thêm vào giỏ hàng</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="cls-tab-info">
+                        <ul class="nav nav-tabs" id="tab-product">
+                            <li class="active">
+                                <a href="#tabOverview" data-toggle="tab">Thông tin tổng quan</a>
+                            </li>
+                            <li>
+                                <a href="#tabDetail" data-toggle="tab">Chi tiết chỉ số</a>
+                            </li>
+                            <li>
+                                <a href="#tabComment" data-toggle="tab">Nhận xét</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" style="border: none; padding: 10px 0; border-top: none;" id="tabpane-product">
+                        <div class="tab-pane fade in active" id="tabOverview">
+                            @Html.Raw(Model.DetailInfo)
+                        </div>
+
+                        <div class="tab-pane fade" id="tabDetail">
+                            <table class="table table-responsive table-condensed table-striped ">
+                                @{
+
+                                    ProductAttributeValueService ser = new ProductAttributeValueService();
+                                    var lstAttr = ser.GetProductAttributeValueByProId(@Model.Id);
+                                    foreach (var item in lstAttr)
+                                    {
+                                        <tr>
+                                            <td width="30%" style="font-weight: bold">@item.AttributeName</td>
+                                            <td>@item.Value</td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+                        </div>
+                        <div class="tab-pane fade Reviews" id="tabComment">
+                            @Html.Partial("_parComment")
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+                    <div class="widget">
+                        @Html.Partial("_parDanhMucSP")
+
+                        <div class="fanpage">
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fquapho.net%2F&tabs=S%E1%BB%B1%20ki%E1%BB%87n&width=255px&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="255px" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @{
+                    List<ProductViewModel> lst = new List<ProductViewModel>();
+                    ProductService _iProductService = new ProductService();
+                    var data = _iProductService.GetAllProduct().Where(m => m.Category.Contains(CategoryNew.Outstanding.ToString())).ToList();
+                    foreach (var item in data)
+                    {
+                        ProductViewModel pro = new ProductViewModel();
+                        pro.Id = item.Id;
+                        pro.GroupName = Extentions.ToUnsignLinkString(item.GroupName);
+                        pro.Image = item.Image;
+                        pro.ProductName = item.ProductName;
+                        lst.Add(pro);
+                    }
+                }
+                @Html.Partial("_sanphamtieubieu", lst)
+            </div>
+        </div>
+    </div>
+
+</main>

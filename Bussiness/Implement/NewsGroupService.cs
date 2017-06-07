@@ -15,7 +15,7 @@ namespace Bussiness.Implement
     {
         public void DeleteNewsGroup(Guid Id)
         {
-            SqlDb_Ultis.ExeNonStored("Tbl_NewsGroupDelete","@Id",Id);
+            SqlDb_Ultis.ExeNonStored("Tbl_NewsGroupDelete", "@Id", Id);
         }
 
         public List<NewsGroupViewModel> GetAllNewsGroup()
@@ -46,7 +46,8 @@ namespace Bussiness.Implement
                 "@Creator", viewModel.Creator,
                 "@CreatedDate", viewModel.CreatedDate,
                 "@Modifier", viewModel.Modifier,
-                "@ModifyDate", viewModel.ModifyDate);
+                "@ModifyDate", viewModel.ModifyDate,
+                "@Url", viewModel.Url);
         }
 
         public void UpdateNewsGroup(NewsGroupViewModel viewModel)
@@ -57,7 +58,8 @@ namespace Bussiness.Implement
                  "@Description", viewModel.Description,
                  "@Status", viewModel.Status,
                  "@Modifier", viewModel.Modifier,
-                 "@ModifyDate", viewModel.ModifyDate);
+                 "@ModifyDate", viewModel.ModifyDate,
+                "@Url", viewModel.Url);
         }
     }
 }

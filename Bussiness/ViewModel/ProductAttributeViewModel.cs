@@ -16,5 +16,8 @@ namespace Bussiness.ViewModel
 
         [DisplayName("Loại thuộc tính")]
         public string AttributeType { get; set; }
+        public string Value { get; set; }
+        public Guid ProductId { get; set; }
+        public int stt { get; set; }
     }
 }

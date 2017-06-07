@@ -1,0 +1,21 @@
+﻿@using Bussiness.ViewModel;
+@using Bussiness.Implement;
+@using NSX_Common;
+<script src="~/Scripts/js-frontend/danhmuctintuc.js"></script>
+@{
+    List<NewsGroupViewModel> lst = new List<NewsGroupViewModel>();
+    NewsGroupService _iNewsService = new NewsGroupService();
+    lst = _iNewsService.GetAllNewsGroup();
+    <div class="category">
+        <h4 class="title-cate">Danh mục tin tức</h4>
+        <ul class="list-cate">
+            @foreach (var item in lst)
+            {
+                <li>
+                    <a data-url="@Extentions.ToUnsignLinkString(@item.NameGroup)" data-id="@item.Id" id="@item.Id" href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)" style="font-weight: bold">@item.NameGroup</a>
+                </li>
+            }
+        </ul>
+    </div>
+}
+

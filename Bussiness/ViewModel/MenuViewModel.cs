@@ -15,11 +15,17 @@ namespace Bussiness.ViewModel
 
         [DisplayName("Thứ tự")]
         public int Order { get; set; }
+
         [DisplayName("Menu cha")]
         public Guid ParrentId { get; set; }
+
         public List<SelectListItem> lstParentMenu { get; set; }
         public string Title_Parent { get; set; }
+
         [DisplayName("Tình trạng")]
         public bool Status { get; set; }
+
+        [DisplayName("Link")]
+        public string Link { get; set; }
     }
 }

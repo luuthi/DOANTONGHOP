@@ -44,7 +44,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="/Admin/AccountGroup"><i class="mdi mdi-account-multiple"></i> Quản lý nhóm người dùng</a></li>
                                 <li><a href="/Admin/AccountMng"><i class="mdi mdi-account"></i> Quản lý người dùng</a></li>
-                                <li><a href="/Admin/RoleMng"><i class="mdi mdi-seal"></i> Quản lý quyền quản trị</a></li>
+                                @*<li><a href="/Admin/RoleMng"><i class="mdi mdi-seal"></i> Quản lý quyền quản trị</a></li>*@
                                 <li><a href="/Admin/Decentralization"><i class="mdi mdi-account-network"></i> Quản lý phân quyền</a></li>
 
                             </ul>
@@ -131,7 +131,7 @@
                     }
                 }
             }
-            @{
+            @*@{
                 if (Session["Role"] != null)
                 {
                     if (Session["Role"].ToString().Contains(RightAdmin.Menu.ToString()))
@@ -145,7 +145,7 @@
                         </li>
                     }
                 }
-            }
+            }*@
             @{
                 if (Session["Role"] != null)
                 {

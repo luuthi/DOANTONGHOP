@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Bussiness.Interface;
 using Bussiness.ViewModel;
+using NSX_Common;
 
 namespace nongsanxanh.Areas.Admin.Controllers
 {
@@ -52,6 +53,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
                     viewModel.Creator = account.UserName;
                     viewModel.ModifyDate = DateTime.Now;
                     viewModel.Modifier = account.UserName;
+                    viewModel.Url = Extentions.ToUnsignLinkString(viewModel.GroupName);
                     _iProductGroupService.InsertProductGroup(viewModel);
                     return RedirectToAction("Index");
                 }
@@ -89,6 +91,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
                     viewModel.Description = viewModel.Description ?? String.Empty;
                     viewModel.ModifyDate = DateTime.Now;
                     viewModel.Modifier = account.UserName;
+                    viewModel.Url = Extentions.ToUnsignLinkString(viewModel.GroupName);
                     _iProductGroupService.UpdateProductGroup(viewModel);
                     return RedirectToAction("Index");
                 }
