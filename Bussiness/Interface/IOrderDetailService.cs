@@ -10,7 +10,7 @@ namespace Bussiness.Interface
     public interface IOrderDetailService
     {
         List<OrderDetailViewModel> GetOrderDetailByOrder(Guid id);
-        OrderDetailViewModel GetOrderEtailById(Guid id);
+        OrderDetailViewModel GetOrderEtailById(Guid proid, Guid oid);
         void InsertOrderDetail(OrderDetailViewModel viewModel);
         void UpdateOrderDetail(OrderDetailViewModel viewModel);
         int GetOrderDetailByProduct(Guid id);

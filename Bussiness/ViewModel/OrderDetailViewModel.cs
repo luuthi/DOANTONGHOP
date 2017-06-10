@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bussiness.ViewModel
 {
-    public class OrderDetailViewModel:BaseViewModel
+    public class OrderDetailViewModel
     {
         [DisplayName("Mã đơn hàng")]
         public Guid  OrderId { get; set; }
@@ -24,8 +24,10 @@ namespace Bussiness.ViewModel
 
         [DisplayName("Thành tiền")]
         public decimal Total { get; set; }
+
         [DisplayName("Đơn giá")]
         public decimal Price { get; set; }
+
         [DisplayName("Ghi chú")]
         public string Notes { get; set; }
     }

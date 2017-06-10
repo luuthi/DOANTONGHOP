@@ -12,13 +12,13 @@ namespace Bussiness.ViewModel
 {
     public class ProductViewModel:BaseViewModel
     {
-        [DisplayName("Nhóm sản phẩm")]
+        [DisplayName("Nhóm sản phẩm *")]
         [Required(ErrorMessage = "Nhập nhóm sản phẩm")]
         public Guid GroupId { get; set; }
         public string GroupName { get; set; }
         public List<SelectListItem> lstGroup { get; set; }
 
-        [DisplayName("Tên sản phẩm")]
+        [DisplayName("Tên sản phẩm *")]
         [Required(ErrorMessage = "Nhập tên sản phẩm")]
         public string  ProductName { get; set; }
 
@@ -27,7 +27,7 @@ namespace Bussiness.ViewModel
 
         public string Price_Format { get; set; }
 
-        [DisplayName("Đơn vị tính")]
+        [DisplayName("Đơn vị tính *")]
         [Required(ErrorMessage = "Nhập đơn vị tính")]
         public string Unit { get; set; }
 
@@ -57,6 +57,10 @@ namespace Bussiness.ViewModel
 
         [DisplayName("Album ảnh")]
         public string Gallery { get; set; }
+
+        [DisplayName("Số lượng trong kho *")]
+        [Required(ErrorMessage = "Nhập số lượng sản phẩm")]
+        public long Quantity { get; set; }
 
         [DisplayName("Người tạo")]
         public string Creator { get; set; }

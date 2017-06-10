@@ -47,7 +47,8 @@ namespace Bussiness.Implement
             SqlDb_Ultis.ExeNonStored("Product_AttributeInsert",
                 "@Id", viewModel.Id,
                 "@AttributeName", viewModel.AttributeName,
-                "@AttributeType", viewModel.AttributeType);
+                "@AttributeType", viewModel.AttributeType,
+                "@Status",viewModel.Status);
         }
 
         public void UpdateProductAttribute(ProductAttributeViewModel viewModel)
@@ -55,7 +56,8 @@ namespace Bussiness.Implement
             SqlDb_Ultis.ExeNonStored("Product_AttributeUpDate",
                 "@Id", viewModel.Id,
                 "@AttributeName", viewModel.AttributeName,
-                "@AttributeType", viewModel.AttributeType);
+                "@AttributeType", viewModel.AttributeType,
+                "@Status", viewModel.Status);
         }
     }
 }

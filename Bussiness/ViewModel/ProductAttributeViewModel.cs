@@ -13,6 +13,7 @@ namespace Bussiness.ViewModel
         [DisplayName("Tên thuộc tính")]
         [Required(ErrorMessage = "Nhập tên thuộc tính")]
         public string AttributeName { get; set; }
+        public bool Status { get; set; }
 
         [DisplayName("Loại thuộc tính")]
         public string AttributeType { get; set; }

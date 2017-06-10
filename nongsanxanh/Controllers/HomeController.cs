@@ -85,6 +85,7 @@ namespace nongsanxanh.Controllers
                 news.Image = item.Image;
                 news.Description = item.Description;
                 news.Id = item.Id;
+                news.NameGroup = item.NameGroup;
                 news.PostedDate = item.PostedDate;
                 lst.Add(news);
             }

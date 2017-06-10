@@ -67,6 +67,11 @@
                         @Html.TextBoxFor(m => m.Vendor, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Vendor)
                     </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Quantity)
+                        @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Quantity)
+                    </div>
                     <div class="form-group text-center">
                         @Html.TextBoxFor(m => m.Image, new { @class = "hide" })
                         <img src="~/Images/images/san-pham/@Model.Image" class="img-responsive  " id="Image1" width="450" height="300" />

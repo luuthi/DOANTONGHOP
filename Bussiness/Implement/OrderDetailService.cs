@@ -25,9 +25,9 @@ namespace Bussiness.Implement
            return  SqlDb_Ultis.ExeStoredGetInt("Tbl_OrderDetailSelectByProduct", "@Id", id);
 
         }
-        public OrderDetailViewModel GetOrderEtailById(Guid id)
+        public OrderDetailViewModel GetOrderEtailById(Guid proid,Guid oid)
         {
-            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_OrderDetailSelectByID", "@Id", id);
+            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_OrderDetailSelectByID", "@ProductId", proid,"@OrderID",oid);
             OrderDetailViewModel role = new OrderDetailViewModel();
             foreach (DataRow item in dtb.Rows)
             {
@@ -39,23 +39,23 @@ namespace Bussiness.Implement
         public void InsertOrderDetail(OrderDetailViewModel viewModel)
         {
             SqlDb_Ultis.ExeNonStored("Tbl_OrderDetailInsert",
-                "@Id", viewModel.Id,
                 "@OrderId", viewModel.OrderId,
                 "@ProductId", viewModel.ProductId,
                 "@Amount", viewModel.Amount,
                 "@Total", viewModel.Total,
-                "@Notes", viewModel.Notes);
+                "@Notes", viewModel.Notes,
+                "@Price",viewModel.Price);
         }
 
         public void UpdateOrderDetail(OrderDetailViewModel viewModel)
         {
             SqlDb_Ultis.ExeNonStored("Tbl_OrderDetailUpDate",
-                "@Id", viewModel.Id,
                 "@OrderId", viewModel.OrderId,
                 "@ProductId", viewModel.ProductId,
                 "@Amount", viewModel.Amount,
                 "@Total", viewModel.Total,
-                "@Notes", viewModel.Notes);
+                "@Notes", viewModel.Notes,
+                "@Price", viewModel.Price);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿@model List<Bussiness.ViewModel.NewsViewModel>
+﻿@using NSX_Common
+@model List<Bussiness.ViewModel.NewsViewModel>
 <div class="blog">
     <div>
         <div class="title-blog text-center"><span>Tin mới nhất</span></div>
@@ -7,19 +8,19 @@
             {
                 foreach (var item in Model)
                 {
-                    <div class="col-xs-12 col-md-4 blog-read">
+                    <div class="col-xs-12 col-sm-4 col-md-4 blog-read">
                         <div class="blog-inner">
                             <div class="blog-img">
-                                <a href="#">
-                                    <img src="~/Images/images/tin-tuc/@item.Image" class="img-responsive">
+                                <a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)/@item.Id">
+                                    <img src="~/Images/images/tin-tuc/@item.Image" class="img-responsive" style="height: 190px">
                                 </a>
                                 <div class="read-hover">
-                                    <span class="read-more">Đọc thêm</span>
+                                    <a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)/@item.Id" class="read-more">Đọc thêm</a>
                                 </div>
                                 <div class="date-up">@item.PostedDate.ToShortDateString()</div>
                             </div>
                             <div class="blog-info">
-                                <a href="#"><h3>@item.Title</h3></a>
+                                <a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)/@item.Id"><h3>@item.Title</h3></a>
                                 <p>@item.Description...</p>
                                 
                             </div>

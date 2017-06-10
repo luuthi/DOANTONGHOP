@@ -10,10 +10,12 @@
         <ul class="list-hot-news">
             @foreach (var item in lst)
             {
-            <li class="clearfix">
-                <a href="" class="col-sm-4"><img src="~/Images/images/tin-tuc/@item.Image"></a>
-                <a href="news-details" style="font-weight:bold" class="col-sm-8">@item.Title</a>
-            </li>
+                <li class="clearfix">
+                    <a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)/@item.Id" class="col-sm-4">
+                        <img src="~/Images/images/tin-tuc/@item.Image">
+                    </a>
+                    <a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)/@item.Id" class="col-sm-8">@item.Title</a>
+                </li>
             }
         </ul>
     </div>

@@ -7,8 +7,9 @@
                 type: "POST",
                 url: '/ShoppingCart/AddProductToCart/',
                 data: { productid: id, soluong: 1 },
-                success: function(r) {
-                    $(".content-header > .navbar > #cart").html(r);
+                success: function (r) {
+                    $(".content-header .navbar  #cart").empty();
+                    $(".content-header .navbar  #cart").append(r.listpro);
                     console.log(r);
                 },
 

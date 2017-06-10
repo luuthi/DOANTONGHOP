@@ -25,13 +25,14 @@ namespace nongsanxanh.Controllers
         // GET: TinTuc
         public ActionResult Index(int? page)
         {
-            int pageSize = 10;
+            int pageSize = 2;
             int pageNumber = (page ?? 1);
-            var data = _iNewsService.GetAllNews().Where(m=>m.Category.Contains(CategoryNew.Outstanding.ToString())).ToList();
+            var data = _iNewsService.GetAllNews().ToList();
             List<NewsViewModel> lstNews =new List<NewsViewModel>();
             foreach (var item in data)
             {
                 NewsViewModel news =new NewsViewModel();
+                news.Id = item.Id;
                 news.Title = item.Title;
                 news.Image = item.Image;
                 news.Description = item.Description;
@@ -44,7 +45,7 @@ namespace nongsanxanh.Controllers
         public ActionResult Group(string catid, int? page)
         {
             var lstGroup = new List<NewsGroupViewModel>();
-            int pageSize = 10;
+            int pageSize = 2;
             int pageNumber = (page ?? 1);
             lstGroup = _iNewsGroupService.GetAllNewsGroup().Where(o => o.Url == catid).ToList();
             List<NewsViewModel> lstNews = new List<NewsViewModel>();
