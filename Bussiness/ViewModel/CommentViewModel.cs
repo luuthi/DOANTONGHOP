@@ -13,19 +13,19 @@ namespace Bussiness.ViewModel
         public string Contents { get; set; }
         [DisplayName("Email")]
         public string EmailComment { get; set; }
-        [DisplayName("Bình luận cha")]
-        public Guid ProductId { get; set; }
         public string Image { get; set; }
         public string FullName { get; set; }
 
         public Guid NewsId { get; set; }
+        public Guid ProductId { get; set; }
         [DisplayName("Tình trạng")]
         public int Status { get; set; }
 
         public string Status_str { get; set; }
-
-        public Guid ParrentId { get; set; }
         public string Reference_str { get; set; }
+
+        [DisplayName("Bình luận cha")]
+        public Guid ParrentId { get; set; }
         
         [DisplayName("Ngày tạo")]
         public DateTime CreatedDate { get; set; }

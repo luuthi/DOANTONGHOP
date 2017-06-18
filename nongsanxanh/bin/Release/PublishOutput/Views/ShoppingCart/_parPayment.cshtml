@@ -1,0 +1,107 @@
+﻿@using Bussiness.ViewModel
+@model Bussiness.ViewModel.LoginViewModel
+<ul class="nav nav-tabs nav-wizard">
+    <li class="active" style="width: 33%;"><a > <span class="mdi mdi-login"></span><b>Đăng nhập</b></a></li>
+    <li style="width: 33%;"><a > <span>2</span><b>Thông tin đơn hàng</b></a></li>
+    <li style="width: 34%;"><a ><span>3</span><b>Hình thức thanh toán</b></a></li>
+</ul>
+
+<div class="tab-content clearfix">
+    <div class="col-md-8 col-sm-8 col-xs-12">
+        <div id="home" class="tab-pane fade in active">
+            <div class="text-center text-warning" style="margin: 10px 20px">**Yêu cầu đăng nhập để tiếp tục thanh toán đơn hàng</div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div class="login-item">
+                <b style="color: red;">Bắt buộc nhập*</b><br>
+                <button class="btn-login" type="submit" id="btnLogin"><span class="fa fa-unlock-alt"> Đăng nhập</span></button>
+                <a href="">Quên mật khẩu?</a>
+            </div>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>Menu 2</h3>
+            <p>Some content in menu 2.</p>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="order">
+            <div class="title">
+                <h4>Đơn hàng (Số sản phẩm)</h4>
+            </div>
+
+            <div class="content">
+                
+                <ul>
+                    @{
+                        List<ShoppingCartViewModel> lst =new List<ShoppingCartViewModel>();
+                        lst = Session["Cart"] as List<ShoppingCartViewModel>;
+                        foreach (var item in lst)
+                        {
+                            <li class="clearfix">
+                                <img src="~/Images/images/san-pham/@item.Image" class="pull-left" alt="" width="60px" height="60px">
+                                <div class="in-product">
+                                    <span>Tên sản phẩm: @item.ProductName</span>
+                                    <b class="text-right" style="margin-left: 50px;">
+                                        Giá tiền: @item.Price
+                                    </b>
+                                    <br>
+                                    <p class="text-right">
+                                        x @item.Quantity <br>
+                                        = @item.SubTotal.ToString("##,###")
+                                    </p>
+                                </div>
+
+                            </li>
+                        }
+                    }
+                    
+                </ul>
+                <div class="sub_price" style="margin: 10px 0px 10px 65px;">
+                    <span>Tổng tiền: </span>
+                    @{
+                        List<ShoppingCartViewModel> lst1 = new List<ShoppingCartViewModel>();
+                        lst1 = Session["Cart"] as List<ShoppingCartViewModel>;
+                        decimal total = 0;
+                        foreach (var item in lst1)
+                        {
+                            total += item.SubTotal;
+                        }
+                        <strong>@total.ToString("##,###")</strong>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $(document).on("click",
+            "#btnLogin",
+            function() {
+                var username = $("#UserName").val();
+                var pass = $("#Password").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/ShoppingCart/LoginAjax/",
+                    data: { UserName: username, Password: pass },
+                    success: function(r) {
+                        $("#processpayment").empty();
+                        $("#processpayment").append(r.Html);
+                    },
+                    error: function(req, status, error) {
+                    }
+                });
+            });
+    })
+</script>

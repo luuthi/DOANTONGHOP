@@ -1,0 +1,219 @@
+﻿@using Bussiness.ViewModel
+@using Bussiness.Implement
+@using NSX_Common;
+@{
+    List<ProductGroupViewModel> lst = new List<ProductGroupViewModel>();
+    ProductGroupService _ProductGroupService = new ProductGroupService();
+    lst = _ProductGroupService.GetAllProductGroup();
+    List<NewsGroupViewModel> lstNew = new List<NewsGroupViewModel>();
+    NewsGroupService _NewGroupService = new NewsGroupService();
+    lstNew = _NewGroupService.GetAllNewsGroup();
+<header>
+    <div class="content-header">
+        <nav class="navbar visible-lg visible-md visible-sm" role="navigation" style="margin-bottom:0">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="/Home" id="">
+                        <img src="~/Images/images/he-thong/logo.png" class="img-responsive" width="80" />
+                    </a>
+                </li>
+                <li><a href="/About">GIỚI THIỆU</a></li>
+                <li class="dropdown">
+                    <a href="/Products" class="dropdown-toggle">SẢN PHẨM <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+
+                        @{
+                           
+                            foreach (var item in lst)
+                            {
+                        <li><a href="/Products/@Extentions.ToUnsignLinkString(@item.GroupName)">@item.GroupName</a></li>
+                            }
+                        }
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/TinTuc" class="dropdown-toggle">TIN TỨC<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        @{
+                           
+                            foreach (var item in lstNew)
+                            {
+                        <li><a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)">@item.NameGroup</a></li>
+                            }
+                        }
+                    </ul>
+                </li>
+                <li><a href="/Contact">LIÊN HỆ</a></li>
+            </ul>
+
+            @Html.Partial("_parViewAccount")
+            <div class="btn btn-cart pull-right" id="cart">
+                @{
+                    if (Session["Cart"] != null)
+                    {
+                @Html.Partial("_parViewCart", Session["Cart"] as List<ShoppingCartViewModel>)
+                    }
+                    else
+                    {
+                @Html.Partial("_parViewCart", new List<ShoppingCartViewModel>())
+                    }
+                }
+            </div>
+        </nav>
+
+
+        <div class="rd-navbar-wrap visible-xs">
+            <nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-sm-stick-up-offset="50px" data-lg-stick-up-offset="150px" class="rd-navbar">
+                <div class="rd-navbar-inner">
+                    <!-- RD Navbar Panel -->
+                    <div class="rd-navbar-panel">
+                        <div class="rd-navbar-panel-canvas"></div>
+
+                        <!-- RD Navbar Toggle -->
+                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                        <!-- END RD Navbar Toggle -->
+                        <!-- RD Navbar Cart Toggle -->
+                        @*<div class="rd-navbar-cart-wrap">
+                            <div class="rd-navbar-cart-floating">
+                                <button class="rd-navbar-cart-toggle"
+                                        data-rd-navbar-toggle=".rd-navbar-cart, .rd-navbar-cart-floating">
+                                    <span class="mdi mdi-cart"></span>
+                                </button>
+                                <a href="#" class="rd-navbar-cart-buy material-icons-card_membership">Go to Checkout</a>
+                            </div>
+                            <div class="rd-navbar-cart">
+                                <ul class="rd-navbar-cart-items">
+                                    <li>
+                                        <div class="rd-navbar-cart-item">
+                                            <div class="rd-navbar-cart-item__left">
+                                                <img src="//lorempixel.com/56/56/technics/1"
+                                                     alt=""
+                                                     class="rd-navbar-cart-item__preview">
+                                            </div>
+
+                                            <div class="rd-navbar-cart-item__body">
+                                                <div class="rd-navbar-cart-item__title">Lorem ipsum dolor sit</div>
+                                                <div class="rd-navbar-cart-item__counter">x3</div>
+                                            </div>
+                                            <a href="#" class="rd-navbar-cart-item__remove material-icons-delete"></a>
+                                        </div>
+                                    </li>
+                                   
+                                </ul>
+                                <a href="#" class="rd-navbar-cart-buy material-icons-card_membership">Go to Checkout</a>
+                            </div>
+                        </div>*@
+                        <!-- END RD Navbar Cart Toggle -->
+                        <!-- RD Navbar Collapse Toggle -->
+                        <button class="rd-navbar-collapse-toggle mdi mdi-cart" data-rd-navbar-toggle=".rd-navbar-collapse">
+                        </button>
+                        
+                        <!-- END RD Navbar Collapse Toggle -->
+                        <!-- RD Navbar Brand -->
+                        <div class="rd-navbar-brand">
+                            @*<img src="~/Images/images/he-thong/logo.png"  alt="" class="img-responsive">*@
+                         
+                        </div>
+                        <!-- END RD Navbar Brand -->
+                    </div>
+                    <!-- END RD Navbar Panel -->
+                </div>
+                <div class="rd-navbar-outer">
+                    <div class="rd-navbar-inner">
+
+
+                        <div class="rd-navbar-subpanel">
+                            <div class="rd-navbar-nav-wrap">
+                                <!-- RD Navbar Nav -->
+                                <ul class="rd-navbar-nav">
+                                    <li class="active">
+                                        <a href="/Home">Trang chủ</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/About">Giới thiệu</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/Products">Sản phẩm</a>
+                                        <!-- RD Navbar Dropdown -->
+                                        <ul class="rd-navbar-dropdown">
+                                            @{
+                                                foreach (var item in lst)
+                                                {
+                                                    <li><a href="/Products/@Extentions.ToUnsignLinkString(@item.GroupName)">@item.GroupName</a></li>
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li class="">
+                                        <a href="/TinTuc">Tin tức</a>
+                                        <!-- RD Navbar Dropdown -->
+                                        <ul class="rd-navbar-dropdown">
+                                            @{
+                           
+                                                foreach (var item in lstNew)
+                                                {
+                                                    <li><a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)">@item.NameGroup</a></li>
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li class="">
+                                        <a href="/About">Liên hệ</a>
+                                    </li>
+                                    @{
+                                        if (Session["isLoginClient"] !=null)
+                                        {
+                                            if ((bool)Session["isLoginClient"])
+                                            {
+                                                AccountViewModel acc = Session["AccountClient"] as AccountViewModel;
+                                                <li><a href="/AccountInfo/@acc.Id">Tài khoản</a></li>
+                                                <li style="border-bottom: none;"><a href="" id="btnLogout"> Đăng xuất</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li class="">
+                                                    <a href="/Login">Đăng nhập</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/Register">Đăng ký</a>
+                                                </li>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <li class="">
+                                                <a href="/Login">Đăng nhập</a>
+                                            </li>
+                                            <li><a href="/Register">Đăng ký</a></li>
+                                        }  
+                                    }
+                                   
+                                </ul>
+                                <!-- END RD Navbar Nav -->
+                            </div>
+
+                            <!-- RD Navbar Search Toggle -->
+                            <div class="rd-navbar-search-wrap">
+                                <button class="rd-navbar-search-toggle mdi mdi-search-web" data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar, .rd-navbar-inner">
+                                </button>
+                                <div class="rd-navbar-search">
+                                    <form action="" method="post">
+                                        <div class="form-group">
+                                            <input id="rd-navbar-search-input" type="text" class="form-control"
+                                                   placeholder="Search">
+                                        </div>
+                                        <button type="submit" class="material-icons-search"></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- END RD Navbar Search Toggle -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+}

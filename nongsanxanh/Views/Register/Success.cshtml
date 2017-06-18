@@ -1,0 +1,39 @@
+﻿@model Bussiness.ViewModel.AccountViewModel
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="title-header">
+                <span>Đăng ký thành công tài khoản</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page-header -->
+<main>
+    <div class="current-page">
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="">Trang Chủ</a></li>
+                <li>/</li>
+                <li>Thông tin cá nhân</li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9">
+                  <span> Bạn đã đăng ký thành công. Bạn vào mail để nhận tin nhắn kích hoạt</span>
+                </div>
+
+                <div class="col-lg-3 col-md-3">
+                    <div class="widget">
+                        @Html.Partial("_parDanhMucTin")
+                        @Html.Partial("_parTinNoiBat")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

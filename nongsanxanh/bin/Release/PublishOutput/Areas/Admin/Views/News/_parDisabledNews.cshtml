@@ -1,0 +1,65 @@
+﻿@model List<Bussiness.ViewModel.NewsViewModel>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Danh sách nhóm tin tức đã bị hủy
+                </h2>
+            </div>
+
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Ảnh</th>
+                        <th>Tiêu đề</th>
+                        <th>Người đăng bài</th>
+                        <th>Mô tả</th>
+                        <th>Thứ tự</th>
+                        <th>Tình trạng</th>
+                        <th>Nhóm tin</th>
+                        <th style="width: 150px">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @{
+                        if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td><img src="~/Images/images/tin-tuc/@item.Image" alt="@item.Title" width="50px" height="50px" class="img-responsive text-center"/> </td>
+                                    <td>@item.Title</td>
+                                    <td>@item.PostAccount - @item.PostedDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Order</td>
+                                    <td>@item.Status</td>
+                                    <td>@item.NameGroup</td>
+                                    <td>
+                                        <a data-id="@item.Id" type="button" class="btn btn-success btn-sm Restore">Khôi phục</a>
+                                        <a data-id="@item.Id" type="button" class="btn btn-danger btn-sm Del">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    }
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="box-footer">
+                <button type="button" class="btn btn-default pull-right " data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+        
+    </div>
+    <!-- /.panel -->
+  
+</div>
+
+

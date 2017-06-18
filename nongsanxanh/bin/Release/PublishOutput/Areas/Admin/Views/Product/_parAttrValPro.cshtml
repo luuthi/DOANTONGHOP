@@ -1,0 +1,63 @@
+﻿@model List<Bussiness.ViewModel.ProductAttributeViewModel>
+<style>
+    .chk_choose {
+        display: block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Danh sách thuộc tính sản phẩm
+                </h2>
+            </div>
+
+            <div class="box-body" style="text-align:center">
+                <input type="hidden" name="ProId" id="ProId" />
+                <h3 id="ProductName"></h3>
+                <table class="table table-bordered table-striped " id="table_attr">
+                    <thead>
+                        <tr>
+                            <th>Chọn</th>
+                            <th>Tên thuộc tính</th>
+                            <th>Giá trị</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+
+                                    <tr data-id="@item.Id">
+                                        @if (@item.stt == 0)
+                                        {
+                                            <td> <input type="checkbox" name="chk_choose" id="@item.Id" class="chk_choose" /></td>
+                                        }
+                                        else if (@item.stt == 1)
+                                        {
+                                            <td> <input type="checkbox" name="chk_choose" id="@item.Id" class="chk_choose" checked /></td>
+                                        }
+
+                                        <td>@item.AttributeName</td>
+                                        <td><input type="text" name="txtValue" id="value-@item.Id" value="@item.Value" class="form-control" /></td>
+                                    </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="box-footer">
+                <button type="button" class="btn btn-default pull-right btnClose" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-success pull-right btnSave" style="margin-right:10px;">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <!-- /.panel -->
+</div>

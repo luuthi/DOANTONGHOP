@@ -14,6 +14,18 @@ namespace nongsanxanh
         {
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{*botdetect}",
+                new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
+            routes.MapRoute(
+                name: "ShoppingCartDetail", // Route name
+                url: "ShoppingCart/DetailShopping/{orderid}", // URL with parameters
+                defaults: new { controller = "ShoppingCart", action = "DetailShopping", orderid = UrlParameter.Optional } // Parameter defaults
+            );
+            routes.MapRoute(
+                name: "ShoppingCart", // Route name
+                url: "ShoppingCart/HistoryShopping/{accountid}", // URL with parameters
+                defaults: new { controller = "ShoppingCart", action = "HistoryShopping", accountid = UrlParameter.Optional } // Parameter defaults
+            );
             routes.MapRoute(
                 name: "AccountInfo", // Route name
                 url: "AccountInfo/{accountid}", // URL with parameters

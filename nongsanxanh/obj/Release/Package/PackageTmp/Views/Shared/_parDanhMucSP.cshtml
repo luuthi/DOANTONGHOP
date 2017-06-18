@@ -1,0 +1,20 @@
+﻿@using Bussiness.ViewModel;
+@using Bussiness.Implement;
+@using NSX_Common;
+<script src="~/Scripts/js-frontend/danhmucsp.js"></script>
+@{
+    List<ProductGroupViewModel> lst = new List<ProductGroupViewModel>();
+    ProductGroupService _productGroupService = new ProductGroupService();
+    lst = _productGroupService.GetAllProductGroup();
+
+    <div class="category ">
+        <h4 class="title-cate">Danh mục sản phẩm</h4>
+        <ul class="list-cate">
+            @foreach (var item in lst)
+            {
+                <li><a data-url="@Extentions.ToUnsignLinkString(@item.GroupName)" data-id="@item.Id" id="@item.Id" href="/Products/@Extentions.ToUnsignLinkString(@item.GroupName)" style="font-weight:bold">@item.GroupName</a></li>
+            }
+        </ul>
+    </div>
+}
+

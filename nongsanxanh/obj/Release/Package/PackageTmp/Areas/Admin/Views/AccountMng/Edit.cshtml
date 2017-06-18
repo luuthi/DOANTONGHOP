@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Cập nhật ";
+    Layout = "~/Views/Shared/_rootLayoutAdmin.cshtml";
+}
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>Thêm mới người dùng</h2>
+            </div>
+            @using (Html.BeginForm("Edit", "AccountMng", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.Partial("_accountForm")
+            }
+        </div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function() {
+        $("#UserName").attr("readonly", "readonly");
+    })
+</script>

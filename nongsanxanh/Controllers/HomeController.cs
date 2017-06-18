@@ -14,6 +14,7 @@ namespace nongsanxanh.Controllers
         private readonly IProductService _iProductService;
         private readonly INewsService _iNewsService;
         private readonly IAccountService _iAccountService;
+        private bool typeError = false;
         public HomeController(IProductService iProductService, INewsService iNewService, IAccountService iAccountService)
         {
             _iNewsService = iNewService;
@@ -117,7 +118,14 @@ namespace nongsanxanh.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("UserName","Tên đăng nhập hoặc mật khẩu chưa chính xác");
+                    if (typeError)
+                    {
+                        ModelState.AddModelError("UserName", "Tên đăng nhập hoặc mật khẩu chưa chính xác");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("UserName", "Tài khoản chưa được kích hoạt");
+                    }
                     return Json(new JsonClasses()
                     {
                         Status = false,
@@ -148,11 +156,13 @@ namespace nongsanxanh.Controllers
                 }
                 else
                 {
+                    typeError = true;
                     return false;
                 }
             }
             else
             {
+                typeError = false;
                 return false;
             }
         }

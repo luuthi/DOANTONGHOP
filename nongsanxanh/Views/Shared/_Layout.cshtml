@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Flavours Home Page</title>
+    <title>Nông sản xanh</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Default Description">
     <meta name="keywords" content="fashion, store, E-commerce">
     <meta name="robots" content="*">
     <link rel="icon" href="#" type="image/x-icon">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 
     <!-- CSS Style -->
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet">
@@ -23,6 +23,8 @@
     <link href="@Url.Content("~/Content/css-frontend/box.css")" rel="stylesheet">
     <script src="@Url.Content("~/Scripts/jquery-2.2.3.min.js")"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <link href="@Url.Content("~/Content/css-admin/dataTables.bootstrap.css")" rel="stylesheet">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
 </head>
@@ -35,13 +37,15 @@
 
         </div>
     </div>
-    <script src="@Url.Content("~/Scripts/js-frontend/parallax.js")"></script>
-    <script src="@Url.Content("~/Scripts/js-frontend/revslider.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-admin/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-admin/dataTables.bootstrap.min.js")"></script>  
     <script src="@Url.Content("~/Scripts/js-frontend/owl.carousel.min.js")"></script>
     <script src="@Url.Content("~/Scripts/js-frontend/jquery-migrate-1.2.1.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/js-admin/bootstrap-datepicker.js")"></script>
     <script src="@Url.Content("~/Scripts/js-frontend/slide.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-frontend/core.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-frontend/script.js")"></script>
     <script src="@Url.Content("~/Scripts/js-frontend/smoothproducts.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-admin/bootstrap-datepicker.js")"></script>
     <script type="text/javascript">
         $(window).load(function () {
             $('.sp-wrap').smoothproducts();
@@ -50,91 +54,17 @@
             if ($(window).scrollTop() > 75) {
                 $(".content-header").css("background-color", "rgba(0,0,0,0.8)");
             } else {
-                $(".content-header").css("background-color", "rgba(255,255,255, 0.2)");
+                $(".content-header").css("background-color", "rgba(0,0,0, 0.3)");
             }
         });
-        jQuery(document).ready(function () {
-            jQuery('#thm-rev-slider').show().revolution({
-                dottedOverlay: 'none',
-                delay: 5000,
-                startwidth: 0,
-                startheight: 900,
 
-                hideThumbs: 200,
-                thumbWidth: 200,
-                thumbHeight: 50,
-                thumbAmount: 2,
-
-                navigationType: 'thumb',
-                navigationArrows: 'solo',
-                navigationStyle: 'round',
-
-                touchenabled: 'on',
-                onHoverStop: 'on',
-
-                swipe_velocity: 0.7,
-                swipe_min_touches: 1,
-                swipe_max_touches: 1,
-                drag_block_vertical: false,
-
-                spinner: 'spinner0',
-                keyboardNavigation: 'off',
-
-                navigationHAlign: 'center',
-                navigationVAlign: 'bottom',
-                navigationHOffset: 0,
-                navigationVOffset: 20,
-
-                soloArrowLeftHalign: 'left',
-                soloArrowLeftValign: 'center',
-                soloArrowLeftHOffset: 20,
-                soloArrowLeftVOffset: 0,
-
-                soloArrowRightHalign: 'right',
-                soloArrowRightValign: 'center',
-                soloArrowRightHOffset: 20,
-                soloArrowRightVOffset: 0,
-
-                shadow: 0,
-                fullWidth: 'on',
-                fullScreen: 'on',
-
-                stopLoop: 'off',
-                stopAfterLoops: -1,
-                stopAtSlide: -1,
-
-                shuffle: 'off',
-
-                autoHeight: 'on',
-                forceFullWidth: 'off',
-                fullScreenAlignForce: 'off',
-                minFullScreenHeight: 0,
-                hideNavDelayOnMobile: 1500,
-
-                hideThumbsOnMobile: 'off',
-                hideBulletsOnMobile: 'off',
-                hideArrowsOnMobile: 'off',
-                hideThumbsUnderResolution: 0,
-
-                hideSliderAtLimit: 0,
-                hideCaptionAtLimit: 0,
-                hideAllCaptionAtLilmit: 0,
-                startWithSlide: 0,
-                fullScreenOffsetContainer: ''
+        $(function () {
+            //Date picker
+            $('#datepicker').datepicker({
+                autoclose: true
             });
         });
-  
-    $(function () {
-        //Initialize Select2 Elements
-       
-     
-        //Date picker
-        $('#datepicker').datepicker({
-            autoclose: true
-        });
-       
-    });
 
-</script>
+    </script>
 </body>
 </html>

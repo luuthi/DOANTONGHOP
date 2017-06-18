@@ -1,6 +1,13 @@
 ﻿@using Bussiness.ViewModel
 @using Bussiness.Implement
 @using NSX_Common;
+@{
+    List<ProductGroupViewModel> lst = new List<ProductGroupViewModel>();
+    ProductGroupService _ProductGroupService = new ProductGroupService();
+    lst = _ProductGroupService.GetAllProductGroup();
+    List<NewsGroupViewModel> lstNew = new List<NewsGroupViewModel>();
+    NewsGroupService _NewGroupService = new NewsGroupService();
+    lstNew = _NewGroupService.GetAllNewsGroup();
 <header>
     <div class="content-header">
         <nav class="navbar visible-lg visible-md visible-sm" role="navigation" style="margin-bottom:0">
@@ -16,12 +23,10 @@
                     <ul class="dropdown-menu">
 
                         @{
-                            List<ProductGroupViewModel> lst = new List<ProductGroupViewModel>();
-                            ProductGroupService _ProductGroupService = new ProductGroupService();
-                            lst = _ProductGroupService.GetAllProductGroup();
+                           
                             foreach (var item in lst)
                             {
-                                <li><a href="/Products/@Extentions.ToUnsignLinkString(@item.GroupName)">@item.GroupName</a></li>
+                        <li><a href="/Products/@Extentions.ToUnsignLinkString(@item.GroupName)">@item.GroupName</a></li>
                             }
                         }
 
@@ -31,12 +36,10 @@
                     <a href="/TinTuc" class="dropdown-toggle">TIN TỨC<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         @{
-                            List<NewsGroupViewModel> lstNew = new List<NewsGroupViewModel>();
-                            NewsGroupService _NewGroupService = new NewsGroupService();
-                            lstNew = _NewGroupService.GetAllNewsGroup();
+                           
                             foreach (var item in lstNew)
                             {
-                                <li><a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)">@item.NameGroup</a></li>
+                        <li><a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)">@item.NameGroup</a></li>
                             }
                         }
                     </ul>
@@ -49,14 +52,138 @@
                 @{
                     if (Session["Cart"] != null)
                     {
-                        @Html.Partial("_parViewCart", Session["Cart"] as List<ShoppingCartViewModel>)
+                @Html.Partial("_parViewCart", Session["Cart"] as List<ShoppingCartViewModel>)
                     }
                     else
                     {
-                        @Html.Partial("_parViewCart", new List<ShoppingCartViewModel>())
+                @Html.Partial("_parViewCart", new List<ShoppingCartViewModel>())
                     }
                 }
             </div>
+        </nav>
+
+
+        <div class="rd-navbar-wrap visible-xs">
+            <nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-sm-stick-up-offset="50px" data-lg-stick-up-offset="150px" class="rd-navbar">
+                <div class="rd-navbar-inner">
+                    <!-- RD Navbar Panel -->
+                    <div class="rd-navbar-panel">
+                        <div class="rd-navbar-panel-canvas"></div>
+
+                        <!-- RD Navbar Toggle -->
+                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                        
+                        <!-- END RD Navbar Cart Toggle -->
+                        <!-- RD Navbar Collapse Toggle -->
+                        <a href="/ShoppingCart" class="rd-navbar-collapse-toggle" style="background-color: #999">
+                            <span class="mdi mdi-cart"></span>
+                        </a>
+                        
+                        <!-- END RD Navbar Collapse Toggle -->
+                        <!-- RD Navbar Brand -->
+                        <div class="rd-navbar-brand">
+                            @*<img src="~/Images/images/he-thong/logo.png"  alt="" class="img-responsive">*@
+                         
+                        </div>
+                        <!-- END RD Navbar Brand -->
+                    </div>
+                    <!-- END RD Navbar Panel -->
+                </div>
+                <div class="rd-navbar-outer">
+                    <div class="rd-navbar-inner">
+
+
+                        <div class="rd-navbar-subpanel">
+                            <div class="rd-navbar-nav-wrap">
+                                <!-- RD Navbar Nav -->
+                                <ul class="rd-navbar-nav">
+                                    <li class="active">
+                                        <a href="/Home">Trang chủ</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/About">Giới thiệu</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/Products">Sản phẩm</a>
+                                        <!-- RD Navbar Dropdown -->
+                                        <ul class="rd-navbar-dropdown">
+                                            @{
+                                                foreach (var item in lst)
+                                                {
+                                                    <li><a href="/Products/@Extentions.ToUnsignLinkString(@item.GroupName)">@item.GroupName</a></li>
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li class="">
+                                        <a href="/TinTuc">Tin tức</a>
+                                        <!-- RD Navbar Dropdown -->
+                                        <ul class="rd-navbar-dropdown">
+                                            @{
+                           
+                                                foreach (var item in lstNew)
+                                                {
+                                                    <li><a href="/TinTuc/@Extentions.ToUnsignLinkString(@item.NameGroup)">@item.NameGroup</a></li>
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li class="">
+                                        <a href="/About">Liên hệ</a>
+                                    </li>
+                                    @{
+                                        if (Session["isLoginClient"] !=null)
+                                        {
+                                            if ((bool)Session["isLoginClient"])
+                                            {
+                                                AccountViewModel acc = Session["AccountClient"] as AccountViewModel;
+                                                <li><a href="/AccountInfo/@acc.Id">Tài khoản</a></li>
+                                                <li style="border-bottom: none;"><a href="" id="btnLogout"> Đăng xuất</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li class="">
+                                                    <a href="/Login">Đăng nhập</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="/Register">Đăng ký</a>
+                                                </li>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <li class="">
+                                                <a href="/Login">Đăng nhập</a>
+                                            </li>
+                                            <li><a href="/Register">Đăng ký</a></li>
+                                        }  
+                                    }
+                                   
+                                </ul>
+                                <!-- END RD Navbar Nav -->
+                            </div>
+
+                            <!-- RD Navbar Search Toggle -->
+                            <div class="rd-navbar-search-wrap">
+                                <button class="rd-navbar-search-toggle mdi mdi-search-web" data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar, .rd-navbar-inner">
+                                </button>
+                                <div class="rd-navbar-search">
+                                    <form action="" method="post">
+                                        <div class="form-group">
+                                            <input id="rd-navbar-search-input" type="text" class="form-control"
+                                                   placeholder="Search">
+                                        </div>
+                                        <button type="submit" class="material-icons-search"></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- END RD Navbar Search Toggle -->
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
-    </header>
+    </div>
+</header>
+
+}

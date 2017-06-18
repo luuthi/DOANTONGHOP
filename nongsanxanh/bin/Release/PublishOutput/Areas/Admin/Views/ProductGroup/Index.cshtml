@@ -1,0 +1,127 @@
+﻿@model List<Bussiness.ViewModel.ProductGroupViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_rootLayoutAdmin.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Danh sách nhóm tin tức
+                </h2>
+            </div>
+            <div class="row cls-btn-add">
+                @Html.ActionLink("Thêm mới", "Create", "ProductGroup", null, new { @class = "btn btn-primary", @style = "float:right;" })
+            </div>
+
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Tên nhóm sản phẩm</th>
+                            <th>Mô tả</th>
+                            <th>Tình trạng</th>
+                            <th>Thông tin</th>
+                            <th style="width: 80px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>@item.GroupName</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.Status</td>
+                                        <td>Tạo bởi: @item.Creator - @item.CreatedDate.ToString("dd/MM/yyyy") <br /> Sửa lần cuối : @item.Modifier - @item.ModifyDate.ToString("dd/MM/yyyy")</td>
+                                        <td>
+                                            <a href="/Admin/ProductGroup/Edit/@item.Id" class="btn btn-success btn-sm">Sửa</a>
+                                            <a data-id="@item.Id" type="button" class="btn btn-danger btn-sm DelRole">Xóa</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<script>
+    $(document)
+        .ready(function () {
+           
+
+
+
+
+
+
+
+            // nhấn vào hủy sản phẩm
+            var id;
+            $(".DelRole")
+                .click(function () {
+                    id = $(this).attr('data-id');
+
+                    $.notify({
+                        title: 'Bạn có thực sự muốn xóa ?',
+                        button: 'Xác nhận'
+                    },
+                    {
+                        style: 'foo',
+                        autoHide: false,
+                        clickToHide: false,
+                        position: "top center",
+                        arrowShow: true,
+
+                    });
+
+                });
+            //add a new style 'foo'
+            $.notify.addStyle('foo', {
+                html:
+                  "<div>" +
+                    "<div class='clearfix'>" +
+                      "<div class='title' data-notify-html='title'/>" +
+                      "<div class='buttons'>" +
+                        "<button class='no btn-primary'>Cancel</button>" +
+                        "<button class='yes btn-danger' style='margin-left:10px' data-notify-text='button'></button>" +
+                      "</div>" +
+                    "</div>" +
+                  "</div>"
+            });
+
+            //listen for click events from this style
+            $(document).on('click', '.notifyjs-foo-base .no', function () {
+                //programmatically trigger propogating hide event
+                $(this).trigger('notify-hide');
+            });
+            $(document).on('click', '.notifyjs-foo-base .yes', function () {
+                $.ajax({
+                    type: "POST",
+                    url: '/Admin/ProductGroup/Delete/',
+                    data: { progroupid: id },
+                    success: function () {
+                        window.location.href = "/Admin/ProductGroup";
+                    },
+
+                    error: function (req, status, error) {
+                    }
+                });
+
+                //hide notification
+                $(this).trigger('notify-hide');
+            });
+        })
+</script>

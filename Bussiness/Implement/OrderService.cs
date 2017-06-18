@@ -13,6 +13,12 @@ namespace Bussiness.Implement
 {
     public class OrderService : IOrderService
     {
+        public int CountOrderOnDay()
+        {
+            int count= SqlDb_Ultis.ExeStoredCount("Tbl_OrderSelectCountOnDay");
+            return count;
+        }
+
         public void DeleteOrder(Guid id)
         {
             SqlDb_Ultis.ExeNonStored("Tbl_OrderDelete","@Id",id);
@@ -25,7 +31,7 @@ namespace Bussiness.Implement
             return lst;
         }
 
-        public List<OrderViewModel> GetOrderByAccount(Guid id)
+        public List<OrderViewModel> GetOrderByAccount(string id)
         {
             DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_OrderSelectByAccount","@Id",id);
             var lst = Ultis.DataTableToList<OrderViewModel>(dtb);
@@ -52,7 +58,7 @@ namespace Bussiness.Implement
                 "@OrderAccount", viewModel.OrderAccount,
                 "@Status", viewModel.Status,
                 "@Receiver", viewModel.Receiver,
-                "@Receiver", viewModel.Place,
+                "@Place", viewModel.Place,
                 "@PhoneReceiver", viewModel.PhoneReceiver,
                 "@Notes", viewModel.Notes,
                 "@ExpectedDate", viewModel.ExpectedDate,

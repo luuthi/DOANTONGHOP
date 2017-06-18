@@ -1,0 +1,111 @@
+﻿.login_wrapper {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 50px;
+    font-family: Arial;
+}
+
+.login_content {
+    border: #DDDDDD 1px solid;
+    border-radius: 10px;
+    width: 100%%;
+    margin: 0 auto;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+    .login_content h3 {
+        text-align: center;
+        background-color: #001f3f;
+        color: #fff;
+        padding: 15px;
+        margin: 0 !important;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .login_content input {
+        position: relative;
+        border: none;
+        padding: 0px 50px;
+        font-size: 16px;
+    }
+
+       
+      
+        .login_content .button {
+            margin: 0 !important;
+            background: transparent;
+        }
+        .login_content .button input {
+            width: 100%;
+            border: 0;
+        }
+        .login_content .button input#btnLogin {
+            border-radius: 0 0 10px 10px;
+            padding: 20px;
+        }
+    .login_content .form-group {
+        margin-top: 15px;
+    }
+    .login_content .separator-line {
+        border-top: #ddd 1px solid;
+    }
+     .login_content .option {
+         padding: 10px;
+     }
+     .login_content .RememberMe_text {
+         font-weight: bold;
+         position: relative;
+         top: 4px;
+         left: 10px;
+         color: #95a7b7;
+     }
+     .cls-btn-add {
+         margin: 0 !important;
+         padding-top: 10px;
+         padding-right: 10px
+     }
+
+
+
+     /*Modal user*/
+     #accountModal .row {
+         margin-bottom: 10px;
+     }
+      #accountModal .row input {
+          border: none;
+      }
+
+
+/*css for notification*/
+ .notifyjs-foo-base {
+    width: 300px;
+    background: #001f3f;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    min-height: 52px;
+    color:#444;
+}
+
+.notifyjs-foo-base .title {
+      width: 100%;
+    /* float: left; */
+    /* margin: 10px 0 0 10px; */
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold
+}
+
+    .notifyjs-foo-base .buttons {
+        width: 100%;
+        font-size: 16px;
+        padding: 5px;
+        margin-top: 16px;
+        text-align: center;
+    }
+    .field-validation-error {
+        color: red;
+        font-size: bold;
+    }

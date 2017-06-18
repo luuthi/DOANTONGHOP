@@ -1,0 +1,54 @@
+﻿@model Bussiness.ViewModel.LoginViewModel
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/Shared/_LoginPartial.cshtml";
+}
+
+<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col-lg-push-4 col-md-push-4 col-sm-push-3" style="margin: 0;padding: 0">
+    <div class="animate form login_form">
+        <div class="text-center">
+            @Html.ValidationMessageFor(m => m.UserName) <br/>
+            @Html.ValidationMessageFor(m => m.Password)<br/>
+            <span style="color: red; text-align: center">@TempData["Error"]</span>
+        </div>
+
+        <section class="login_content">
+            @using (Html.BeginForm("Login", "LoginAdmin", FormMethod.Post, new { enctype = "multipart/form-data", @id = "form_login" }))
+            {
+
+                <h3>ĐĂNG NHẬP HỆ THỐNG</h3>
+                <div class="form-group" style="position: relative">
+                    <span class="mdi mdi-account mdi-24px" style="position: absolute; top: 0; left: 5px;z-index: 1"></span>
+                    @Html.TextBoxFor(m => m.UserName, new {@class = "form-control", @placeholder = "Tên tài khoản...", @id = "txtUserName"})
+                </div>
+                <div class="separator-line"></div>
+                <div class="form-group" style="position: relative">
+                    <span class="mdi mdi-lock mdi-24px" style="position: absolute; top: 0; left: 5px;z-index: 1"></span>
+                    @Html.PasswordFor(m => m.Password, new {@class = "form-control", @placeholder = "Mật khẩu...", @id = "txtPassWord"})
+                </div>
+                <div class="separator-line"></div>
+                <div class="option">
+                    @Html.CheckBoxFor(m => m.DuyTriDangNhap, new { @class = "flat-red" })
+                    <span class="RememberMe_text">Duy trì đăng nhập</span>
+                    <a href="#" style="float: right; text-decoration: underline">Quên mật khẩu?</a>
+                </div>
+                <div class="button">
+                    <input type="submit" class="btn" id="btnLogin" value="Đăng nhập" style="background-color: #001f3f; color: #fff">
+                </div>
+            }
+        </section>
+        <div class="separator text-center">
+            <div class="clearfix"></div>
+            <br>
+            <div>
+                <h3>
+                    <i class="mdi mdi-36px mdi-city"></i> NÔNG SẢN XANH VER 1.0.0
+                </h3>
+                <p>©2016 All Rights Reserved. NÔNG SẢN XANH Version 1.0.0</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+</script>

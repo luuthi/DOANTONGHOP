@@ -1,0 +1,32 @@
+﻿@model Bussiness.ViewModel.RoleViewModel
+<div class="row" style="margin-bottom:5px; margin-right:0px;">
+    @Html.ActionLink("Quay lại", "Index", "RoleMng", null, new { @class = "btn btn-default", @style = "float:right; margin-right: 20px; margin-top: 10px" })
+</div>
+<div class="box-body">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Code)
+                @Html.EnumDropDownListFor(m => m.Code, "Chọn quyền",new { @class = "form-control select_for_search" })
+                @Html.ValidationMessageFor(m => m.Code)
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Role)
+                @Html.TextBoxFor(m => m.Role, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Role)
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="float: right; padding-right: 20px">
+        <button type="submit" class="btn btn-primary submit_add_post ">Ghi lại</button>
+    </div>
+    <!-- /.panel-body -->
+</div>
+<script>
+
+</script>
+
+

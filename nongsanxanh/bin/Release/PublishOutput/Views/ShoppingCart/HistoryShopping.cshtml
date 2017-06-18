@@ -1,0 +1,84 @@
+﻿@using System.Globalization
+@model List<Bussiness.ViewModel.OrderViewModel>
+<div class="page-header"  style="background-image: url(/Images/images/slide/gioi-thieu.jpeg);">
+    <div class="container">
+        <div class="row">
+            <div class="title-header">
+                <span>Lịch sử mua hàng</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="current-page">
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="">Trang Chủ</a></li>
+                <li>/</li>
+                <li>Tài khoản</li>
+                <li>/</li>
+                <li>Lịch sử mua hàng</li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row" style="margin-top: 50px">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h2>
+                                Danh sách đơn hàng đã giao dịch
+                            </h2>
+                        </div>
+
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Mã đơn hàng</th>
+                                    <th>Người đặt hàng</th>
+                                    <th>Ngày đặt hàng</th>
+                                    <th>Ngày nhận dự tính</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Hình thức thanh toán</th>
+                                    <th>Tình trạng</th>
+                                    <th style="width: 120px">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @{
+                                    if (Model != null)
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.OrderCode</td>
+                                                <td>@item.FullName</td>
+                                                <td>@item.OrderDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@item.ExpectedDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@item.TotalMoney.ToString("##,###")</td>
+                                                <td>@item.TypePayment_str</td>
+                                                <td>@item.Status_str</td>
+                                                <td>
+                                                    <a href="/ShoppingCart/DetailShopping/@item.Id" class="btn btn-success btn-sm">Chi tiết</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+
+                                </tbody>
+                            </table>
+                        </div>
+                       
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+        </div>
+    </div>
+</main>
+

@@ -1,0 +1,51 @@
+﻿@model Bussiness.ViewModel.LoginViewModel
+<div class="page-header" style="background-image: url(/Images/images/slide/gioi-thieu.jpeg);">
+    <div class="container">
+        <div class="row">
+            <div class="title-header">
+                <span>Đăng nhập</span>
+            </div>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="container">
+        <div class="wrapper-content">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="new-customers">
+                        <h4 class="title-new-cust">New Customers</h4>
+                        <p style="padding: 10px;">Để việc mua hàng và thanh toán sẽ diễn ra nhanh chóng và dễ dàng hơn cũng như hưởng nhiều ưu đãi hơn, quý khách vui lòng đăng ký tài khoản trên hệ thống của chúng tôi . Vui lòng Nhấn nút tạo tài khoản bên dưới, xin cảm ơn </p>
+                        <a href="/Register" class="btn-create-new"><span class="fa fa-user"> Tạo tài khoản</span></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6  col-sm-6 col-xs-12 login-customer">
+                    <h4 class="login-title ">Thông tin  tài khoản</h4>
+                    <div class="login-content">
+                        <p>Nếu quý khách đã có tài khoản, vui lòng đăng nhập</p>
+                    @using (Html.BeginForm("Login", "Login", FormMethod.Post, new {enctype = "multipart/form-data"}))
+                    {
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.UserName)
+                            @Html.TextBoxFor(m => m.UserName, new {@class = "form-control"})
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password)
+                            @Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                        <div class="login-item">
+                            <b style="color: red;">Bắt buộc nhập*</b><br>
+                            <button class="btn-login" type="submit" name="btnLogin"><span class="fa fa-unlock-alt"> Đăng nhập</span></button>
+                            <a href="">Quên mật khẩu?</a>
+                        </div>
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

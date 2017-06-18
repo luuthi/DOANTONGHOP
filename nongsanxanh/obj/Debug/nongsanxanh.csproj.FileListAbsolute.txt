@@ -200,3 +200,5 @@ D:\nongsanxanh\nongsanxanh\bin\PagedList.dll
 D:\nongsanxanh\nongsanxanh\bin\PagedList.Mvc.dll
 D:\nongsanxanh\nongsanxanh\bin\PagedList.xml
 D:\nongsanxanh\nongsanxanh\bin\PagedList.Mvc.xml
+D:\nongsanxanh\nongsanxanh\bin\BotDetect.dll
+D:\nongsanxanh\nongsanxanh\bin\BotDetect.Web.Mvc.dll

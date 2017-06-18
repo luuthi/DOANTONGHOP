@@ -13,9 +13,6 @@ namespace Bussiness.ViewModel
         [DisplayName("Mã đơn hàng")]
         public string OrderCode { get; set; }
 
-        [DisplayName("Tên đơn hàng")]
-        public string OrderName { get; set; }
-
         [DisplayName("Tài khoản đặt")]
         public string OrderAccount { get; set; }
 

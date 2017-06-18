@@ -67,28 +67,6 @@ namespace nongsanxanh.Areas.Admin.Controllers
 
             return View(viewModel);
         }
-        // GET: Admin/Comment/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Admin/Comment/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
         [HttpPost]
         public ActionResult Duyet(string commentid)
         {
@@ -107,12 +85,6 @@ namespace nongsanxanh.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/Comment/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
         // POST: Admin/Comment/Delete/5
         [HttpPost]
         public ActionResult Delete(string commentid)
@@ -126,7 +98,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
                 _iCommentService.UpdateComment(viewModel);
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception e)
             {
                 return View();
             }

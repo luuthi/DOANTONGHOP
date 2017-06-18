@@ -14,6 +14,7 @@ namespace Bussiness.Interface
         void InsertOrder(OrderViewModel viewModel);
         void UpdateOrder(OrderViewModel viewModel);
         void DeleteOrder(Guid id);
-        List<OrderViewModel> GetOrderByAccount(Guid id);
+        List<OrderViewModel> GetOrderByAccount(string id);
+        int CountOrderOnDay();
     }
 }

@@ -1,0 +1,142 @@
+﻿@using Bussiness.ViewModel
+@{
+    List<ShoppingCartViewModel> lst =new List<ShoppingCartViewModel>();
+    lst = Session["Cart"] as List<ShoppingCartViewModel>;
+    decimal total = 0;
+    <div class="page-header"style="background-image: url(/Images/images/slide/rau-cu.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="title-header">
+                    <span>Thông tin giỏ hàng</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="current-page">
+            <div class="container">
+                <ul class="pull-left">
+                    <li><a href="">Trang Chủ</a></li>
+                    <li>/</li>
+                    <li>Giỏ Hàng</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                        <div class="Wrapper-content">
+                            <div class="shopping-cart">
+                                <div class="row">
+                                    <h4 class="title-shopping-cart"><span class="fa fa-shopping-cart"></span> Giỏ hàng của bạn</h4>
+                                    <form class="product-checked col-xs-12">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                                            <thead>
+                                                <tr>
+                                                    <th>Sản phẩm</th>
+                                                    <th class="text-right">Giá</th>
+                                                    <th class="text-center">Số lượng</th>
+                                                    <th class="text-right">Thành tiền</th>
+                                                    <th>Xóa</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                            @{
+                                                foreach (var item in lst)
+                                                {
+                                                    total += item.SubTotal;
+                                                    <tr>
+                                                        <td class="text-left">
+                                                            <img src="~/Images/images/san-pham/@item.Image" width="70px" style="margin-right: 20px;">
+                                                            @item.ProductName
+                                                        </td>
+                                                        <td class="text-right">@item.Price.ToString("##,###")</td>
+                                                        <td  class="text-center"><input type="text" name="txt-amount" size="1" class="txt_Quantity" value="@item.Quantity" data-id="@item.ProductId" id="soluong_@item.ProductId"></td>
+                                                        <td class="text-right">@item.SubTotal.ToString("##,###")  VNĐ</td>
+                                                        <td><span class="mdi mdi-close btn-remove btn btn-danger btn-sm" data-id="@item.ProductId"></span></td>
+
+                                                    </tr>
+                                                }
+                                            }
+                                            <tr>
+                                                <td colspan="3" class="text-center text-danger" ><h5 style="font-weight: bold">Tổng tiền</h5></td>
+                                                <td colspan="2" class="text-center">@total.ToString("##,###")  VNĐ</td>
+                                            </tr>
+
+                                        </table>
+                                    </form>
+
+                                    <a href="javascript:void(0)" class="btn-continue-buy" name="btn-continue-buy" onclick="goBack()">
+                                        Tiếp tục mua hàng
+                                    </a>
+                                    <a href="/ShoppingCart/ProcessPayment" class="btn-pay" name="btn-pay">
+                                        Thanh toán
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                        <div class="widget">
+                            @Html.Partial("_parDanhMucSP")
+                            @Html.Partial("_parTinNoiBat")
+                            <div class="fanpage">
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fquapho.net%2F&tabs=S%E1%BB%B1%20ki%E1%BB%87n&width=255px&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="255px" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+}
+<!-- end main -->
+<script>
+    function goBack() {
+        window.history.back();
+    }
+    $(document).ready(function () {
+        $(document).on("blur",
+            ".txt_Quantity",
+            function () {
+                debugger;
+                var id = $(this).attr("data-id");
+                var soluong = $("#soluong_" + id).val();
+                $.ajax({
+                    type: "POST",
+                    url: '/ShoppingCart/EditProductToCart/',
+                    data: { productid: id, soluong: soluong},
+                    success: function (r) {
+                        $(".content-header .navbar  #cart").empty();
+                        $(".content-header .navbar  #cart").append(r.listpro);
+                        location.reload();
+                    },
+
+                    error: function (req, status, error) {
+                    }
+                });
+            });
+        $(document).on("click",
+            ".btn-remove",
+            function () {
+                var id = $(this).attr("data-id");
+                $.ajax({
+                    type: "POST",
+                    url: '/ShoppingCart/RemoveItemCart/',
+                    data: { productid: id },
+                    success: function (r) {
+                        $(".content-header .navbar  #cart").empty();
+                        $(".content-header .navbar  #cart").append(r.listpro);
+                        location.reload();
+                    },
+
+                    error: function (req, status, error) {
+                    }
+                });
+            });
+    });
+</script>

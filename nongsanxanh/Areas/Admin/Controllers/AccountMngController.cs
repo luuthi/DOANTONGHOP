@@ -134,6 +134,14 @@ namespace nongsanxanh.Areas.Admin.Controllers
 
         }
 
+        [HttpPost]
+        public ActionResult ChangeStatus(string status,string accountid)
+        {
+            bool stt = Convert.ToBoolean(status);
+            Guid g = Guid.Parse(accountid);
+            _iAccountService.UpdateStt(stt,g);
+            return View("Index");
+        }
         // POST: Admin/AccountMng/Edit/5
         [HttpPost]
         public ActionResult Edit(string accountid, AccountViewModel viewModel)
@@ -141,6 +149,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
             try
             {
                 Guid g = Guid.Parse(accountid);
+                ModelState.Remove("RePassword");
                 // TODO: Add update logic here
                 if (ModelState.IsValid)
                 {

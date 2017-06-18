@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Nông sản xanh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Default Description">
+    <meta name="keywords" content="fashion, store, E-commerce">
+    <meta name="robots" content="*">
+    <link rel="icon" href="#" type="image/x-icon">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+
+    <!-- CSS Style -->
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/materialdesignicons.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css-frontend/revslider.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css-frontend/owl.carousel.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css-frontend/owl.theme.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css-frontend/style.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css-frontend/responsive.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css-admin/datepicker3.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css-frontend/smoothproducts.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css-frontend/box.css")" rel="stylesheet">
+    <script src="@Url.Content("~/Scripts/jquery-2.2.3.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <link href="@Url.Content("~/Content/css-admin/dataTables.bootstrap.css")" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+</head>
+<body>
+    @Html.Partial("_header")
+    @RenderBody()
+    @Html.Partial("footer")
+    <div class="modal fade" id="accountModal" role="dialog">
+        <div class="modal-dialog" id="detail-account" style="text-align: center; width: 50%">
+
+        </div>
+    </div>
+    <script src="@Url.Content("~/Scripts/js-admin/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-admin/dataTables.bootstrap.min.js")"></script>  
+    <script src="@Url.Content("~/Scripts/js-frontend/owl.carousel.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-frontend/jquery-migrate-1.2.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-frontend/slide.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-frontend/core.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-frontend/script.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-frontend/smoothproducts.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/js-admin/bootstrap-datepicker.js")"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.sp-wrap').smoothproducts();
+        });
+        $(window).on("scroll", function () {
+            if ($(window).scrollTop() > 75) {
+                $(".content-header").css("background-color", "rgba(0,0,0,0.8)");
+            } else {
+                $(".content-header").css("background-color", "rgba(0,0,0, 0.3)");
+            }
+        });
+
+        $(function () {
+            //Date picker
+            $('#datepicker').datepicker({
+                autoclose: true
+            });
+            $("#example1").DataTable();
+        });
+
+    </script>
+</body>
+</html>

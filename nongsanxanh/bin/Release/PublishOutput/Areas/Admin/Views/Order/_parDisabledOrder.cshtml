@@ -1,0 +1,59 @@
+﻿@model List<Bussiness.ViewModel.OrderViewModel>
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h2>
+                    Danh sách đơn hàng
+                </h2>
+            </div>
+
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Người đặt hàng</th>
+                        <th>Ngày đặt hàng</th>
+                        <th>ngày nhận dự tính</th>
+                        <th>Tổng tiền</th>
+                        <th>Hình thức thanh toán</th>
+                        <th>Tình trạng</th>
+                        <th style="width: 120px">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @{
+                        if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.OrderCode</td>
+                                    <td>@item.FullName</td>
+                                    <td>@item.OrderDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.ExpectedDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.TotalMoney.ToString("C0")</td>
+                                    <td>@item.TypePayment_str</td>
+                                    <td>@item.Status_str</td>
+                                    <td>
+                                        <a data-id="@item.Id" class="btn btn-primary btn-sm btn-khoiphuc">Khôi phục</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="box-footer">
+                <button type="button" class="btn btn-default pull-right " data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>

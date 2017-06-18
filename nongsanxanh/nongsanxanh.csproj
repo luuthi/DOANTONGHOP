@@ -56,6 +56,12 @@
       <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="BotDetect, Version=4.2.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.2.0\lib\net45\BotDetect.dll</HintPath>
+    </Reference>
+    <Reference Include="BotDetect.Web.Mvc, Version=4.2.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.2.0\lib\net45\BotDetect.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -246,9 +252,12 @@
     <Compile Include="Areas\Admin\Models\City.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountInfoController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\TinTucController.cs" />
     <Compile Include="Global.asax.cs">
@@ -298,16 +307,14 @@
     <Content Include="fonts\materialdesignicons-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\green.png" />
+    <Content Include="Images\images\green.png" />
     <Content Include="Images\images\he-thong\cong-ty-nong-san-xanh-bao-ngoc-minh.jpg" />
     <Content Include="Images\images\he-thong\logo.png" />
+    <Content Include="Images\images\he-thong\pay1.png" />
     <Content Include="Images\images\he-thong\slide1.jpg" />
     <Content Include="Images\images\he-thong\slide2.jpg" />
     <Content Include="Images\images\he-thong\slide3.jpg" />
-    <Content Include="Images\images\san-pham\bi-do.jpg" />
     <Content Include="Images\images\he-thong\category-banner.jpg" />
-    <Content Include="Images\images\san-pham\landscape-wallpaper %281%29.jpg" />
-    <Content Include="Images\images\san-pham\landscape-wallpaper %281%29.png" />
-    <Content Include="Images\images\san-pham\landscape-wallpaper %282%29.jpg" />
     <Content Include="Images\images\san-pham\noimage.png" />
     <Content Include="Images\images\san-pham\p1.jpg" />
     <Content Include="Images\images\san-pham\p10.jpg" />
@@ -358,12 +365,6 @@
     <Content Include="Images\images\user-logo\user.gif" />
     <Content Include="Images\images\user-logo\user.png" />
     <Content Include="Images\images\user-logo\user.svg" />
-    <Content Include="Images\key.png" />
-    <Content Include="Images\noimage.png" />
-    <Content Include="Images\user.gif" />
-    <Content Include="Images\user.png" />
-    <Content Include="Images\user.svg" />
-    <Content Include="Images\user2-160x160.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -452,6 +453,14 @@
     <Content Include="Areas\Admin\Views\Comment\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Product\_parDisabledProduct.cshtml" />
     <Content Include="App_Data\cities.json" />
+    <Content Include="fonts\MaterialIcons-Regular.eot" />
+    <Content Include="fonts\MaterialIcons-Regular.ijmap" />
+    <Content Include="fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="fonts\MaterialIcons-Regular.woff" />
+    <Content Include="fonts\MaterialIcons-Regular.woff2" />
+    <Content Include="Views\ShoppingCart\_parOverviewOrder.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
@@ -1503,14 +1512,17 @@
     <Content Include="Scripts\js-admin\notify.min.js" />
     <Content Include="Scripts\js-admin\responsive.bootstrap.js" />
     <Content Include="Scripts\js-admin\select2.full.min.js" />
+    <Content Include="Scripts\js-frontend\core.min.js" />
     <Content Include="Scripts\js-frontend\danhmucsp.js" />
     <Content Include="Scripts\js-frontend\danhmuctintuc.js" />
     <Content Include="Scripts\js-frontend\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\js-frontend\jquery.rd-navbar.min.js" />
+    <Content Include="Scripts\js-frontend\jquery.ui.totop.min.js" />
     <Content Include="Scripts\js-frontend\owl.carousel.js" />
     <Content Include="Scripts\js-frontend\owl.carousel.min.js" />
-    <Content Include="Scripts\js-frontend\parallax.js" />
     <Content Include="Scripts\js-frontend\plugins.js" />
     <Content Include="Scripts\js-frontend\revslider.js" />
+    <Content Include="Scripts\js-frontend\script.js" />
     <Content Include="Scripts\js-frontend\shoppingcart.js" />
     <Content Include="Scripts\js-frontend\slide.js" />
     <Content Include="Scripts\js-frontend\smoothproducts.js" />
@@ -1564,6 +1576,17 @@
     <Content Include="Views\Shared\_parLogin.cshtml" />
     <Content Include="Views\AccountInfo\Index.cshtml" />
     <Content Include="Views\AccountInfo\Edit.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\ProcessPayment.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Register\Success.cshtml" />
+    <Content Include="Views\ShoppingCart\_parPayment.cshtml" />
+    <Content Include="Views\ShoppingCart\_parPayment1.cshtml" />
+    <Content Include="Views\ShoppingCart\_parPayment2.cshtml" />
+    <Content Include="Views\ShoppingCart\Success.cshtml" />
+    <Content Include="Views\ShoppingCart\HistoryShopping.cshtml" />
+    <Content Include="Views\ShoppingCart\DetailShopping.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Shared\" />
@@ -1573,7 +1596,7 @@
     <Folder Include="Content\css-admin\minimal\" />
     <Folder Include="Content\css-admin\polaris\" />
     <Folder Include="Content\css-admin\square\" />
-    <Folder Include="Views\ShoppingCart\" />
+    <Folder Include="Views\Comments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -32,11 +32,13 @@ namespace Bussiness.Interface
         /// </summary>
         /// <param name="viewModel"></param>
         void InsertAccount(AccountViewModel viewModel);
+
         /// <summary>
         /// cập nhật tài khoản
         /// </summary>
         /// <param name="viewModel"></param>
         void UpdateAccount(AccountViewModel viewModel);
+        void UpdateStt(bool stt, Guid id);
         void UpdateInfo(AccountViewModel viewModel);
         /// <summary>
         /// xóa tài khoản
@@ -45,5 +47,7 @@ namespace Bussiness.Interface
         void DeleteAccount(Guid Id);
 
         string GetRoleByGroup(string group);
+        AccountViewModel GetAccountByUserName(string userName);
+        AccountViewModel GetAccountByEmail(string email);
     }
 }

@@ -1,0 +1,59 @@
+﻿@using Bussiness.ViewModel
+<div class="page-header"  style="background-image: url(/Images/images/slide/gioi-thieu.jpeg);">
+    <div class="container">
+        <div class="row">
+            <div class="title-header">
+                <span>Thông tin đơn hàng</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="current-page">
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="">Trang Chủ</a></li>
+                <li>/</li>
+                <li>Đơn Hàng</li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row" style="margin-top: 20px; background-color: #fff; padding: 10px;" id="processpayment">
+                @{
+                    if (Session["isLoginClient"] != null)
+                    {
+                        if ((bool) Session["isLoginClient"])
+                        {
+                            AccountViewModel acc = Session["AccountClient"] as AccountViewModel;
+                            if (acc!=null)
+                            {
+                                @Html.Partial("_parPayment1",acc)
+                            }
+                            else
+                            {
+                                @Html.Partial("_parPayment")
+                            }
+                        }
+                        else
+                        {
+                            @Html.Partial("_parPayment")
+                        }
+                    }
+                    else
+                    {
+                        @Html.Partial("_parPayment")
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</main>
+<div class="modal fade" id="overViewOrder" role="dialog">
+    <div class="modal-dialog" id="OrderDetail" style="text-align: center;width: 90%">
+        <span class="text-center" style="color:black"><i class="fa fa-spinner fa-spin  fa-5x "></i></span>
+
+    </div>
+</div>

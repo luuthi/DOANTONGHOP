@@ -1,0 +1,204 @@
+﻿@using Bussiness.ViewModel
+@model Bussiness.ViewModel.AccountViewModel
+<ul class="nav nav-tabs nav-wizard">
+    <li style="width: 33%;"><a > <span class="mdi mdi-check"></span><b>Đăng nhập</b></a></li>
+    <li class="active" style="width: 33%;"><a  > <span>2</span><b>Thông tin đơn hàng</b></a></li>
+    <li style="width: 34%;"><a  ><span>3</span><b>Hình thức thanh toán</b></a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="col-md-8 col-sm-8 col-xs-12">
+        <div id="home" class="tab-pane fade">
+        </div>
+        <div id="menu1" class="tab-pane fade in active">
+            <div class="info-user">
+                <div class="add-get ">
+                    <div class="title">
+                        <h4> <i class="mdi mdi-map-marker"></i> Địa chỉ nhận hàng</h4>
+                    </div>
+                    <div class="content">
+                        <form class="form-group">
+                            <div class="row">
+                                <label for="rd_info">
+                                    <input type="radio" name="rd_info" id="rd_info" value="1" style="margin-right: 20px" checked="checked">
+                                    <span>
+                                        @Model.FullName (@Model.UserName) - Số điện thoại: @Model.PhoneNumber - Email: @Model.Email < Địa chỉ: @Model.Address
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label for="rd_add"><input type="radio" id="rd_add" name="rd_info" value="0" style="margin-right: 20px">Thêm địa chỉ nhận hàng khác</label>
+                            </div>
+                            <div class="row hide" id="additionalArea">
+                                <table class="table tab-default">
+                                    <tr>
+                                        <td>Họ tên :</td>
+                                        <td><input type="text" name="txtName" id="txtName" placeholder="Người nhận hàng" class="form-control" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Điện thoại :</td>
+                                        <td><input type="text" name="txtDienThoai" id="txtDienThoai" class="form-control" placeholder="Điện thoại liên hê" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địa chỉ  :</td>
+                                        <td><input type="text" name="txtDiaChi" id="txtDiaChi" class="form-control" placeholder="Địa chỉ giao hàng" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <label>Ngày nhận hàng: </label>
+                                <input type="text" id="datepicker" class="form-control txt_date" value=""/>
+                            </div>
+                            <div class="row">
+                                
+                                <label>Lời nhắn: </label>
+                                <textarea name="txt_msg" id="txt_msg" placeholder="Ví dụ: Chuyển hàng ngoài giờ hành chính"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end .add-get -->
+
+                <div class="info-custom">
+                    <div class="title">
+                        <h4> <i class="mdi mdi-account"></i> Thông tin người mua hàng</h4>
+                    </div>
+                    <div class="content">
+                        <p>
+                            @Model.FullName (@Model.UserName) - Số điện thoại: @Model.PhoneNumber <br>
+                            Email: @Model.Email<br>
+                            Địa chỉ: @Model.Address<br>
+                        </p>
+                    </div>
+
+                </div>
+                <button class="btn-login" type="submit" id="btnNextStep"> Tiếp tục thanh toán <span class="mdi mdi-arrow-right"></span></button>
+            </div>
+
+
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>Menu 2</h3>
+            <p>Some content in menu 2.</p>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="order">
+            <div class="title">
+                <h4>Đơn hàng (Số sản phẩm)</h4>
+            </div>
+
+            <div class="content">
+
+                <ul>
+                    @{
+                        if (Session["Cart"] != null)
+                        {
+                            List<ShoppingCartViewModel> lst = new List<ShoppingCartViewModel>();
+                            lst = Session["Cart"] as List<ShoppingCartViewModel>;
+                            foreach (var item in lst)
+                            {
+                                <li class="clearfix">
+                                    <img src="~/Images/images/san-pham/@item.Image" class="pull-left" alt="" width="60px" height="60px">
+                                    <div class="in-product">
+                                        <span>@item.ProductName</span>
+                                        <b class="text-right" style="margin-left: 50px;">
+                                            Giá tiền: @item.Price
+                                        </b>
+                                        <br>
+                                        <p class="text-right">
+                                            x @item.Quantity <br>
+                                            = @item.SubTotal.ToString("##,###")
+                                        </p>
+                                    </div>
+
+                                </li>
+                            }
+                        }
+                    }
+
+                </ul>
+                <div class="sub_price" style="margin: 10px 0px 10px 65px;">
+                    <span>Tổng tiền: </span>
+                    @{
+                        if (Session["Cart"] != null)
+                        {
+                            List<ShoppingCartViewModel> lst1 = new List<ShoppingCartViewModel>();
+                            lst1 = Session["Cart"] as List<ShoppingCartViewModel>;
+                            decimal total = 0;
+                            foreach (var item in lst1)
+                            {
+                                total += item.SubTotal;
+                            }
+                            <strong>@total.ToString("##,###")</strong>
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        var check = function () {
+            var checked = $("input[name='rd_info']:checked").val();
+           
+            if (checked == "0") {
+                $("#additionalArea").removeClass("hide");
+            } else if (checked == "1") {
+                $("#additionalArea").addClass("hide");
+            }
+        }
+        $(document).on("change", "#rd_add", check);
+        $(document).on("change", "#rd_info", check);
+
+        //
+        var saveInfo = function () {
+            debugger;
+            var checked = $("input[name='rd_info']:checked").val();
+            var Receiver, PhoneReceiver, Notes, ExpectedDate, Place;
+            Notes = $("#txt_msg").val();
+            if ($(".txt_date").val() === "") {
+                var d = new Date();
+                ExpectedDate = d.toLocaleDateString();
+            } else {
+                
+                ExpectedDate = $(".txt_date").val();
+            }
+           
+
+            if (checked === "0") {
+                Receiver = $("#txtName").val();
+                PhoneReceiver = $("#txtDienThoai").val();
+                Place = $("#txtDiaChi").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/ShoppingCart/SaveInfo/",
+                    data: { Receiver:Receiver, PhoneReceiver: PhoneReceiver, Notes:Notes, ExpectedDate:ExpectedDate, Place:Place },
+                    success: function(r) {
+                        $("#processpayment").empty();
+                        $("#processpayment").append(r.Html);
+                    },
+                    error: function(req, status, error) {
+                    }
+                });
+            }
+            else  if (checked === "1") {
+                $.ajax({
+                    type: "POST",
+                    url: "/ShoppingCart/SaveInfo1/",
+                    data: { note: Notes, expectedDate:ExpectedDate},
+                    success: function(r) {
+                        $("#processpayment").empty();
+                        $("#processpayment").append(r.Html);
+                    },
+                    error: function(req, status, error) {
+                    }
+                });
+            }
+        }
+        $(document).on("click", "#btnNextStep", saveInfo);
+    })
+</script>

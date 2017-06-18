@@ -17,6 +17,18 @@ namespace Bussiness.Implement
             SqlDb_Ultis.ExeNonStored("Tbl_AccountDelete","@Id",Id);
         }
 
+        public AccountViewModel GetAccountByEmail(string email)
+        {
+            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_AccountSelectByEmail",
+                "@Email", email);
+            AccountViewModel acc = new AccountViewModel();
+            foreach (DataRow item in dtb.Rows)
+            {
+                acc = Ultis.GetItem<AccountViewModel>(item);
+            }
+            return acc;
+        }
+
         public AccountViewModel GetAccountById(Guid Id)
         {
             DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_AccountSelectByID",
@@ -34,6 +46,18 @@ namespace Bussiness.Implement
             DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_AccountSelectByUserName",
                 "@UserName", UserName, "@Password", Password);
             AccountViewModel acc =new AccountViewModel();
+            foreach (DataRow item in dtb.Rows)
+            {
+                acc = Ultis.GetItem<AccountViewModel>(item);
+            }
+            return acc;
+        }
+
+        public AccountViewModel GetAccountByUserName(string userName)
+        {
+            DataTable dtb = SqlDb_Ultis.ExeStoredToDataTable("Tbl_AccountSelectByUserName1",
+                "@UserName", userName);
+            AccountViewModel acc = new AccountViewModel();
             foreach (DataRow item in dtb.Rows)
             {
                 acc = Ultis.GetItem<AccountViewModel>(item);
@@ -110,6 +134,13 @@ namespace Bussiness.Implement
                 "@Email", viewModel.Email,
                 "@PhoneNumber", viewModel.PhoneNumber,
                 "@Address", viewModel.Address);
+        }
+
+        public void UpdateStt(bool stt, Guid id)
+        {
+            SqlDb_Ultis.ExeNonStored("Tbl_AccountUpDate_stt",
+                "@Id",id,
+                "@Status", stt);
         }
     }
 }

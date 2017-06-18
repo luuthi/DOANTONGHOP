@@ -1,0 +1,115 @@
+﻿@using Bussiness.ViewModel
+<ul class="nav nav-tabs nav-wizard">
+    <li style="width: 33%;"><a> <span class="mdi mdi-check"></span><b>Đăng nhập</b></a></li>
+    <li style="width: 33%;"><a> <span class="mdi mdi-check"></span><b>Thông tin đơn hàng</b></a></li>
+    <li class="active" style="width: 34%;"><a><span>3</span><b>Hình thức thanh toán</b></a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="col-md-8 col-sm-8 col-xs-12">
+        <div id="home" class="tab-pane fade">
+        </div>
+        <div id="menu1" class="tab-pane fade in active">
+            <div class="info-user">
+                <div class="add-get ">
+                    <div class="title">
+                        <h4> <i class="mdi mdi-map-marker"></i> Hình thức thanh toán</h4>
+                    </div>
+                    <div class="content">
+                        <label for="payment-method-29" style="width:100%">
+                            <div class="thumbnail" style="float: left; border-radius: 0px">
+                                <img alt="" src="~/Images/images/he-thong/pay1.png">
+                            </div>
+                            <div style="float: left;border: 1px solid #ccc;height: 74px;width: 80%;padding: 15px 20px;">
+                                Thanh toán khi giao hàng
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <!-- end .add-get -->
+                <button class="btn-login"  id="btnFinish"data-toggle="modal" data-target="#overViewOrder" data-backdrop="static" data-keyboard="false"> Thanh toán <span class="mdi mdi-receipt"></span></button>
+            </div>
+
+
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>Menu 2</h3>
+            <p>Some content in menu 2.</p>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="order">
+            <div class="title">
+                <h4>Đơn hàng (Số sản phẩm)</h4>
+            </div>
+
+            <div class="content">
+
+                <ul>
+                    @{
+                        if (Session["Cart"] != null)
+                        {
+                            List<ShoppingCartViewModel> lst = new List<ShoppingCartViewModel>();
+                            lst = Session["Cart"] as List<ShoppingCartViewModel>;
+                            foreach (var item in lst)
+                            {
+                                <li class="clearfix">
+                                    <img src="~/Images/images/san-pham/@item.Image" class="pull-left" alt="" width="60px" height="60px">
+                                    <div class="in-product">
+                                        <span>@item.ProductName</span>
+                                        <b class="text-right" style="margin-left: 50px;">
+                                            Giá tiền: @item.Price
+                                        </b>
+                                        <br>
+                                        <p class="text-right">
+                                            x @item.Quantity <br>
+                                            = @item.SubTotal.ToString("##,###")
+                                        </p>
+                                    </div>
+
+                                </li>
+                            }
+                        }
+                    }
+
+                </ul>
+                <div class="sub_price" style="margin: 10px 0px 10px 65px;">
+                    <span>Tổng tiền: </span>
+                    @{
+                        if (Session["Cart"] != null)
+                        {
+                            List<ShoppingCartViewModel> lst1 = new List<ShoppingCartViewModel>();
+                            lst1 = Session["Cart"] as List<ShoppingCartViewModel>;
+                            decimal total = 0;
+                            foreach (var item in lst1)
+                            {
+                                total += item.SubTotal;
+                            }
+                            <strong>@total.ToString("##,###")</strong>
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $(document).on("click",
+            "#btnFinish",
+            function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/ShoppingCart/ShowOverview/",
+                    data: {  },
+                    success: function (r) {
+                        $("#OrderDetail").empty();
+                        $("#OrderDetail").append(r.Html);
+                    },
+                    error: function (req, status, error) {
+                    }
+                });
+            });
+    })
+</script>

@@ -23,6 +23,11 @@ namespace Bussiness.ViewModel
         [StringLength(32, MinimumLength = 8, ErrorMessage = "Mật khẩu trong khoảng 8-32  kí tự")]
         public string Password { get; set; }
 
+        [DisplayName("Nhập lại mật khẩu :*")]
+        [Required(ErrorMessage = "Nhập lại mật khẩu")]
+        [StringLength(32, MinimumLength = 8, ErrorMessage = "Mật khẩu trong khoảng 8-32  kí tự")]
+        public string RePassword { get; set; }
+
         [DisplayName("Họ và tên  :*")]
         [Required(ErrorMessage = "Nhập họ tên đầy đủ")]
         public string FullName { get; set; }
@@ -35,6 +40,7 @@ namespace Bussiness.ViewModel
         [DisplayName("Ngày sinh")]
         public DateTime Birthday { get; set; }
 
+        [DataType(DataType.EmailAddress)]   
         [DisplayName("Email : *")]
         [Required(ErrorMessage = "Nhập Email")]
         public string Email { get; set; }
@@ -59,6 +65,7 @@ namespace Bussiness.ViewModel
         public bool Status { get; set; }
 
         public string status_string { get; set; }
+
         [DisplayName("Nhóm người dùng :*")]
         [Required(ErrorMessage = "Nhập nhóm người dùng")]
         public string GroupAccId { get; set; }

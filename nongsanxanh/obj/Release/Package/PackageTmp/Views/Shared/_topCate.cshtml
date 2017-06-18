@@ -1,0 +1,35 @@
+﻿@model List<Bussiness.ViewModel.ProductViewModel>
+<div class="top-cate">
+    <div class=" body-cate">
+        <div class="row">
+            <div class="title-cate">
+                <h2>Sản phẩm bán chạy</h2>
+            </div>
+            <div id="top-cates" class="product-flexslider hidden-buttons">
+                <div class="slider-cate">
+                    <div class="owl-carousel owl-theme" style="display:block;">
+                        
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <div class="owl-item" style="width:142px;">
+                                        <div class="item top-img">
+                                            <a href="/Products/@item.GroupName/@item.Id">
+                                                <img src="~/Images/images/san-pham/@item.Image">
+                                            </a>
+                                            <div class="top-info"><h3>@item.ProductName</h3></div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
