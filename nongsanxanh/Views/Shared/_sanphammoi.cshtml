@@ -28,17 +28,17 @@
                                                     <div class="details-item">
                                                         <a href="/Products/@item.GroupName/@item.Id" class="pro-details">
                                                             <span class="mdi mdi-18px mdi-magnify visible-md visible-lg visible-sm">Chi tiết sản phẩm</span>
-                                                            <span class="mdi mdi-18px mdi-magnify visible-xs fl-left"></span>
+                                                           
                                                         </a>
-                                                        <a href="javascript:void(0)" class="pro-cart  add-shopping" data-id ="@item.Id">
+                                                        <a href="javascript:void(0)" class="btn-pro-cart"  add-shopping" data-id ="@item.Id">
                                                             <span class="mdi mdi-18px mdi-shopping visible-md visible-lg  visible-sm">  Thêm vào giỏ hàng</span>
-                                                            <span class="mdi mdi-18px mdi-shopping visible-xs fl-right"></span>
+                                                            
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="sell-info text-center">
-                                                    <h5>@item.ProductName</h5>
-                                                    <span><strong><i>@item.Price</i></strong></span>
+                                                    <h4 style="color: #88be4c">@item.ProductName</h4>
+                                                    <span><strong><i>@item.Price.ToString("##,###") VND</i></strong></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,7 +56,7 @@
 <script>
     $(document).ready(function() {
         $(document).on("click",
-            ".pro-cart",
+            ".btn-pro-cart",
             function() {
                 var id = $(this).attr("data-id");
                 $.ajax({
@@ -66,7 +66,7 @@
                     success: function(r) {
                         $(".content-header .navbar  #cart").empty();
                         $(".content-header .navbar  #cart").append(r.listpro);
-                        console.log(r);
+                        $.notify('Đã thêm sản phẩm vào giỏ hàng', "success", "top left"); 
                     },
 
                     error: function(req, status, error) {

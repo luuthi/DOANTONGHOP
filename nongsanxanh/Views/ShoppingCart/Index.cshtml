@@ -32,7 +32,7 @@
                                 <div class="row">
                                     <h4 class="title-shopping-cart"><span class="fa fa-shopping-cart"></span> Giỏ hàng của bạn</h4>
                                     <form class="product-checked col-xs-12">
-                                        <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                                        <table class="table table-responsive table-striped table-hover" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
                                             <thead>
                                                 <tr>
                                                     <th>Sản phẩm</th>
@@ -44,27 +44,38 @@
                                             </thead>
                                             <tbody></tbody>
                                             @{
-                                                foreach (var item in lst)
+                                                if (lst!=null)
                                                 {
-                                                    total += item.SubTotal;
+                                                    foreach (var item in lst)
+                                                    {
+                                                        total += item.SubTotal;
+                                                        <tr>
+                                                            <td class="text-left">
+                                                                <img src="~/Images/images/san-pham/@item.Image" width="70px" style="margin-right: 20px;">
+                                                                @item.ProductName
+                                                            </td>
+                                                            <td class="text-right">@item.Price.ToString("##,###") VND</td>
+                                                            <td  class="text-center"><input type="text" name="txt-amount" size="1" class="txt_Quantity" value="@item.Quantity" data-id="@item.ProductId" id="soluong_@item.ProductId"></td>
+                                                            <td class="text-right">@item.SubTotal.ToString("##,###")  VNĐ</td>
+                                                            <td><span class="mdi mdi-close btn-remove btn btn-danger btn-sm" data-id="@item.ProductId"></span></td>
+
+                                                        </tr>
+                                                    }
                                                     <tr>
-                                                        <td class="text-left">
-                                                            <img src="~/Images/images/san-pham/@item.Image" width="70px" style="margin-right: 20px;">
-                                                            @item.ProductName
-                                                        </td>
-                                                        <td class="text-right">@item.Price.ToString("##,###")</td>
-                                                        <td  class="text-center"><input type="text" name="txt-amount" size="1" class="txt_Quantity" value="@item.Quantity" data-id="@item.ProductId" id="soluong_@item.ProductId"></td>
-                                                        <td class="text-right">@item.SubTotal.ToString("##,###")  VNĐ</td>
-                                                        <td><span class="mdi mdi-close btn-remove btn btn-danger btn-sm" data-id="@item.ProductId"></span></td>
-
+                                                        <td colspan="3" class="text-center text-danger" ><h5 style="font-weight: bold">Tổng tiền</h5></td>
+                                                        <td colspan="2" class="text-center">@total.ToString("##,###")  VNĐ</td>
                                                     </tr>
-                                                }
-                                            }
-                                            <tr>
-                                                <td colspan="3" class="text-center text-danger" ><h5 style="font-weight: bold">Tổng tiền</h5></td>
-                                                <td colspan="2" class="text-center">@total.ToString("##,###")  VNĐ</td>
-                                            </tr>
 
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="5" class="text-center text-danger" ><h5 style="font-weight: bold">Giỏ hàng trống</h5></td>
+                                                      </tr>  
+                                                }
+                                                
+                                            }
+                                           
                                         </table>
                                     </form>
 
@@ -84,9 +95,7 @@
                         <div class="widget">
                             @Html.Partial("_parDanhMucSP")
                             @Html.Partial("_parTinNoiBat")
-                            <div class="fanpage">
-                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fquapho.net%2F&tabs=S%E1%BB%B1%20ki%E1%BB%87n&width=255px&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="255px" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>

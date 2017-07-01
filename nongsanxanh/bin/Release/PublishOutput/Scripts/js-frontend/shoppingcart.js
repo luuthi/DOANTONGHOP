@@ -1,6 +1,6 @@
 ﻿$(document).ready(function() {
     $(document).on("click",
-        ".pro-cart",
+        ".btn-pro-cart",
         function() {
             var id = $(this).attr("data-id");
             $.ajax({
@@ -10,65 +10,12 @@
                 success: function (r) {
                     $(".content-header .navbar  #cart").empty();
                     $(".content-header .navbar  #cart").append(r.listpro);
-                    console.log(r);
+                    $.notify('Đã thêm sản phẩm vào giỏ hàng', "success", "top left"); 
                 },
 
                 error: function(req, status, error) {
                 }
             });
         });
-    //$(document).on("click",
-    //    ".action_button > .btn-remove",
-    //    function() {
-    //        var id = $(this).attr("data-id");
-    //        $.ajax({
-    //            type: "POST",
-    //            url: '/ShoppingCart/RemoveItemCart/',
-    //            data: { productid: id },
-    //            success: function (r) {
-    //                $(".content-header .navbar  #cart").empty();
-    //                $(".content-header .navbar  #cart").append(r.listpro);
-    //                //console.log(r);
-    //            },
-
-    //            error: function (req, status, error) {
-    //            }
-    //        });
-    //    });
-    //$(document).on("click",
-    //    ".action_button > .btn-add-item",
-    //    function () {
-    //        var id = $(this).attr("data-id");
-    //        $.ajax({
-    //            type: "POST",
-    //            url: '/ShoppingCart/PlusItemCart/',
-    //            data: { productid: id },
-    //            success: function (r) {
-    //                $(".content-header .navbar  #cart").empty();
-    //                $(".content-header .navbar  #cart").append(r.listpro);
-    //                //console.log(r);
-    //            },
-
-    //            error: function (req, status, error) {
-    //            }
-    //        });
-    //    });
-    //$(document).on("click",
-    //    ".action_button > .btn-substract-item",
-    //    function () {
-    //        var id = $(this).attr("data-id");
-    //        $.ajax({
-    //            type: "POST",
-    //            url: '/ShoppingCart/SubstractItemCart/',
-    //            data: { productid: id },
-    //            success: function (r) {
-    //                $(".content-header .navbar  #cart").empty();
-    //                $(".content-header .navbar  #cart").append(r.listpro);
-    //                //console.log(r);
-    //            },
-
-    //            error: function (req, status, error) {
-    //            }
-    //        });
-    //    });
+    
 });

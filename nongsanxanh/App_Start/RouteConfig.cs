@@ -17,6 +17,12 @@ namespace nongsanxanh
             routes.IgnoreRoute("{*botdetect}",
                 new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
             routes.MapRoute(
+                name: "Search",
+                url: "Search/{action}/{searchString}",
+                defaults: new { controller = "Search", action = "Index", searchString = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "ShoppingCartDetail", // Route name
                 url: "ShoppingCart/DetailShopping/{orderid}", // URL with parameters
                 defaults: new { controller = "ShoppingCart", action = "DetailShopping", orderid = UrlParameter.Optional } // Parameter defaults

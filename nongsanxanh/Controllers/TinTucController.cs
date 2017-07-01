@@ -27,7 +27,7 @@ namespace nongsanxanh.Controllers
         {
             int pageSize = 2;
             int pageNumber = (page ?? 1);
-            var data = _iNewsService.GetAllNews().ToList();
+            var data = _iNewsService.GetAllNews().Where(m=>m.Status).ToList();
             List<NewsViewModel> lstNews =new List<NewsViewModel>();
             foreach (var item in data)
             {
@@ -47,7 +47,7 @@ namespace nongsanxanh.Controllers
             var lstGroup = new List<NewsGroupViewModel>();
             int pageSize = 2;
             int pageNumber = (page ?? 1);
-            lstGroup = _iNewsGroupService.GetAllNewsGroup().Where(o => o.Url == catid).ToList();
+            lstGroup = _iNewsGroupService.GetAllNewsGroup().Where(o => o.Url == catid && o.Status).ToList();
             List<NewsViewModel> lstNews = new List<NewsViewModel>();
             foreach (var item in lstGroup)
             {

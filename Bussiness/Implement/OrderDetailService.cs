@@ -42,7 +42,6 @@ namespace Bussiness.Implement
                 "@OrderId", viewModel.OrderId,
                 "@ProductId", viewModel.ProductId,
                 "@Amount", viewModel.Amount,
-                "@Total", viewModel.Total,
                 "@Notes", viewModel.Notes,
                 "@Price",viewModel.Price);
         }
@@ -53,7 +52,6 @@ namespace Bussiness.Implement
                 "@OrderId", viewModel.OrderId,
                 "@ProductId", viewModel.ProductId,
                 "@Amount", viewModel.Amount,
-                "@Total", viewModel.Total,
                 "@Notes", viewModel.Notes,
                 "@Price", viewModel.Price);
         }

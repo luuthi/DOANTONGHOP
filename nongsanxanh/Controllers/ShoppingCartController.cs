@@ -156,7 +156,6 @@ namespace nongsanxanh.Controllers
                 if (acc.Status)
                 {
                     Session["AccountClient"] = acc;
-                    Session["Role"] = _iAccountService.GetRoleByGroup(acc.GroupAccId);
                     return true;
                 }
                 else

@@ -14,8 +14,8 @@ namespace Bussiness.ViewModel
         
         [DisplayName("Tên đăng nhập  :*")]
         [Required(ErrorMessage = "Nhập tên đăng nhập")]
+        [RegularExpression("^[a-zA-Z0-9]{6,32}$", ErrorMessage = "Tên đăng nhập không chứa kí tự đặc biệt")]
         [StringLength(32, MinimumLength = 6, ErrorMessage = "Tên đăng nhập trong khoảng 6-32  kí tự")]
-        [RegularExpression("^[a-zA-Z0-9]{4,10}$",ErrorMessage = "Tên đăng nhập không chứa kí tự đặc biệt")]
         public string UserName { get; set; }
         
         [DisplayName("Mật khẩu  :*")]
@@ -40,7 +40,8 @@ namespace Bussiness.ViewModel
         [DisplayName("Ngày sinh")]
         public DateTime Birthday { get; set; }
 
-        [DataType(DataType.EmailAddress)]   
+        [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         [DisplayName("Email : *")]
         [Required(ErrorMessage = "Nhập Email")]
         public string Email { get; set; }

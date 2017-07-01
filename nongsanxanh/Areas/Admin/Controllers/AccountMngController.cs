@@ -71,6 +71,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
         {
             try
             {
+                ModelState.Remove("RePassword");
                 // TODO: Add insert logic here
                 if (ModelState.IsValid)
                 {

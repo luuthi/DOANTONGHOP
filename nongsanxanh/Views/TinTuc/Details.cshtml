@@ -28,8 +28,14 @@
                         <div class="inner-content-new new-details">
                             @Html.Raw(@Model.Content)
                         </div>
-                        <div class="Reviews" style="background-color: #fff; border-top: 1px double #f5f5f5;padding-top: 20px ">
-                            @Html.Partial("_parComment")
+                        <div class="Reviews" style="background-color: #fff; border-top: 1px double #f5f5f5; padding-top: 20px">
+                            @{
+                                if (@Model.CanComment)
+                                {
+                                    @Html.Partial("_parComment")
+                                }
+                            }
+                            
                         </div>
                     </div>
                 </div>
@@ -47,3 +53,12 @@
         </div>
     </div>
 </main>
+<script>
+    (function() {
+        var lstimg = $(".new-details img");
+        lstimg.each(function() {
+            $(this).css("height", '');
+            $(this).css("width", '100%');
+        });
+    })();
+</script>

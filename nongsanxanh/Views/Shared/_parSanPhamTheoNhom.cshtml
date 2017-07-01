@@ -19,19 +19,19 @@
                             <div class="details-item">
                                 <div class="pro-details">
                                     <a href="/Products/@Extentions.ToUnsignLinkString(@Model[0].GroupName)/@item.Id">
-                                        <span class="mdi mdi-magnify mdi-18px ">  Chi tiết sản phẩm</span>
+                                        <span class="mdi mdi-magnify mdi-18px  visible-md visible-lg visible-sm ">  Chi tiết sản phẩm</span>
                                     </a>
                                 </div>
                                 <div class=" pro-cart">
-                                    <a href="javascript:void(0)" data-id="@item.Id" class="pro-cart">
-                                        <span class="mdi mdi-shopping mdi-18px">  Thêm vào giỏ hàng</span>
+                                    <a href="javascript:void(0)" data-id="@item.Id" class="btn-pro-cart">
+                                        <span class="mdi mdi-shopping mdi-18px visible-md visible-lg visible-sm ">  Thêm vào giỏ hàng</span>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="sell-info text-center">
-                            <h5>@item.ProductName</h5>
-                            <span><strong><i>@Extentions.ToCurrencyString(Convert.ToInt32((@item.Price)))</i></strong></span>
+                            <h4 style="color: #88be4c">@item.ProductName</h4>
+                            <span><strong><i>@Extentions.ToCurrencyString(Convert.ToInt32((@item.Price))) VND</i></strong></span>
                         </div>
                     </div>
                 }
@@ -51,26 +51,3 @@
                         </div>
                     </div>
                 }
-<script>
-    $(document).ready(function () {
-        $(document).on("click",
-            ".pro-cart",
-            function () {
-                var id = $(this).attr("data-id");
-                $.ajax({
-                    type: "POST",
-                    url: '/ShoppingCart/AddProductToCart/',
-                    data: { productid: id, soluong: 1 },
-                    success: function (r) {
-                        $(".content-header .navbar  #cart").empty();
-                        $(".content-header .navbar  #cart").append(r.listpro);
-                        console.log(r);
-                    },
-
-                    error: function (req, status, error) {
-                    }
-                });
-            });
-
-    });
-</script>

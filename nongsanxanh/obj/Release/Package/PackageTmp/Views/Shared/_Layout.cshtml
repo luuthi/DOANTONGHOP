@@ -8,7 +8,7 @@
     <meta name="keywords" content="fashion, store, E-commerce">
     <meta name="robots" content="*">
     <link rel="icon" href="#" type="image/x-icon">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 
     <!-- CSS Style -->
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet">
@@ -37,8 +37,11 @@
 
         </div>
     </div>
+
+    <a id="back-to-top" href="#" class="btn btn-lg back-to-top" role="button" title="Lên đầu trang" data-toggle="tooltip" data-placement="left"><span class="mdi mdi-chevron-up mdi-24px"></span></a>
+
     <script src="@Url.Content("~/Scripts/js-admin/jquery.dataTables.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/js-admin/dataTables.bootstrap.min.js")"></script>  
+    <script src="@Url.Content("~/Scripts/js-admin/dataTables.bootstrap.min.js")"></script>
     <script src="@Url.Content("~/Scripts/js-frontend/owl.carousel.min.js")"></script>
     <script src="@Url.Content("~/Scripts/js-frontend/jquery-migrate-1.2.1.min.js")"></script>
     <script src="@Url.Content("~/Scripts/js-frontend/slide.js")"></script>
@@ -46,7 +49,25 @@
     <script src="@Url.Content("~/Scripts/js-frontend/script.js")"></script>
     <script src="@Url.Content("~/Scripts/js-frontend/smoothproducts.min.js")"></script>
     <script src="@Url.Content("~/Scripts/js-admin/bootstrap-datepicker.js")"></script>
+<script src="@Url.Content("~/Scripts/js-admin/notify.min.js")"></script>
     <script type="text/javascript">
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 150) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+        
+//
+
         $(window).load(function () {
             $('.sp-wrap').smoothproducts();
         });
@@ -63,7 +84,6 @@
             $('#datepicker').datepicker({
                 autoclose: true
             });
-            $("#example1").DataTable();
         });
 
     </script>

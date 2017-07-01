@@ -12,7 +12,7 @@
 		right: 40px;
 	}
 	.best-sell h2,.top-cate h2{
-		width: 40%;
+		width: 45%;
 	}
 	iframe{
 		width: 180px;
@@ -36,7 +36,10 @@
             margin: 0px;
             padding: 0px;
         }
-        
+        .cont-cus-rev ul.list-cus-rev li ul {
+            width: 70%;
+            padding: 0px;
+        }
         .login-customer {
             margin-top: 35px;
         }
@@ -61,7 +64,7 @@
         }
 
         .navbar-nav > li > a {
-            padding: 0px 25px;
+            padding: 2px 15px;
         }
 
         .frm-search {
@@ -298,3 +301,8 @@
             width: 100%;
         }
     }
+@media screen and (max-width: 400px) {
+    .title-header span {
+        font-size: 20px;
+    }
+}

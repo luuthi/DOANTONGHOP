@@ -6,8 +6,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_NewBackgroundProfile>False</_NewBackgroundProfile>
-    <_PublishTargetUrl>C:\Users\luudi\Desktop</_PublishTargetUrl>
+    <_NewBackgroundProfile>True</_NewBackgroundProfile>
+    <_PublishTargetUrl>D:\nongsanxanh\nongsanxanh\bin\Release\PublishOutput</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -116,7 +116,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/08/2017 03:27:34</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Product/Index.cshtml">
-      <publishTime>05/24/2017 11:32:54</publishTime>
+      <publishTime>06/19/2017 22:10:16</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Product/_parAttrValPro.cshtml">
       <publishTime>05/24/2017 09:04:33</publishTime>
@@ -149,7 +149,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/08/2017 01:44:43</publishTime>
     </File>
     <File Include="Areas/Admin/Views/ProductGroup/Index.cshtml">
-      <publishTime>05/08/2017 21:54:18</publishTime>
+      <publishTime>06/25/2017 14:35:27</publishTime>
     </File>
     <File Include="Areas/Admin/Views/ProductGroup/_progroupForm.cshtml">
       <publishTime>05/08/2017 10:57:03</publishTime>
@@ -194,10 +194,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/27/2017 10:40:34</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-      <publishTime>06/15/2017 19:01:41</publishTime>
+      <publishTime>07/01/2017 00:36:48</publishTime>
     </File>
     <File Include="bin/Bussiness.pdb">
-      <publishTime>06/15/2017 19:01:41</publishTime>
+      <publishTime>07/01/2017 00:36:48</publishTime>
     </File>
     <File Include="bin/CKFinder.dll">
       <publishTime>05/06/2017 08:46:58</publishTime>
@@ -209,10 +209,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/03/2017 10:10:06</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>06/15/2017 19:01:40</publishTime>
+      <publishTime>07/01/2017 00:36:47</publishTime>
     </File>
     <File Include="bin/DataAccess.pdb">
-      <publishTime>06/15/2017 19:01:40</publishTime>
+      <publishTime>07/01/2017 00:36:47</publishTime>
     </File>
     <File Include="bin/DocumentFormat.OpenXml.dll">
       <publishTime>08/04/2013 13:21:24</publishTime>
@@ -290,16 +290,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/03/2014 20:33:56</publishTime>
     </File>
     <File Include="bin/nongsanxanh.dll">
-      <publishTime>06/15/2017 19:06:23</publishTime>
+      <publishTime>07/01/2017 09:20:45</publishTime>
     </File>
     <File Include="bin/nongsanxanh.pdb">
-      <publishTime>06/15/2017 19:06:23</publishTime>
+      <publishTime>07/01/2017 09:20:45</publishTime>
     </File>
     <File Include="bin/NSX_Common.dll">
-      <publishTime>06/15/2017 19:01:39</publishTime>
+      <publishTime>07/01/2017 00:36:44</publishTime>
     </File>
     <File Include="bin/NSX_Common.pdb">
-      <publishTime>06/15/2017 19:01:39</publishTime>
+      <publishTime>07/01/2017 00:36:44</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>11/27/2012 13:00:52</publishTime>
@@ -449,7 +449,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2017 14:48:40</publishTime>
     </File>
     <File Include="Content/css-frontend/responsive.css">
-      <publishTime>06/13/2017 22:53:37</publishTime>
+      <publishTime>06/25/2017 09:35:48</publishTime>
     </File>
     <File Include="Content/css-frontend/revslider.css">
       <publishTime>05/15/2017 15:28:08</publishTime>
@@ -458,7 +458,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2017 19:05:11</publishTime>
     </File>
     <File Include="Content/css-frontend/style.css">
-      <publishTime>06/15/2017 00:03:13</publishTime>
+      <publishTime>06/25/2017 15:14:31</publishTime>
     </File>
     <File Include="Content/custom.min.css">
       <publishTime>04/23/2017 16:43:32</publishTime>
@@ -474,9 +474,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/PagedList.css">
       <publishTime>05/25/2017 18:31:38</publishTime>
-    </File>
-    <File Include="favicon.ico">
-      <publishTime>04/20/2017 22:16:30</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
       <publishTime>04/23/2017 17:15:56</publishTime>
@@ -527,10 +524,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2017 10:41:48</publishTime>
     </File>
     <File Include="Images/images/he-thong/cong-ty-nong-san-xanh-bao-ngoc-minh.jpg">
-      <publishTime>05/26/2017 10:04:51</publishTime>
+      <publishTime>06/20/2017 23:48:51</publishTime>
     </File>
     <File Include="Images/images/he-thong/logo.png">
       <publishTime>04/07/2017 20:36:51</publishTime>
+    </File>
+    <File Include="Images/images/he-thong/pay1.png">
+      <publishTime>06/17/2017 18:03:56</publishTime>
     </File>
     <File Include="Images/images/he-thong/slide1.jpg">
       <publishTime>05/15/2017 10:42:24</publishTime>
@@ -713,7 +713,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/06/2017 08:57:27</publishTime>
     </File>
     <File Include="Scripts/ckeditor/config.js">
-      <publishTime>05/08/2017 21:51:19</publishTime>
+      <publishTime>06/20/2017 23:19:39</publishTime>
     </File>
     <File Include="Scripts/ckeditor/contents.css">
       <publishTime>05/06/2017 02:22:26</publishTime>
@@ -3959,7 +3959,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2017 21:17:12</publishTime>
     </File>
     <File Include="Scripts/js-frontend/shoppingcart.js">
-      <publishTime>06/11/2017 16:06:32</publishTime>
+      <publishTime>06/25/2017 15:18:18</publishTime>
     </File>
     <File Include="Scripts/js-frontend/slide.js">
       <publishTime>05/24/2017 12:09:20</publishTime>
@@ -3989,7 +3989,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2017 00:24:32</publishTime>
     </File>
     <File Include="Views/AccountInfo/Index.cshtml">
-      <publishTime>06/14/2017 00:24:32</publishTime>
+      <publishTime>06/18/2017 08:36:40</publishTime>
     </File>
     <File Include="Views/Contact/Index.cshtml">
       <publishTime>06/13/2017 16:55:56</publishTime>
@@ -3998,43 +3998,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2017 15:08:56</publishTime>
     </File>
     <File Include="Views/Login/Index.cshtml">
-      <publishTime>06/13/2017 23:54:20</publishTime>
+      <publishTime>06/15/2017 22:34:30</publishTime>
     </File>
     <File Include="Views/Products/Details.cshtml">
-      <publishTime>06/13/2017 18:27:19</publishTime>
+      <publishTime>07/01/2017 00:04:43</publishTime>
     </File>
     <File Include="Views/Products/group.cshtml">
-      <publishTime>06/13/2017 18:39:57</publishTime>
+      <publishTime>06/25/2017 15:13:05</publishTime>
     </File>
     <File Include="Views/Products/Index.cshtml">
-      <publishTime>06/13/2017 18:39:16</publishTime>
+      <publishTime>06/25/2017 15:12:48</publishTime>
     </File>
     <File Include="Views/Register/Index.cshtml">
-      <publishTime>06/14/2017 20:10:01</publishTime>
+      <publishTime>06/20/2017 19:29:15</publishTime>
     </File>
     <File Include="Views/Register/Success.cshtml">
       <publishTime>06/13/2017 23:41:41</publishTime>
+    </File>
+    <File Include="Views/Search/Index.cshtml">
+      <publishTime>06/25/2017 15:13:15</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>04/20/2017 22:17:01</publishTime>
     </File>
     <File Include="Views/Shared/footer.cshtml">
-      <publishTime>06/13/2017 22:34:33</publishTime>
+      <publishTime>06/20/2017 23:47:03</publishTime>
     </File>
     <File Include="Views/Shared/Lockout.cshtml">
       <publishTime>04/20/2017 22:17:03</publishTime>
     </File>
     <File Include="Views/Shared/_header.cshtml">
-      <publishTime>06/13/2017 22:59:44</publishTime>
+      <publishTime>07/01/2017 00:48:32</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>06/14/2017 22:22:24</publishTime>
+      <publishTime>06/20/2017 19:54:30</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>04/23/2017 20:42:31</publishTime>
     </File>
     <File Include="Views/Shared/_News.cshtml">
-      <publishTime>06/13/2017 18:21:40</publishTime>
+      <publishTime>07/01/2017 08:51:22</publishTime>
     </File>
     <File Include="Views/Shared/_parComment.cshtml">
       <publishTime>06/14/2017 23:45:49</publishTime>
@@ -4046,7 +4049,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/26/2017 08:59:27</publishTime>
     </File>
     <File Include="Views/Shared/_parHotNewRight.cshtml">
-      <publishTime>06/13/2017 18:43:46</publishTime>
+      <publishTime>06/25/2017 10:46:39</publishTime>
     </File>
     <File Include="Views/Shared/_parInforPopup.cshtml">
       <publishTime>05/09/2017 14:20:51</publishTime>
@@ -4055,10 +4058,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2017 22:19:36</publishTime>
     </File>
     <File Include="Views/Shared/_parSanPham.cshtml">
-      <publishTime>06/15/2017 00:27:30</publishTime>
+      <publishTime>06/25/2017 15:13:55</publishTime>
     </File>
     <File Include="Views/Shared/_parSanPhamTheoNhom.cshtml">
-      <publishTime>06/15/2017 00:27:21</publishTime>
+      <publishTime>06/25/2017 15:14:45</publishTime>
+    </File>
+    <File Include="Views/Shared/_parSearchResult.cshtml">
+      <publishTime>06/25/2017 15:14:52</publishTime>
+    </File>
+    <File Include="Views/Shared/_parSearchRight.cshtml">
+      <publishTime>06/25/2017 09:27:55</publishTime>
     </File>
     <File Include="Views/Shared/_parTinNoiBat.cshtml">
       <publishTime>06/13/2017 18:43:56</publishTime>
@@ -4067,13 +4076,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2017 23:53:01</publishTime>
     </File>
     <File Include="Views/Shared/_parViewCart.cshtml">
-      <publishTime>06/11/2017 23:07:56</publishTime>
+      <publishTime>06/18/2017 01:30:32</publishTime>
     </File>
     <File Include="Views/Shared/_rootLayoutAdmin.cshtml">
-      <publishTime>05/07/2017 09:25:52</publishTime>
+      <publishTime>06/25/2017 15:47:00</publishTime>
     </File>
     <File Include="Views/Shared/_sanphammoi.cshtml">
-      <publishTime>06/11/2017 16:17:03</publishTime>
+      <publishTime>07/01/2017 09:29:20</publishTime>
     </File>
     <File Include="Views/Shared/_sanphamtieubieu.cshtml">
       <publishTime>05/25/2017 13:57:47</publishTime>
@@ -4090,20 +4099,41 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Shared/_topNavAdmin.cshtml">
       <publishTime>05/09/2017 14:22:01</publishTime>
     </File>
+    <File Include="Views/ShoppingCart/DetailShopping.cshtml">
+      <publishTime>06/18/2017 09:19:01</publishTime>
+    </File>
+    <File Include="Views/ShoppingCart/HistoryShopping.cshtml">
+      <publishTime>06/18/2017 09:18:15</publishTime>
+    </File>
     <File Include="Views/ShoppingCart/Index.cshtml">
-      <publishTime>06/13/2017 16:54:01</publishTime>
+      <publishTime>06/20/2017 20:08:06</publishTime>
     </File>
     <File Include="Views/ShoppingCart/ProcessPayment.cshtml">
-      <publishTime>06/14/2017 23:59:02</publishTime>
+      <publishTime>06/17/2017 22:51:22</publishTime>
+    </File>
+    <File Include="Views/ShoppingCart/Success.cshtml">
+      <publishTime>06/18/2017 08:08:49</publishTime>
+    </File>
+    <File Include="Views/ShoppingCart/_parOverviewOrder.cshtml">
+      <publishTime>06/18/2017 08:16:05</publishTime>
+    </File>
+    <File Include="Views/ShoppingCart/_parPayment.cshtml">
+      <publishTime>06/17/2017 15:34:36</publishTime>
+    </File>
+    <File Include="Views/ShoppingCart/_parPayment1.cshtml">
+      <publishTime>06/20/2017 23:56:41</publishTime>
+    </File>
+    <File Include="Views/ShoppingCart/_parPayment2.cshtml">
+      <publishTime>06/17/2017 23:38:32</publishTime>
     </File>
     <File Include="Views/TinTuc/Details.cshtml">
-      <publishTime>06/13/2017 17:00:12</publishTime>
+      <publishTime>06/27/2017 00:05:41</publishTime>
     </File>
     <File Include="Views/TinTuc/Group.cshtml">
-      <publishTime>06/13/2017 16:55:15</publishTime>
+      <publishTime>06/25/2017 00:26:27</publishTime>
     </File>
     <File Include="Views/TinTuc/Index.cshtml">
-      <publishTime>06/13/2017 16:55:42</publishTime>
+      <publishTime>06/25/2017 00:26:20</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>04/20/2017 22:16:30</publishTime>
@@ -4112,7 +4142,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/15/2017 08:48:20</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/15/2017 19:02:01</publishTime>
+      <publishTime>06/25/2017 16:03:50</publishTime>
     </File>
   </ItemGroup>
 </Project>

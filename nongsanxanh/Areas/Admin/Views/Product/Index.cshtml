@@ -249,10 +249,10 @@
                 url: '/Admin/Product/Delete_Del/',
                 data: { proid: id },
                 success: function (r) {
-                    if (r.Status==false) {
+                    if (r.Status===false) {
                         $.notify(r.Html, "danger", "top left"); 
                     }
-                    else if (r.Status == true) {
+                    else if (r.Status === true) {
                         $("#list-pro").empty();
                         $("#list-pro").append(r.Html);
                        

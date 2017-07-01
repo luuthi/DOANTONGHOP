@@ -309,7 +309,7 @@ namespace nongsanxanh.Areas.Admin.Controllers
             {
                 JsonClasses cls = new JsonClasses()
                 {
-                    Status = true,
+                    Status = false,
                     Html = "Sản phẩm đã được bán.Không xóa được!"
                 };
                 return Json(cls);

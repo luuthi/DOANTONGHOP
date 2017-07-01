@@ -21,3 +21,4 @@ D:\nongsanxanh\NSX_Common\bin\Release\System.Web.WebPages.Deployment.xml
 D:\nongsanxanh\NSX_Common\bin\Release\System.Web.WebPages.Razor.xml
 D:\nongsanxanh\NSX_Common\obj\Release\NSX_Common.dll
 D:\nongsanxanh\NSX_Common\obj\Release\NSX_Common.pdb
+D:\nongsanxanh\NSX_Common\obj\Release\NSX_Common.csprojResolveAssemblyReference.cache

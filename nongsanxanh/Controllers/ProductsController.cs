@@ -24,7 +24,7 @@ namespace nongsanxanh.Controllers
         {
             var lstGroup = new List<ProductGroupViewModel>();
 
-            lstGroup = _iProductGroupService.GetAllProductGroup();
+            lstGroup = _iProductGroupService.GetAllProductGroup().Where(o=>o.Status).ToList();
             ProductAllViewModel viewModel = new ProductAllViewModel();
             viewModel.lstListProduct = new List<List<ProductViewModel>>();
             foreach (var item in lstGroup)
@@ -48,7 +48,7 @@ namespace nongsanxanh.Controllers
             var lstGroup = new List<ProductGroupViewModel>();
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            lstGroup = _iProductGroupService.GetAllProductGroup().Where(o=>o.Url==catid).ToList();
+            lstGroup = _iProductGroupService.GetAllProductGroup().Where(o=>o.Url==catid && o.Status).ToList();
             List<ProductViewModel> lstPro = new List<ProductViewModel>();
             foreach (var item in lstGroup)
             {

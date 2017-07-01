@@ -33,13 +33,14 @@ namespace nongsanxanh.Controllers
         private List<ProductViewModel> loadNewProduct()
         {
             List<ProductViewModel> lst = new List<ProductViewModel>();
-            var data = _iProductService.GetAllProduct().Where(m => m.Category.Contains(CategoryNew.New.ToString())).ToList();
+            var data = _iProductService.GetAllProduct().Where(m => m.Category.Contains(CategoryNew.New.ToString()) && m.Status).ToList();
             foreach (var item in data)
             {
                 ProductViewModel pro = new ProductViewModel();
                 pro.Id = item.Id;
                 pro.GroupName = Extentions.ToUnsignLinkString(item.GroupName);
                 pro.Image = item.Image;
+                pro.Price = item.Price;
                 pro.ProductName = item.ProductName;
                 lst.Add(pro);
             }
@@ -48,7 +49,7 @@ namespace nongsanxanh.Controllers
         private List<ProductViewModel> loadTopSellProduct()
         {
             List<ProductViewModel> lst = new List<ProductViewModel>();
-            var data = _iProductService.GetAllProduct().Where(m => m.Category.Contains(CategoryNew.Hot.ToString())).ToList();
+            var data = _iProductService.GetAllProduct().Where(m => m.Category.Contains(CategoryNew.Hot.ToString()) && m.Status).ToList();
             foreach (var item in data)
             {
                 ProductViewModel pro = new ProductViewModel();
@@ -63,7 +64,7 @@ namespace nongsanxanh.Controllers
         private List<ProductViewModel> loadOutstandingProduct()
         {
             List<ProductViewModel> lst = new List<ProductViewModel>();
-            var data = _iProductService.GetAllProduct().Where(m => m.Category.Contains(CategoryNew.Outstanding.ToString())).ToList();
+            var data = _iProductService.GetAllProduct().Where(m => m.Category.Contains(CategoryNew.Outstanding.ToString())&&m.Status).ToList();
             foreach (var item in data)
             {
                 ProductViewModel pro = new ProductViewModel();
@@ -78,7 +79,7 @@ namespace nongsanxanh.Controllers
         private List<NewsViewModel> loadNews()
         {
             List<NewsViewModel> lst = new List<NewsViewModel>();
-            var data = _iNewsService.GetAllNews().Take(3);
+            var data = _iNewsService.GetAllNews().Where(m=>m.Status).Take(3);
             foreach (var item in data)
             {
                 NewsViewModel news = new NewsViewModel();

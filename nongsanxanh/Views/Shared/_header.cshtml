@@ -4,10 +4,10 @@
 @{
     List<ProductGroupViewModel> lst = new List<ProductGroupViewModel>();
     ProductGroupService _ProductGroupService = new ProductGroupService();
-    lst = _ProductGroupService.GetAllProductGroup();
+    lst = _ProductGroupService.GetAllProductGroup().Where(o=>o.Status).ToList();
     List<NewsGroupViewModel> lstNew = new List<NewsGroupViewModel>();
     NewsGroupService _NewGroupService = new NewsGroupService();
-    lstNew = _NewGroupService.GetAllNewsGroup();
+    lstNew = _NewGroupService.GetAllNewsGroup().Where(o => o.Status).ToList();
 <header>
     <div class="content-header">
         <nav class="navbar visible-lg visible-md visible-sm" role="navigation" style="margin-bottom:0">
@@ -45,8 +45,15 @@
                     </ul>
                 </li>
                 <li><a href="/Contact">LIÊN HỆ</a></li>
-            </ul>
-
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle">TÌM KIẾM<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <form action="/Search/Index" method="get">
+                            <input type="text" id="searchString" class="search-box-dropdown" name="searchString" placeholder="Nhập tên sản phẩm..."/>
+                        </form>
+                    </ul>
+                </li></ul>
+           
             @Html.Partial("_parViewAccount")
             <div class="btn btn-cart pull-right" id="cart">
                 @{
@@ -61,8 +68,6 @@
                 }
             </div>
         </nav>
-
-
         <div class="rd-navbar-wrap visible-xs">
             <nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-sm-stick-up-offset="50px" data-lg-stick-up-offset="150px" class="rd-navbar">
                 <div class="rd-navbar-inner">
@@ -82,7 +87,7 @@
                         <!-- END RD Navbar Collapse Toggle -->
                         <!-- RD Navbar Brand -->
                         <div class="rd-navbar-brand">
-                            @*<img src="~/Images/images/he-thong/logo.png"  alt="" class="img-responsive">*@
+                            <a href="/Home"><img src="~/Images/images/he-thong/logo-small.png" alt="" class="img-responsive"></a>
                          
                         </div>
                         <!-- END RD Navbar Brand -->
@@ -168,9 +173,9 @@
                                 <button class="rd-navbar-search-toggle mdi mdi-search-web" data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar, .rd-navbar-inner">
                                 </button>
                                 <div class="rd-navbar-search">
-                                    <form action="" method="post">
+                                    <form action="/Search/Index" method="post">
                                         <div class="form-group">
-                                            <input id="rd-navbar-search-input" type="text" class="form-control"
+                                            <input id="rd-navbar-search-input" type="text" class="form-control" name="searchString"
                                                    placeholder="Search">
                                         </div>
                                         <button type="submit" class="material-icons-search"></button>
