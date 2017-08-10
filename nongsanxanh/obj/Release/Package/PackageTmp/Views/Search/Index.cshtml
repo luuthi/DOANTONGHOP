@@ -1,0 +1,53 @@
+﻿@model PagedList.IPagedList<Bussiness.ViewModel.ProductViewModel>
+@using PagedList.Mvc
+
+<script src="~/Scripts/js-frontend/shoppingcart.js"></script>
+<div class="page-header" style="background-image: url(/Images/images/slide/hoa-qua-tuoi-sach-mien-bac.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="title-header">
+                <span>Tìm kiếm</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page-header -->
+
+<main>
+    <div class="current-page">
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="/Home">Trang Chủ</a></li>
+                <li>/</li>
+                <li>Tìm kiếm</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                <div class="Wrapper-content">
+                    @{
+                        @Html.Partial("_parSearchResult", @Model)
+                    }
+                    <div>
+                        @Html.PagedListPager(Model, page => Url.Action("Index",
+                            new { page }))
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="widget">
+                    @Html.Partial("_parDanhMucSP")
+                    @Html.Partial("_parDanhMucTin")
+                    @Html.Partial("_parHotNewRight")
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+

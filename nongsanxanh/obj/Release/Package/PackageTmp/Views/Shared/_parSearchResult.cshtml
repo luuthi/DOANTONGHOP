@@ -1,0 +1,53 @@
+﻿
+@model PagedList.IPagedList<Bussiness.ViewModel.ProductViewModel>
+@using NSX_Common;
+@if (Model.Count >0)
+{
+    <div class="vegetables">
+        <div class="title-vegetable clearfix">
+            <h1 class="pull-left">Danh sách sản phẩm</h1>
+        </div>
+        <div class="category-products clearfix">
+            @{
+                foreach (var item in Model)
+                {
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6 sell-img ">
+                        <div class="sell-inner">
+                            <a href="/Products/@Extentions.ToUnsignLinkString(@Model[0].GroupName)/@item.Id">
+                                <img src="~/Images/images/san-pham/@item.Image" class="img-responsive">
+                            </a>
+                            <div class="details-item">
+                                <div class="pro-details">
+                                    <a href="/Products/@Extentions.ToUnsignLinkString(@Model[0].GroupName)/@item.Id">
+                                        <span class="mdi mdi-magnify mdi-18px visible-md visible-lg visible-sm ">  Chi tiết sản phẩm</span>
+                                    </a>
+                                </div>
+                                <div class="pro-cart  add-shopping">
+                                    <a href="javascript:void(0)" class="btn-pro-cart" data-id="@item.Id">
+                                        <span class="mdi mdi-shopping mdi-18px pro-cart visible-md visible-lg visible-sm">  Thêm vào giỏ hàng</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sell-info text-center">
+                            <h4 style="color: #88be4c">@item.ProductName</h4>
+                            <span><strong><i>@Extentions.ToCurrencyString(Convert.ToInt32((@item.Price))) VND</i></strong></span>
+                        </div>
+                    </div>
+                }
+
+            }
+        </div>
+    </div>
+                }
+                else
+                {
+                    <div class="vegetables">
+                        <div class="title-vegetable clearfix">
+                            <h1 class="pull-left">Danh sách sản phẩm</h1>
+                        </div>
+                        <div class="category-products clearfix">
+                            <h4 class="text-danger" style="margin-left:20px;"> Không có dữ liệu</h4>
+                        </div>
+                    </div>
+                }
